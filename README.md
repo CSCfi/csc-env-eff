@@ -1,16 +1,21 @@
+# Using CSC Environment Efficiently
 
+# Note! This repository is a work in progress
 
-# Word count example
+## Opening target is Q1 2021
 
-These programs will count words in a given text, plot a bar chart of the 10
-most common words, and test [Zipf's
-law](https://en.wikipedia.org/wiki/Zipf%27s_law) on the two most common words.
+This repository holds the source for the lectures, tutorials and exercises
+for facilitating the efficient use of the CSC computational resources.
+The content is designed as modular blocks that can be easily embedded
+in training materials in universities, CSC's own training events or
+any courses which touch topics where CSC resources can be used.
 
-- Inspired by and derived from https://hpc-carpentry.github.io/hpc-python/
-  which is distributed under
-  [Creative Commons Attribution license (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
-- Documentation: https://word-count.readthedocs.io
+You are welcome to contribute to the content via fork and pull request!
 
-We use this example in two [CodeRefinery](https://coderefinery.org/) lessons:
-- https://coderefinery.github.io/reproducible-research/
-- https://coderefinery.github.io/documentation/
+The structure of the site has folders which typically contain three
+subdirectories for
+
+- slides (presenting the topic)
+- tutorials (copy/paste walkthrough)
+- exercises (tasks with instructions themed by scientific disciplines)
+
