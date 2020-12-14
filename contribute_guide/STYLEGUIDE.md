@@ -7,12 +7,10 @@
  - When in doubt, check how other pages are formatted
 
 ## Organizing content
- - Try to make standalone articles with a good name (user knows to select it from the left menu)
+ - Try to make standalone articles with a good name
  - The content should be as concise as possible, but as lengthy as needed.
- - The main user guide should document only what is specific to CSC environment, for general usage instructions link to the real manuals of the tool
-   - Lengthier tutorials can be written under Support->Tutorials.
- - Don't make too deep hierarchy or too many entries per subcategory (combine very small pages)
- - Don't refer to the same page twice in mkdocs.yml -> sitemap breaks + weird menu action
+ - Link generously to main guide (docs.csc.fi) for additional information
+   - Some details can be introduced via tutorials/exercises
 
 ## Accessibility
  - [General guidelines](https://www.saavutettavuusvaatimukset.fi/)
@@ -21,16 +19,16 @@
       - `[Read more here](link-to-some-page)` is not accessible. `[Read more about free use cases](link-to-some-page)` is better.
       - Avoid long walls of text and long sentences
       - Lists and clear titles: good
-      - Use descriptive alt texts for images and videos 
-      - Avoid presenting something ONLY as a video, and use captions/subtitles in video. Also, do present import or difficult to follow things also with videos.
+      - Use descriptive alt texts for images and videos
+      - Avoid presenting something ONLY as a video, and use captions/subtitles in video. Also, do present important or difficult to follow things also with videos.
       - Avoid using loadable pdfs
       - Avoid using only color to signal some meaning
 
 ## Images, linked documents
- - Put all images in `/img` folder in slides root
+ - Put all slides images in `slides/img` folder (tutorials/exercise folders can have their own img/)
  - Put large files in Allas (write access with project 2001659) bucket docs-files,
- e.g.  [https://a3s.fi/docs-files/README.md](https://a3s.fi/docs-files/README.md)
-      - new files easy to share with `a-publish your-file.tgz -b docs-files` 
+ e.g.  [https://a3s.fi/csc-env-files/README.md](https://a3s.fi/csc-env-files/README.md)
+      - new files easy to share with `a-publish your-file.tgz -b csc-env-files` 
 
 ## Syntax highlighting
  - Write SLURM flags in long format (`--nodes` instead of `-N`, etc.)

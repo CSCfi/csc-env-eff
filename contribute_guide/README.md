@@ -8,8 +8,6 @@ fork, create new content and make a pull request to the master
 branch (or you're of course welcome to use your fork in your
 events, as well.)
 
-The general [guidelines and workflow for contributing](CONTRIBUTING.md)
-
-The general [styleguide for slides and other content](STYLEGUIDE.md)
-
-Instructions [how to turn Markdown into standalone html](MD_to_html.md)
+- [The general guidelines and workflow for contributing](CONTRIBUTING.md)
+- [The general styleguide for slides and other content](STYLEGUIDE.md)
+- [Instructions how to turn Markdown into standalone html](MD_to_html.md)

@@ -13,8 +13,9 @@ any courses which touch topics where CSC resources can be used.
 You are [welcome to contribute](./contribute_guide/README.md) to the 
 content via fork and pull request!
 
-The **slides** folder containst an introduction to each of the topics.
-The folders with more descriptive names contain **tutorials** (a copy/paste
-walkthrough) of the topic and **exercises** (tasks with instructions themed 
-by scientific disciplines).
+The **slides** folder contains an introduction to each of the topics as a
+separate slideset.
+The **hands-on** folder has subfolders with more descriptive names containing
+**tutorials** (a copy/paste walkthrough) for each of slideset topics and also
+**exercises** (tasks with instructions themed by scientific disciplines).
 

@@ -21,6 +21,8 @@
    ```bash
    $HOME/bin/pandoc.sif -s 01_my_lecture.md
    ```
+5. To create the whole site add your page to the top of the Makefile list and run `make`
+
 Note, don't publish the theme and slidefactory accessory files, just the html (and related images etc.)!
 
 ## Speed up testing how the slides look like directly from Puhti
