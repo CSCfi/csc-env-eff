@@ -1,25 +1,29 @@
 ---
-title: Study tips
-titleslide: true
+theme: csc-2019
+lang: en
 ---
+# Study tips for self learning {.title}
 
+# Using these materials
 
-# Problem solving
+- The material is organized by topics in increasing complexity
+   - Feel free to jump if you know the basics already
+- Read the slides / watch the video first
+- Complete the tutorial to make sure you've got the steps right
+- Try out one or more of the exercises to verify your new skill
+- If you get stuck, consult [the docs](https://docs.csc.fi) linked to the topic slides
+
+# General problem solving
 
 1. Try in [docs.csc.fi](https://docs.csc.fi) in the right section in the *hierarchy*
-2. Try in the [FAQ](https://docs.csc.fi/support/FAQ/)
-3. Try the search if docs or in google for it
+2. Try in the [FAQ](https://docs.csc.fi/support/faq/)
+3. Try the search in docs or google for it
 4. Send an email to [servicedesk@csc.fi](mailto:servicedesk@csc.fi) containing:
-   - A descripte title
-   - What you wanted to achieve, and which on which computer
+   - A descriptive title
+   - What you wanted to achieve, and on which which computer
    - Which commands you had given
    - What error messages resulted
    - [More tips to help us quickly solve your issue](https://docs.csc.fi/support/support-howto/))
-
-{:.Q}
-
-Docs challenge: What is the name of the command that copies the file
-to Allas and makes it available directly from the internet?
 
 # Learning a new method or application
 

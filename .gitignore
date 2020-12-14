@@ -2,6 +2,7 @@
 __pycache__/
 _build/
 venv/
-results/*.png
-results/*.txt
-processed_data/*.dat
+slides/reveal.js/
+slides/theme/
+slides/filter/
+slides/convert.sh

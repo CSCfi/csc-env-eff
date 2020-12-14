@@ -10,12 +10,12 @@ The content is designed as modular blocks that can be easily embedded
 in training materials in universities, CSC's own training events or
 any courses which touch topics where CSC resources can be used.
 
-You are welcome to contribute to the content via fork and pull request!
+You are [welcome to contribute](./contribute_guide/README.md) to the 
+content via fork and pull request!
 
-The structure of the site has folders which typically contain three
-subdirectories for
-
-- slides (presenting the topic)
-- tutorials (copy/paste walkthrough)
-- exercises (tasks with instructions themed by scientific disciplines)
+The **slides** folder contains an introduction to each of the topics as a
+separate slideset.
+The **hands-on** folder has subfolders with more descriptive names containing
+**tutorials** (a copy/paste walkthrough) for each of slideset topics and also
+**exercises** (tasks with instructions themed by scientific disciplines).
 
