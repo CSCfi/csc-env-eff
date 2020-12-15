@@ -6,5 +6,4 @@
 
 ## Exercises
 * [Search for a crystal structure with 6 fused benzene rings](mercury.md)
-
-
+* more exercises...
