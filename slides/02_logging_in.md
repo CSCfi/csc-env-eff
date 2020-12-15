@@ -14,17 +14,12 @@ In this section, you will learn how to login on CSC supercomputers with ssh and 
 - Please read this page for an introduction on how to login with ssh: https://docs.csc.fi/computing/connecting/
 - Note the [prerequisites to be able to access Puhti](https://docs.csc.fi/support/faq/how-to-get-puhti-access/)
 
-TODO: Tutorial link (so that copy paste works - apart from username)
-
 # Log in via NoMachine
 
 - NoMachine is a software that makes remote graphics easier, like running a graphical version of the R software.
 - NoMachine client must be installed locally on your computer first (May require admin privileges).
+- [The client is used to connect to a server in Kajaani](https://docs.csc.fi/apps/nomachine/) and it provides faster graphical performance than X11-forwarding
 - Please first consult the [Instructions on how to install and to use NoMachine](https://docs.csc.fi/support/tutorials/nomachine-usage/)
-
-TODO: tutorial on how to launch some graphical apps
-
-TODO: exercise on how to launch some graphical app and do smth with it
 
 # Advanced topic: Setting up SSH-keys
 
