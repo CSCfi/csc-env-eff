@@ -36,6 +36,7 @@ Start a local http server in Puhti and access slides with your browser
    , where XX is some random number. 
    If the port is already in use, choose another one. Note that this example works 
    with default system python, so make sure that you are not using any conda or python modules.
+   **Note, this is an unencrypted link, don't view anything private!**
 2. Launch another ssh session with local port forwarding 
    ```
    ssh -L 80XX:localhost:80XX <your username>@puhti-login2.csc.fi

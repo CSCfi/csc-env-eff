@@ -10,4 +10,4 @@ events, as well.)
 
 - [The general guidelines and workflow for contributing](CONTRIBUTING.md)
 - [The general styleguide for slides and other content](STYLEGUIDE.md)
-- [Instructions how to turn Markdown into standalone html](MD_to_html.md)
+- [Instructions how to turn Markdown into standalone html](MD_into_html.md)

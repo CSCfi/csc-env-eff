@@ -15,29 +15,27 @@ See [Style guide](STYLEGUIDE.md) for content and formatting instructions.
 ## For the impatient (Note: this will differ for CSC Staff and non-staff)
 
 Once you've completed the steps above:
-* In [docs.csc.fi](https://docs.csc.fi) go the the page you want to edit and click the pen icon at top right
 * (sign in GitHub) and edit then content
-* Scroll down to commit changes (create a new branch) -> make a pull request
-* Assign a reviewer
+* Scroll down to commit changes (create a new branch, don't push directly to master) -> make a pull request
+* Assign a reviewer or merge yourself if it's a small thing
 
 ## Making changes using pull requests
 
-The csc-user-guide repository uses the 'master' as the default
+The csc-env repository uses the 'master' as the default
 branch. You can make changes in web gui, command line or desktop application.
 
-Master branch is protected. You cannot make changes to it directly, but you
-must use pull requests.
+Master branch is not protected. You can make changes to it directly, but please
+don't. Instead, make a "feature branch" for your change and then create a pull request.
 
 ### Overview
 **writer:**
 
  - Create your own branch from master (or work in an already existing branch, if agreed)
  - Create / bring there the content you want to work with. Pay attention to file naming!
- - Make sure the data is 100% correct
  - When creating new exercise / tutorial add it to it's subfolder's README.md
  - Make a pull request for your work to be added to Master
     - Assign a reviewer if you want
-        - **Tip** Add a link to the html-page ([see README for publishing the slides in Allas](README.md)
+        - **Tip** Add a link to the html-page ([see instructions for publishing the slides in Allas](MD_into_html.md/#publish-html-files-in-allas)
     - Write meaningful pull request messages, so it is easier for reviewers to do their job.
     - Communicate! Use "WIP" (= Work In Progress) in your pull request title, if you don't wish the branch to be merged to master (i.e. you want to continue working with it).
  - You can also merge the branch yourself, but please delete the feature branch afterwards
