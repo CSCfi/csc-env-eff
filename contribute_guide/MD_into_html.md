@@ -57,7 +57,7 @@ Start a local http server in Puhti and access slides with your browser
    - Note, `a-publish` is recursive, so if you want only some subfolder, `cd` there first.
      Leave the *csc-env* bucket for the full repository and master branch only.
    ```bash
-   a-publish -b my-csc-env contribute_guide
+   a-publish -b my-csc-env 0X_cool_chapter.html
    ```
-   - `a-publish` will echo the url, which in this case would be *https://a3s.fi/my-csc-env/contribute_guide*
+   - `a-publish` will echo the url, which in this case would be *https://a3s.fi/my-csc-env/0X_cool_chapter.html*
 
