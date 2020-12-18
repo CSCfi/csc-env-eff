@@ -34,17 +34,18 @@ One reason to use CSC resources is to get to results faster. This can be accompl
    - beware too many batch jobs or job steps
    - be aware of partition limits
    - optimum job length
+   - avoid idling allocations
 
 # Leverage GPUs for speed
 
 - GPUs can give a real boost, but can your code make use of them?
-   - How to check if your code can utilize GPUs
+   - How to check if your code can utilize GPUs (FIXME i.e. tell how)
    - Note, just asking for GPUs from SLURM will not help if your code can't use them
    - If you're unsure, here's [how to check if your batch job used GPU](https://docs.csc.fi/support/tutorials/gpu-ml/#gpu-utilization)
 
-# Be more clever instead of using brute force
+# Be more clever instead of (only) using brute force
 
-- Computational science has not got more useful only because computers are faster, but also because scientists have come up with more clever algorithms
+- Better performance is not only due to ever faster computers, but also because scientists have come up with more clever algorithms
 - Different codes may give very different performance
     - Compare the options you have in [the CSC Software selection](https://docs.csc.fi/apps/)
 - Before launching massive simulations, look for more efficient algorithms to get the data you need
