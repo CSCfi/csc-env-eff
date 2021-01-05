@@ -35,7 +35,7 @@ don't. Instead, make a "feature branch" for your change and then create a pull r
  - When creating new exercise / tutorial add it to it's subfolder's README.md
  - Make a pull request for your work to be added to Master
     - Assign a reviewer if you want
-        - **Tip** Add a link to the html-page ([see instructions for publishing the slides in Allas](MD_into_html.md/#publish-html-files-in-allas)
+        - **Tip** Add a link to the html-page ([see instructions for publishing the slides in Allas](MD_into_html.md/#publish-html-files-in-allas) )
     - Write meaningful pull request messages, so it is easier for reviewers to do their job.
     - Communicate! Use "WIP" (= Work In Progress) in your pull request title, if you don't wish the branch to be merged to master (i.e. you want to continue working with it).
  - You can also merge the branch yourself, but please delete the feature branch afterwards
@@ -62,16 +62,16 @@ don't. Instead, make a "feature branch" for your change and then create a pull r
 In the master branch, navigate to the page you want to edit, click the pen-logo 
 at the top right and once ready, at the bottom choose "Create new branch from this 
 commit and start a pull request". Note, that you can give the branch a descriptive 
-name at this point. If you wish to edit already existing branch, first change to 
+name at this point. If you wish to edit an already existing branch, first change to 
 the correct branch in the "branch" button on upper left, next to the path to the 
-file. If you found an error in the pull request of your own branch, you can commit 
+file. If you found an error in the pull request of your own branch, you should commit 
 to it directly instead of creating another pull request (the two choices at the bottom).
 
 ### Making pull requests on the command line
 
 Overview:
 
- - Clone the reposity (if not done already) `git clone https://github.com/CSCfi/csc-env`
+ - Clone the reposity (if not done already) `git clone https://github.com/CSCfi/csc-env-eff`
  - Update local repository `git pull`
  - Change to master branch (if not already) `git checkout master` 
  - Make a new branch from the master branch `git checkout -b my-new-branch`
