@@ -2,11 +2,14 @@
 
 ## Starting as a writer
 
-CSC staff can join the Git organization
-[CSCfi](https://github.com/CSCfi) by sending email to
-vcs-support@csc.fi. After this you can [join the CSC employees
-team](https://github.com/orgs/CSCfi/teams/employees/members), which
-gives you permissions to edit source files that build the guide.
+CSC staff: do these two things _first_:
+
+1. Join the Git organization [CSCfi](https://github.com/CSCfi) by sending email to vcs-support@csc.fi.
+2. Then [join here the CSC employees team](https://github.com/orgs/CSCfi/teams/employees/members). Membership
+gives you permissions to edit source files that build the content. (Wait for a confirmation email.)
+
+The rest of this document describes the workflow in Github as well as instructions for previewing 
+and deploying the documentation. See [Style guide](STYLEGUIDE.md) for content and formatting instructions.
 
 The rest of this document describes the workflow in Github as 
 well as instructions for previewing and deploying the documentation. 
@@ -21,7 +24,7 @@ Once you've completed the steps above:
 
 ## Making changes using pull requests
 
-The csc-env repository uses the 'master' as the default
+The csc-env-eff repository uses the 'master' as the default
 branch. You can make changes in web gui, command line or desktop application.
 
 Master branch is not protected. You can make changes to it directly, but please
@@ -71,7 +74,7 @@ to it directly instead of creating another pull request (the two choices at the 
 
 Overview:
 
- - Clone the reposity (if not done already) `git clone https://github.com/CSCfi/csc-env`
+ - Clone the reposity (if not done already) `git clone https://github.com/CSCfi/csc-env-eff`
  - Update local repository `git pull`
  - Change to master branch (if not already) `git checkout master` 
  - Make a new branch from the master branch `git checkout -b my-new-branch`
