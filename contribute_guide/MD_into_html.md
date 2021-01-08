@@ -7,7 +7,7 @@
 
 ## Copy the theme and other dependencies to local directory
 
-1. Go the the same directory as the source md files (= your git root directory for csc-env in Puhti) (If you haven't yet cloned the repository, do so: git clone https://github.com/CSCfi/csc-env-eff).
+1. Go the the same directory as the source md files (= your git root directory for csc-env-eff in Puhti) (If you haven't yet cloned the repository, do so: git clone https://github.com/CSCfi/csc-env-eff).
 2. Run command 
    ```bash
    singularity exec $HOME/bin/pandoc.sif /bin/sh -c "cp -r /slidetools/* ."
