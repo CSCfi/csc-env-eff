@@ -1,13 +1,13 @@
 # Convert Markdown into html, preview, and publish
 
-## Copy the Singularity tool image to Puhti. (*e.g.* in `$HOME/bin` which is used below)
+## Copy the Singularity tool image to Puhti. (*e.g.* in `$HOME/bin` which is used in the examples below)
    - Initialize Allas with project_2001659 (see below, works only for CSC staff)
    - `a-get pandocTool/pandoc.sif`
    - Give execute permissions `chmod u+x pandoc.sif`
 
 ## Copy the theme and other dependencies to local directory
 
-1. Go the the same directory as the source md files (again your git root for csc-env?).
+1. Go the the same directory as the source md files (= your git root directory for csc-env-eff in Puhti) (If you haven't yet cloned the repository, do so: git clone https://github.com/CSCfi/csc-env-eff).
 2. Run command 
    ```bash
    singularity exec $HOME/bin/pandoc.sif /bin/sh -c "cp -r /slidetools/* ."
@@ -17,7 +17,7 @@
    ```bash
    $HOME/bin/pandoc.sif 01_my_lecture.md
    ```
-4. To create a self contained html page add `-s` *i.e.* instead
+4. To create a self contained html *slide* page add `-s` *i.e.* instead
    ```bash
    $HOME/bin/pandoc.sif -s 01_my_lecture.md
    ```
@@ -44,7 +44,7 @@ Start a local http server in Puhti and access slides with your browser
    where XX is the port from step 1. and 
    login node name must match also with step 1. command.
 3. Open up the pages in your local browser with a link to `http://localhost:80XX`
-4. When done, please remember to shut down the server and release the port!
+4. When done, please remember to shut down the server and release the port! (ctrl-c in the python3 screen does this)
 
 ## Publish html files in Allas
 
