@@ -24,9 +24,12 @@ ssh <your_csc_username>@puhti.csc.fi
 - replace above `<your_csc_username>` with your actual csc username, or training account
   which ever you're using, and press enter
 
-## Mac
+## MacOS
 
-FIXME
+In MacOS, you can use Terminal similarly as with Linux machines (see below). Simply open the Terminal application and type:
+```bash
+ssh <your_csc_username>@puhti.csc.fi
+```
 
 ## Linux
 
