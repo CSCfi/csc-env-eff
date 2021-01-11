@@ -5,7 +5,7 @@
    - `a-get pandocTool/pandoc.sif`
    - Give execute permissions `chmod u+x pandoc.sif`
 
-## Copy the theme and other dependencies to local directory
+## Copy the theme and other dependencies to local directory (in Puhti)
 
 1. Go the the same directory as the source md files (= your git root directory for csc-env-eff in Puhti) (If you haven't yet cloned the repository, do so: git clone https://github.com/CSCfi/csc-env-eff).
 2. Run command 
@@ -21,7 +21,7 @@
    ```bash
    $HOME/bin/pandoc.sif -s 01_my_lecture.md
    ```
-5. To create the whole site add your page to the top of the Makefile list and run `make`
+5. To create the whole site add your page to the top of the Makefile (located in: csc-env-eff/slides/Makefile) list and run `make`
 
 Note, don't publish the theme and slidefactory accessory files, just the html (and related images etc.)!
 
