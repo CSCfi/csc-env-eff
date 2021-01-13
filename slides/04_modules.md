@@ -13,7 +13,7 @@ Same information can be found in [the module section of our user guide at docs.c
 - Several softwares with different (possibly conflicting) requirements are needed in one supercomputer
 - The solution for managing this situation: separate the applications in *modules*
 - *Environment modules* set up everything required by a particular application:
--  Load libraries, adjust path, set environment variables 
+   -  Load libraries, adjust path, set environment variables 
 
 # Module system in CSC supercomputers
 
@@ -25,15 +25,18 @@ Same information can be found in [the module section of our user guide at docs.c
 # How to use modules
 
 - The syntax is simple: module command module-name 
-    - For example: module load gromacs-env)
+    - For example: module load gromacs-env
+    - [List of most common commands](https://docs.csc.fi/computing/modules/#module-commands-table)
 - You can't just load all the modules because of the dependencies
 - If you try to load a module that is not available, you will get an error message saying so 
-- Commands: *module spider*, *module list* and *module avail* will help you:
+
+<!--- Commented out atm:
+ - Commands: *module spider*, *module list* and *module avail* will help you:
     - *module list*: See the list of modules loaded at the moment
     - *module avail*: Modules available at the moment (due to depencies -hides modules that can't be loaded atm)
      - *module spider name*: Search for an application in the list of all existing modules
      - *module spider name/version*: Gives information on how to load the module (prerequisites etc).
-- [List of most common commands](https://docs.csc.fi/computing/modules/#module-commands-table)
+-->
 
 # Advance module use
 
