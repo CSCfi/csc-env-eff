@@ -18,28 +18,30 @@ Same information can be found in [the module section of our user guide at docs.c
 # Module system in CSC supercomputers
 
 - CSC uses [*Lmod*](https://lmod.readthedocs.io/en/latest/) environment modules, which are using *Lua* programming language
-- Some softwares/applications have their own module (e.g. *gromacs-env*), whereas some are combined in larger modules (e.g. *biokit*, *geoconda*), and some can be find in many different modules (e.g. *GDAL*)
+- Some softwares/applications have their own module (e.g. `gromacs-env`), whereas some are combined in larger modules (e.g. `biokit`, `geoconda`), and some can be find in many different modules (e.g. `gdal`)
 - You can check the available applications and their respective modules in the [Application list](https://docs.csc.fi/apps/)
 - These modules are used both in *interactive* and *batch jobs*
 
-# How to use modules
+# How to use modules (1/2)
 
-- The syntax is simple: module command module-name 
-    - For example: module load gromacs-env
+- The syntax is simple: `module command module-name`
+    - For example: `module load gromacs-env`
     - [List of most common commands](https://docs.csc.fi/computing/modules/#module-commands-table)
 - You can't just load all the modules because of the dependencies
 - If you try to load a module that is not available, you will get an error message saying so 
 
-<!--- Commented out atm:
- - Commands: *module spider*, *module list* and *module avail* will help you:
-    - *module list*: See the list of modules loaded at the moment
-    - *module avail*: Modules available at the moment (due to depencies -hides modules that can't be loaded atm)
-     - *module spider name*: Search for an application in the list of all existing modules
-     - *module spider name/version*: Gives information on how to load the module (prerequisites etc).
--->
+# How to use modules (1/2)
+ - These commands will help you figuring out the module situation:
+    - `module list`: See the list of modules loaded at the moment
+    - `module avail`: Modules available at the moment (due to depencies -hides modules that can't be loaded atm)
+     - `module spider name`: Search for an application in the list of all existing modules
+     - `module spider name/version`: Gives information on how to load the module (prerequisites etc).
 
-# Advance module use
 
-- You can save your current module set (*module save filename*) and load it (*module restore filename*)
-- You can also write your own module files: add them in your home directory ($HOME/modulefiles) and add the path to the module search path (*module use $HOME/modulefiles*)
-- To study existing module files: *module show module-name* shows also the filename of the module file
+# Advanced module use
+
+- You can save your current module set (`module save filename`) and load it (`module restore filename`)
+- You can also write your own module files: 
+    1. Add them in your home directory (`$HOME/modulefiles`) and 
+    2. Add the path to the module search path (`module use $HOME/modulefiles`)
+- To study existing module files: command `module show module-name` shows also the filename of the module file
