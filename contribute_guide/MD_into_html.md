@@ -60,4 +60,8 @@ Start a local http server in Puhti and access slides with your browser
    a-publish -b my-csc-env 0X_cool_chapter.html
    ```
    - `a-publish` will echo the url, which in this case would be *https://a3s.fi/my-csc-env/0X_cool_chapter.html*
+   
+   ## Link the files in e-Lena
+   
+   To nicely link the files in e-Lena, choose "+Add an activity or resource" -> URL -> Write the name "Slides: Topic name" and copy the Allas URL for the slides. You can write in the Description the link to github page also. Then under Appearance choose "display" = embed.
 
