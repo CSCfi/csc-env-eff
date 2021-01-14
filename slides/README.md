@@ -13,6 +13,7 @@ slide hierarchy, related tutorials and exercises.
 
 ## [00 Study tips](00_study_tips.html)
 ## [02 Logging in](02_logging_in.html)
+## [04 Modules](02_modules.html)
 ## [10 Speed up jobs](10_speed_up_jobs.html)
 
 ## [Syntax example - help for new content](example.html)
