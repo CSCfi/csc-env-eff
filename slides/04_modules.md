@@ -18,7 +18,8 @@ Same information can be found in [the module section of our user guide at docs.c
 # Module system in CSC supercomputers
 
 - CSC uses [*Lmod*](https://lmod.readthedocs.io/en/latest/) environment modules, which are using *Lua* programming language
-- Some softwares/applications have their own module (e.g. `gromacs-env`), whereas some are combined in larger modules (e.g. `biokit`, `geoconda`), and some can be find in many different modules (e.g. `gdal`)
+- Some softwares/applications have their own module (e.g. `gromacs-env`), whereas some are combined in larger modules (e.g. `biokit`, `geoconda`), and some can be found in many different modules (e.g. `gdal`)
+
 - You can check the available applications and their respective modules in the [Application list](https://docs.csc.fi/apps/)
 - These modules are used both in *interactive* and *batch jobs*
 
