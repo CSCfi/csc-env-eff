@@ -14,7 +14,7 @@ ssh <your_csc_username>@puhti.csc.fi
 module list
 ```
 
-3. Check what versions are available for Gromacs (note that this might take a while, is the command searches through all the available modules):
+3. Check what versions are available for Gromacs (note, that this might take a while, as the command searches through all the available modules):
 ```bash
 module spider gromacs
 ```
@@ -42,4 +42,4 @@ module list
 module purge
 ```
 
-8. Check the [example batch job script for Gromacs](/apps/gromacs/#example-parallel-batch-script-for-puhti) to see how the module is recommended to be loaded there (first two lines after the `#SBATCH` commands and comments).
+8. Check the [example batch job script for Gromacs](https://docs.csc.fi/apps/gromacs/#example-parallel-batch-script-for-puhti) to see how the module is recommended to be loaded there (first two lines after the `#SBATCH` commands and comments).
