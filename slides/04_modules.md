@@ -30,13 +30,15 @@ Same information can be found in [the module section of our user guide at docs.c
 - You can't just load all the modules because of the dependencies
 - If you try to load a module that is not available, you will get an error message saying so 
 
-# How to use modules (1/2)
+# How to use modules (2/2)
  - These commands will help you figuring out the module situation:
     - `module list`: See the list of modules loaded at the moment
     - `module avail`: Modules available at the moment (due to depencies -hides modules that can't be loaded atm)
      - `module spider name`: Search for an application in the list of all existing modules
      - `module spider name/version`: Gives information on how to load the module (prerequisites etc).
 
+## Conda enviroment
+- Should we say something about the conda modules too?
 
 # Advanced module use
 
