@@ -12,6 +12,7 @@ lang: en
 - Complete the tutorial to make sure you've got the steps right
 - Try out one or more of the exercises to verify your new skill
 - If you get stuck, consult [the docs](https://docs.csc.fi) linked to the topic slides
+- Press *ctrl* to open additional information links to a new window
 
 # General problem solving
 
