@@ -8,20 +8,20 @@ You will learn:
 - How to look for applications
 - About the bioconda environment
 
-Let's imagine that we want to create a batch script that runs multiple tools related to aligning a sequening result to a reference genome.
+Let's imagine that we have some sequencing data that we wish to align to a reference genome, and check the quality of the alignment. 
 
-## Looking for an application and related modules
+## Looking for applications and related modules
 
-1. Let's see the [list of applications](https://docs.csc.fi/apps/) and look for suitable aligners. Can you find for example TopHat, STAR, Bowtie and BWA in the list? Which module is needed to run these applications?
+1. Let's see the [list of applications](https://docs.csc.fi/apps/) and look for suitable aligners. Can you find for example TopHat, STAR, Bowtie and BWA aligners in the list? Which module is needed to run these applications?
 
-The biokit module sets up a set of commonly used bioinformatics tools. 
+The *biokit module* sets up a set of commonly used bioinformatics tools. 
 
-2. All softwares installed in Puhti (or Mahti) don't necessarily have their own manual page in the application list (yet): they might be new installations, or installed from request of a single research group etc. Let's check if HISAT2 aligner is also available:
+2. All softwares installed in CSCs super computers don't necessarily have their own manual page in the application list (yet): they might be new installations, or installed from request of a single research group etc. Let's check if HISAT2 aligner is also available:
 
 ```bash
 module spider hisat
 ```
-Is there some version available?
+Is there some version oh HISAT2 also available?
 
 3. Let's load the biokit module and see what is included.
 ```bash
@@ -32,9 +32,9 @@ Was HISAT2 available in the biokit?
 
 ## Bioconda environment
 
-4. After aligning, we might want to check the quality of the alignment with RSeQC tool. As we can see from the list command above, it was not included in the biokit. You can try to look for it from the application manual page and by using the 'module spider reseqc'. 
+4. After aligning, we might want to check the quality of the alignment with RSeQC tool. As we can see from the `module list` command above, it was not included in the biokit. Like we learned, you can try to look for it from the application manual page and by using the `module spider reseqc`. 
 
-No luck? What next? Let's look at the bioconda environment.
+No luck? What next? Let's take a look at the bioconda environment.
 
 Some applications are installed and used as Conda environments in Puhti. You can use [CSC's bioconda environment](https://docs.csc.fi/apps/bioconda/) also to easily install tools from [Bioconda repository](http://bioconda.github.io).
 
@@ -44,7 +44,7 @@ module spider bioconda
 module load bioconda/3
 ```
 Take a look at the message you get. Note, that some dependency modules were re-loaded in the background. It says that we first need to set the PROJAPPL environment variable.
-To do so, run command (you can check the name/number of your project(s) with command 'csc-workspaces')
+To do so, run command (you can check the name/number of your project(s) with command `csc-workspaces`)
 ```bash
 export PROJAPPL=/projappl/project_XXXXXXX
 ```

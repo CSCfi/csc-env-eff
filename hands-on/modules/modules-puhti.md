@@ -42,4 +42,4 @@ module list
 module purge
 ```
 
-8. Check the [example batch job script for Gromacs](/apps/gromacs/#example-parallel-batch-script-for-puhti) to see how the module recommended to be loaded there (first two lines after the '#SBATCH' commands and comments).
+8. Check the [example batch job script for Gromacs](/apps/gromacs/#example-parallel-batch-script-for-puhti) to see how the module is recommended to be loaded there (first two lines after the `#SBATCH` commands and comments).
