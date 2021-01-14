@@ -37,7 +37,7 @@ Same information can be found in [the module section of our user guide at docs.c
      - `module spider name`: Search for an application in the list of all existing modules
      - `module spider name/version`: Gives information on how to load the module (prerequisites etc).
 
-## Conda enviroment
+# Conda enviroment
 - Should we say something about the conda modules too?
 
 # Advanced module use
