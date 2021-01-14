@@ -21,7 +21,7 @@ The *biokit module* sets up a set of commonly used bioinformatics tools.
 ```bash
 module spider hisat
 ```
-Is there some version oh HISAT2 also available?
+Is there some version of HISAT2 also available?
 
 3. Let's load the biokit module and see what is included.
 ```bash
