@@ -44,7 +44,7 @@ you can copy *sofwtareA_binary* file on puhti to *projapple* directory on Mahti 
 rsync -P sofwtareA_binary <username>@mahti.csc.fi:/scratch/project_1234
 ```
 
-#### What would be ideal disk area to perform the following task that require high I/O operations ?
+#### What would be the ideal disk area to perform the following task that require high I/O operations ?
 *The task description*: Analysis is based on a big tar file containing around 52000 small files, each one comprises one or more nucleotide sequences. Unpack the tar file and convert the nucleic acids sequences in each file to corresponding protein sequences using *transeq* software. Once analysis is finished, pack all files into a tar file again.
 
 *Background*: The “normal” Lustre based project-specific directories, *scratch* and *projappl*, can store large amounts of data and make it accessible to all the nodes of Puhti. However, these directories are not good for managing a large number of files.  If you need to work with a huge number of smaller files, you should consider using the NVME based local temporary scratch directories, either through normal or interactive batch jobs.
