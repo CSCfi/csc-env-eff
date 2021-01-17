@@ -31,12 +31,12 @@ lang: en
 # Displaying current status of disk areas
 - use `csc-workspaces` command to display available projects and quotas 
 
-![](./img/disc_areas3.png){height=30%}
+![](./img/disc_areas3.png)
 
 # Moving data between supercomputers
 - Data can be moved between the supercomputers and CSC object storage
 
-![](./img/data-migration.png){height=30%}
+![](./img/data-migration.png)
 
 # Note on additional disk areas
 - Login nodes
