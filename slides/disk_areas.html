@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>disk_areas</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="theme/csc-2019/csc.css" id="theme">
+  <link rel="stylesheet" href="theme/csc-2019/fonts.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="disk-areas-in-csc-hpc-environment" class="slide level1" data-background-image="theme/Disk/img/normal.png" data-background-size="contain">
+<h1 data-background-image="theme/Disk/img/normal.png" data-background-size="contain">Disk areas in CSC HPC environment</h1>
+<ul>
+<li>Understand your disk areas and their specific uses in Puhti/Mahti</li>
+<li>Disk areas have defined quotas for both amount of data and total number of files</li>
+<li>Main disk areas at CSC
+<ul>
+<li>Home directory ($HOME)</li>
+<li>ProjAppl directory (/projapple/project_name)</li>
+<li>Scratch directory (/scratch/project_name)</li>
+</ul></li>
+<li>No more earlier concepts of personal $WRKDIR/persistent project directories/DONOTREMOVE directories</li>
+</ul>
+</section>
+<section id="overview-of-disk-areas-in-puhtimahti" class="slide level1" data-background-image="theme/Disk/img/normal.png" data-background-size="contain">
+<h1 data-background-image="theme/Disk/img/normal.png" data-background-size="contain">Overview of disk areas in Puhti/Mahti</h1>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Directory</strong></th>
+<th><strong>Default size</strong></th>
+<th><strong>Default number of files</strong></th>
+<th><strong>Accessibility</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Home</td>
+<td>10 GB</td>
+<td>100 000</td>
+<td>User Only</td>
+</tr>
+<tr class="even">
+<td>projappl</td>
+<td>50 GB</td>
+<td>100 000</td>
+<td>Project Members</td>
+</tr>
+<tr class="odd">
+<td>scratch</td>
+<td>1 TB</td>
+<td>1000 000</td>
+<td>Project members</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Note that:
+<ul>
+<li>any files on scratch that have not been used for 90 days will be automatically removed</li>
+<li>You can ask for more quota if needed</li>
+<li>There is a limit for the number of files</li>
+</ul></li>
+</ul>
+</section>
+<section id="displaying-current-status-of-disk-areas" class="slide level1" data-background-image="theme/Disk/img/normal.png" data-background-size="contain">
+<h1 data-background-image="theme/Disk/img/normal.png" data-background-size="contain">Displaying current status of disk areas</h1>
+<ul>
+<li>use <code>csc-workspaces</code> command to display available projects and quotas</li>
+</ul>
+<p><img data-src="./img/disc_areas3.png" style="height:30.0%" /></p>
+</section>
+<section id="moving-data-between-supercomputers" class="slide level1" data-background-image="theme/Disk/img/normal.png" data-background-size="contain">
+<h1 data-background-image="theme/Disk/img/normal.png" data-background-size="contain">Moving data between supercomputers</h1>
+<ul>
+<li>Data can be moved between the supercomputers and CSC object storage</li>
+</ul>
+<p><img data-src="./img/data-migration.png" style="height:30.0%" /></p>
+</section>
+<section id="note-on-additional-disk-areas" class="slide level1" data-background-image="theme/Disk/img/normal.png" data-background-size="contain">
+<h1 data-background-image="theme/Disk/img/normal.png" data-background-size="contain">Note on additional disk areas</h1>
+<ul>
+<li>Login nodes
+<ul>
+<li>All of the login nodes have 2900 GiB of fast local storage</li>
+<li>The local storage is meant for temporary storage and is cleaned frequently</li>
+</ul></li>
+<li>Compute nodes in Puhti
+<ul>
+<li>Interactive batch jobs as well as jobs running in the IO- and gpu-nodes have local fast storage</li>
+<li>You must copy all the data that you want to preserve from these temporary disk areas to scratch directory or to Allas</li>
+</ul></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/dist/reveal.js"></script>
+
+  <script src="reveal.js/plugin/notes/notes.js"></script>
+  <script src="reveal.js/plugin/search/search.js"></script>
+  <script src="reveal.js/plugin/zoom/zoom.js"></script>
+  <script src="reveal.js/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: false,
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: false,
+        // Transition style
+        transition: 'none', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'none', // none/fade/slide/convex/concave/zoom
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1920,
+        height: 1080,
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
