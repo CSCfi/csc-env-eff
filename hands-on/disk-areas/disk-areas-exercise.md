@@ -69,7 +69,7 @@ cd $LOCAL_SCRATCH
 
 # download tar file and unpack it (fix this link)
 
-wget https//:a3s.fi/big_data.tar
+wget https://a3s.fi/big_data.tar
 tar big_data.tar ./
 
 # perform actual analysis
