@@ -62,7 +62,7 @@ interactive -c 2 -m 4G -d 250 #  grants you a compute node with 2 cores, 4 GB of
 
 ```
 # launch an interactive session with required resources
-interactive -c 2 -m 4G -d 250
+sinteractive -c 2 -m 4G -d 250
 
 # chnage working directory to fast local scratch directory
 cd $LOCAL_SCRATCH
