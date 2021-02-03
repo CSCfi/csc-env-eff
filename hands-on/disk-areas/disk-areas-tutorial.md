@@ -11,7 +11,7 @@ Upon completion of this tutorial, you will get familiar with:
 
 ### How do you identify your personal and project-specific directories in Puhti and Mahti supercomputers?
 
-Each user at CSC supercomputer (Puhti or Mahti) owns different disk areas (or directories), each one with a specific purpose. Let's get familiar with them by issuing the following command in login node:
+Each user at CSC supercomputer (Puhti or Mahti) owns different disk areas (or directories), each one with a specific purpose. You can get familiar with the directories by issuing the following command in login node:
 
 ```bash
 csc-workspaces 
