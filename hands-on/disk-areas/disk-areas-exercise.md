@@ -33,6 +33,7 @@ Set read-only permissions for your group members for the file *data.txt*:
 chmod -R g-w data.txt
 ```
 4. sharing files in Mahti supercomputer
+
 you can copy *data.txt* file on puhti to *scratch* drive on Mahti as below:
 
 ```bash
