@@ -25,7 +25,7 @@ cp softwareA_binary  /projapple/project_1234
 ```bash
 cp data.txt /scratch/project_1234
 ```
-All new files and directories are also fully accessible for other group members (including read, write and execution permissions). If you want to restrict access from your group members, you can reset the permissions with the *chmod* command.
+All new files and directories are also fully accessible for other group members (including read, write and execution permissions). If you want to restrict access from your group members, you can reset the permissions with *chmod* command.
 
 Set read-only permissions for your group members for the file *data.txt*:
 
