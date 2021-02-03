@@ -52,7 +52,7 @@ rsync -P sofwtareA_binary <username>@mahti.csc.fi:/scratch/project_1234
 ***hints:***
 - Use interactive job option. One can launch an interactive session using the following command:
 ```text
-interactive -c 2 -m 4G -d 250 #  grants you a compute node with 2 cores, 4 GB of memory and 250 GB of fast temporary scratch disk.
+sinteractive -c 2 -m 4G -d 250 #  grants you a compute node with 2 cores, 4 GB of memory and 250 GB of fast temporary scratch disk.
 ```
 - Move to fast local scratch area (i.e, cd $LOCAL_SCRATCH) and unpack tar file to the local scratch directory.
 - Run the analysis using the command *transeq* to translate all the fasta files (i.e., transeq necleicacid_input.file  protein_output.file)
