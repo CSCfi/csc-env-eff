@@ -8,9 +8,6 @@ CSC staff: do these two things _first_:
 2. Then [join here the CSC employees team](https://github.com/orgs/CSCfi/teams/employees/members). Membership
 gives you permissions to edit source files that build the content. (Wait for a confirmation email.)
 
-The rest of this document describes the workflow in Github as well as instructions for previewing 
-and deploying the documentation. See [Style guide](STYLEGUIDE.md) for content and formatting instructions.
-
 The rest of this document describes the workflow in Github as 
 well as instructions for previewing and deploying the documentation. 
 See [Style guide](STYLEGUIDE.md) for content and formatting instructions.
@@ -35,13 +32,13 @@ don't. Instead, make a "feature branch" for your change and then create a pull r
 
  - Create your own branch from master (or work in an already existing branch, if agreed)
  - Create / bring there the content you want to work with. Pay attention to file naming!
- - When creating new exercise / tutorial add it to it's subfolder's README.md
+ - When creating a new exercise / tutorial add it to it's subfolder's README.md
  - Make a pull request for your work to be added to Master
     - Assign a reviewer if you want
         - **Tip** Add a link to the html-page ([see instructions for publishing the slides in Allas](MD_into_html.md/#publish-html-files-in-allas) )
     - Write meaningful pull request messages, so it is easier for reviewers to do their job.
     - Communicate! Use "WIP" (= Work In Progress) in your pull request title, if you don't wish the branch to be merged to master (i.e. you want to continue working with it).
- - You can also merge the branch yourself, but please delete the feature branch afterwards
+ - You can also merge the branch yourself, but please delete the feature branch afterwards, if you no longer use it
 
 **Reviewer:** If you get a request to review a pull request, please contribute to help publish the changes!
 
