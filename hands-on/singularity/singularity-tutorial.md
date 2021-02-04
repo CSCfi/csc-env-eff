@@ -86,17 +86,82 @@ The bind path does not need to exist inside the container. It is created if nece
 bind pair can be specified. The option is available for the run methods described above.
 
 In this example we 
-MISSING
+xxMISSINGxx
 
-
-## Exploring containers
+If you use wrapper script **singularity_wrapper**, it will take care of the binds for most common use cases. 
+```text
+singularity_wrapper exec tutorial.sif <YO>
+```
+If environment variable *$SING_IMAGE* is set, you don't even need to provide path to the image file.
+```text
+export SING_IMAGE=$PWD/tutorial.sif
+singularity_wrapper exec <YO>
+```
+Since some modules set *$SING_IMAGE* when loaded it is a good idea to start with **module purge** if you plan
+to use it to make sure correct image is used.
 
 ## Environment variables
+Some software may reguire some environment variables to be set, e.g. to point to some reference data or 
+a configuration file.
 
-## Using an existing container
+Most environment variables set on the host are inherited by the container.
 
+To set an environment variable specifically inside the container, you can set an environment variable 
+*$SINGULARITYENV_xxx* on the host before invoking the container.
 
+```text
+export TEST1="value1"
+export SINGULARITYENV_TEST2="value"
+```
+Compare the outputs of:
 
+```text
+env |grep TEST
+singularity exec tutorial.sif env |grep TEST
+```
+
+## Exploring containers
+XXMISSINGXX
+
+## How to get containers
+Building containers from scratch requires root access, so it can not be done on Puhti. 
+Instead, you will have to import a ready image file.
+
+There are various option to do this.
+
+### Pull an existing Singularity container from a repository
+Use **singularity pull**:
+```text
+singularity pull shub://vsoch/hello-world
+```
+
+### Convert an existing Docker container to Singularity
+Use **singularity build**:
+```text
+singularity build pytorch_20.03-py3.sif docker://nvcr.io/nvidia/pytorch:20.03-py3
+```
+You can find more detailed instructions for this in Doc CSC: [Running existing containers](ADD LINK)
+
+### Build the image on another system and transfer the image file to Puhti
+To do this you will need an access to system where you have root access and that has Singularity installed.
+
+Singularity version does not need to be exactly same, but it should be same major varsion e.g. (3.x as oppsed to 2.x).
+
+You can check the current version on Puhti with:
+```text
+singularity --version
+```
+After creating an image file, you can transfer it to Puhti to use.
+
+## More information
+
+This tutorial is meant as brief introduction to get you started.
+
+When searching the internet for instruction, pay attention that the instructions are
+for the same version of Singularity that you are using. There has been some command syntax changes
+etc. between the versions, so older instructions may not work with copy-paste.
+
+For authoritative instructions see [Singularity documentation](https://sylabs.io/docs/).
 
 
 
