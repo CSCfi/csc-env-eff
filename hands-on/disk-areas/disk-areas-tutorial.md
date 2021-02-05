@@ -18,7 +18,7 @@ csc-workspaces
 ```
 The resulting output from the above command shows a lot of information about different directories and their current quota. Briefly, these directories are as below:
 
-- User-specific directory: It is your home directory ($HOME) which can contain data up to 10 GB of data by default. It is also the default directory when you login to Puhti/Mahti. You can store configuration files and other minor personal data. 
+- User-specific directory: It is your home directory ($HOME) which can contain up to 10 GB of data by default. It is also the default directory when you login to Puhti/Mahti. You can store configuration files and other minor personal data. 
 
 - Project-specific directories: These are *scratch* and *projappl* directories. Each project has 1 TB of scratch disk space by default. This diskspace is temporary space and the files that have not been used for 90 days will be  removed automatically. *Projappl* directory on the other hand can contain up to 50 GB of data and is mainly for storing and sharing compiled applications and libraries etc. with other members of the project. 
 
