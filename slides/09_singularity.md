@@ -101,21 +101,21 @@ otherwise problematic:
 - Should be considered even when other methods exist
 
 # Just a random example (FASTX-toolkit)
-Installation type | Size on disc | Number of files
-Native |1,9 MB| 47
-Conda |1,1 GB |27464
-Singularity |339 MB |1
+Installation type Size on disc Number of files
+Native 1,9 MB 47
+Conda 1,1 GB 27464
+Singularity 339 MB|1
 - Containers are not the solution for everything, but they do have their uses…
 
 # Building a new Singularity container
-Typical steps
-- Build a basic container in sandbox mode (`--sandbox`)
-  - Uses a folder structure instead of an image file
-  - Requires root access!
-- Open a shell in the container and install software
-  - Depending on base image system, package managers can be used to install libraries etc (apt install, yum install etc)
-  - Installation as per software developer instructions
-- Build a production image from the sandbox
-- (optional) Make a definition file and build a productio image from it
+- Typical steps
+  - Build a basic container in sandbox mode (`--sandbox`)
+    - Uses a folder structure instead of an image file
+    - Requires root access!
+  - Open a shell in the container and install software
+    - Depending on base image system, package managers can be used to install libraries etc (apt install, yum install etc)
+    - Installation as per software developer instructions
+  - Build a production image from the sandbox
+  - (optional) Make a definition file and build a productio image from it
 
 Requires root access: Can not be done directly in e.g. Puhti
