@@ -4,7 +4,9 @@ lang: en
 ---
 
 # Introduction to Singularity containers {.title}
-CSC – Suomalainen tutkimuksen, koulutuksen, kulttuurin ja julkishallinnon ICT-osaamiskeskus
+
+In this section you will learn the basics of Singularity containers
+and how to use them in CSC environment.
 
 # Singularity in a nutshell
 - Designed for HPC environments
@@ -18,17 +20,17 @@ CSC – Suomalainen tutkimuksen, koulutuksen, kulttuurin ja julkishallinnon ICT-
 - Can import and run Docker containers
 
 # Running Singularity containers: Basic syntax
-'singularity run [run options...] <container>'
+`singularity run [run options...] <container>`
 Runs a script specified when container was built
-'singularity exec [exec options...] <container> <command>'
+`singularity exec [exec options...] <container> <command>`
 Executes a command in the container
-'singularity shell [shell options...] <container>'
+`singularity shell [shell options...] <container>`
 Opens a shell in the container
 
 # File system (1/2)
 - Containers have their own, internal file system
 - To use host file systemfor input/output, host directories need to be mapped to container directories
-'--bind /scratch/project_12345:/data'
+`--bind /scratch/project_12345:/data`
 host directory /scratch/project_12345 is mapped to
 directory /data inside the container
 - Target directory inside the container does not need to exist. It is created as
@@ -39,17 +41,17 @@ necessary
 - Mounting container directories with the same path as host directories allows you to
 use same command line as you would without a container – but can be confusing
 when troubleshooting
-'singularity exec --bind /scratch/project_12345/data:/scratch/project_12345/data myimage.sif myprog --input /scratch/project_12345/data/myfile'
-'singularity exec --bind $PWD:$PWD myimage.sif myprog --input myfile'
+`singularity exec --bind /scratch/project_12345/data:/scratch/project_12345/data myimage.sif myprog --input /scratch/project_12345/data/myfile`
+`singularity exec --bind $PWD:$PWD myimage.sif myprog --input myfile`
 - Using different name space for the container may be clearer, but you need to remember to use it in commands
-'singularity exec --bind /scratch/project_12345/data:/container/data myimage.sif myprog --input /container/data/myfile'
+`singularity exec --bind /scratch/project_12345/data:/container/data myimage.sif myprog --input /container/data/myfile`
 Matter of taste: take you pick
 
 # Using Docker containers with Singularity
 - You can build a Singularity container from a Docker container with normal user rights:
-'singularity build <image> docker://<address>'
+`singularity build <image> docker://<address>`
 For example:
-'singularity build pytorch_19.10-py3.sif docker://nvcr.io/nvidia/pytorch:19.10-py3'
+`singularity build pytorch_19.10-py3.sif docker://nvcr.io/nvidia/pytorch:19.10-py3`
 
 # Singularity containers as installation method
 - Singularity is a good option in cases where installation is
@@ -68,7 +70,7 @@ Singularity 339 MB 1
 
 # Building a new Singularity container
 Typical steps
-- Build a basic container in sandbox mode ( --sandbox)
+- Build a basic container in sandbox mode (`--sandbox`)
   - Uses a folder structure instead of an image file
   - Requires root access!
 - Open a shell in the container and install software
