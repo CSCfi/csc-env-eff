@@ -11,11 +11,11 @@ sinteractive -i
 To get started, download a test container image from allas.
 
 ```text
-wget ADDRESS
+wget  https://a3s.fi/saren-2001659-pub/tutorial.sif
 ls -lh tutorial.sif
 ```
 As you can see, the container is a single file. In this case the container is very 
-bare-bones, and thus quite small, about 68 MB. 
+bare-bones, and thus quite small, about 50 MB. 
 
 Actual application containers are typically larger, since they also contain the 
 software installation, and may in some cases include some reference data etc.
