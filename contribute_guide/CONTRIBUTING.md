@@ -77,6 +77,6 @@ Overview:
  - Make a new branch from the master branch `git checkout -b my-new-branch`
  - Work and commit in your new branch `emacs ...; git add file`
  - Check status (all files committed etc.) `git status`
- - Push changes to github `git push origing my-new-branch`
+ - Push changes to github `git push origin my-new-branch`
  - Make a pull request to merge changes from your new branch into the develop branch (in the web guide)
  - Ask a person to review and merge the changes
