@@ -1,12 +1,14 @@
----
-title: Disk areas in CSC supercomputing environment
----
+# Where to put files in CSC environment?
 
-#### Imagine that you have a data file and software binary (e.g., data.txt and softwareA_binary) on your Puhti home directory and  also have a shared project (e.g., project_1234) on Puhti and Mahti. How would you safely share your files to other project members on the same supercomputer (i.e., on Puhti) as well as on Mahti (i.e, another supercomputer at CSC)?
+## Binary and data files to share
 
-*Background*: This exercise is aimed at familiarising yourself with main disc areas in Puhti and Mahti supercomputers. Data files needed for computational analysis should be stored and shared in *scratch* directories and any software compilations and binaries should be shared in *proappl* directory. In order to find actual directories use commands such as `csc-workspaces` and `csc-projects`. Data transfer between two supercomputers can be done with many tools including `rsync`. In this example try to avoid using *allas* for data transfer between the supercomupters. 
+Imagine that you have a data file and software binary (e.g., data.txt and softwareA_binary) on your Puhti home directory and  also have a shared project (e.g., project_1234) on Puhti and Mahti. How would you safely share your files to other project members on the same supercomputer (i.e., on Puhti) as well as on Mahti (i.e, another supercomputer at CSC)?
 
-***Solution:***
+###  Background
+
+This exercise is aimed at familiarising yourself with main disc areas in Puhti and Mahti supercomputers. Data files needed for computational analysis should be stored and shared in *scratch* directories and any software compilations and binaries should be shared in *proappl* directory. In order to find actual directories use commands such as `csc-workspaces` and `csc-projects`. Data transfer between two supercomputers can be done with many tools including `rsync`. In this example try to avoid using *allas* for data transfer between the supercomupters. 
+
+### Solution
 
 1. First login to Puhti supecomputer using *ssh* command as below:
 
@@ -15,7 +17,7 @@ ssh <username>@puhti.csc.fi
 ```
 Authenticate using the password associated with CSC user account. Once your login to Puhti is successful, Linux terminal will be opened for command-line interaction in your home directory. Let's assume that file *data.txt* is intended for computational use and *softwareA_binary* is a software tool needed for analysis. As you know the project name, you can share file *data.txt* in scratch folder and *softwareA_binary* file in projapple directory.
 
-2. Share your *softwareA_binary* file in *projapple* directory
+2. Share your *softwareA_binary* file in *projappl* directory
 
 ```bash
 cp softwareA_binary  /projapple/project_1234
@@ -45,12 +47,16 @@ you can copy *sofwtareA_binary* file on puhti to *projapple* directory on Mahti 
 rsync -P sofwtareA_binary <username>@mahti.csc.fi:/scratch/project_1234
 ```
 
-#### What would be the ideal disk area to perform the following task that require high I/O operations ?
-*The task description*: Analysis is based on a big tar file containing around 52000 small files, each one comprises one or more nucleotide sequences. Unpack the tar file and convert the nucleic acids sequences in each file to corresponding protein sequences using *transeq* software. Once analysis is finished, pack all files into a tar file again.
+## What would be the ideal disk area to perform the following task that require high I/O operations ?
 
-*Background*: The “normal” Lustre based project-specific directories, *scratch* and *projappl*, can store large amounts of data and make it accessible to all the nodes of Puhti. However, these directories are not good for managing a large number of files.  If you need to work with a huge number of smaller files, you should consider using the NVME based local temporary scratch directories, either through normal or interactive batch jobs.
+### The task description
 
-***hints:***
+Analysis is based on a big tar file containing around 52000 small files, each one comprises one or more nucleotide sequences. Unpack the tar file and convert the nucleic acids sequences in each file to corresponding protein sequences using *transeq* software. Once analysis is finished, pack all files into a tar file again.
+
+The “normal” Lustre based project-specific directories, *scratch* and *projappl*, can store large amounts of data and make it accessible to all the nodes of Puhti. However, these directories are not good for managing a large number of files.  If you need to work with a huge number of smaller files, you should consider using the NVME based local temporary scratch directories, either through normal or interactive batch jobs.
+
+### Hints
+
 - Use interactive job option. One can launch an interactive session using the following command:
 ```text
 sinteractive -c 2 -m 4G -d 250 #  grants you a compute node with 2 cores, 4 GB of memory and 250 GB of fast temporary scratch disk.
@@ -59,7 +65,7 @@ sinteractive -c 2 -m 4G -d 250 #  grants you a compute node with 2 cores, 4 GB o
 - Run the analysis using the command *transeq* to translate all the fasta files (i.e., transeq necleicacid_input.file  protein_output.file)
 - After analysis on each file, create again a tar file with protein sequences
 
-***Solution:***
+### Solution
 
 ```
 # launch an interactive session with required resources
@@ -95,7 +101,9 @@ Below is the execution time comparison for running the three steps above in LOCA
 |Total                          | 14m 15s       |   1h 8m 31s    |
               
  
-#### How do you make use of local scratch drive on compute node for faster computational tasks? Convert the following normal batch job into the one that uses local scratch drive?
+## How do you make use of local scratch drive on compute node for faster computational tasks? 
+
+Convert the following normal batch job into the one that uses local scratch drive?
 
 Below is a normal batch job that pulls docker image from DockerHub and converts into a singularity one that is compatible with working in HPC environments such as CSC Puhti and Mahti supercomputers. During the conversion process, several layers are retrieved, cached and then converted into a singularity file (.sif format)
 
@@ -110,7 +118,8 @@ export SINGULARITY_CACHEDIR=/scratch/project_xxx/$USER
 singularity pull --name trinity.simg  docker://trinityrnaseq/trinityrnaseq
 ```
 
-***Hints***:
+### Hints
+
 - Request NVME fast local storage using the --gres flag  in sbatch directive as below:
 
 ```
@@ -122,7 +131,7 @@ singularity pull --name trinity.simg  docker://trinityrnaseq/trinityrnaseq
 - Please move any data to shared area once  the job is finished
 
 
-***Solution:***
+### Solution
 
 ```bash
 #!/bin/bash
