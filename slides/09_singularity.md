@@ -16,16 +16,17 @@ and how to use them in CSC environment.
 - Supports MPI
   - Requires containers tailored to host system
 - Can use host driver stack (Nvidia/cuda)
-  - Add option --nv
+  - Add option `--nv`
 - Can import and run Docker containers
 
 # Running Singularity containers: Basic syntax
-`singularity run [run options...] <container>`
-Runs a script specified when container was built
-`singularity exec [exec options...] <container> <command>`
-Executes a command in the container
-`singularity shell [shell options...] <container>`
-Opens a shell in the container
+- Runs a script specified when container was built
+  - `singularity run [run options...] <container>`
+- Executes a command in the container
+  - `singularity exec [exec options...] <container> <command>`
+- Opens a shell in the container
+  - `singularity shell [shell options...] <container>`
+
 
 # File system (1/2)
 - Containers have their own, internal file system
