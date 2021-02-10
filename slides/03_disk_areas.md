@@ -31,7 +31,7 @@ In this section, you will learn how to manage different disk areas in HPC enviro
 - Puhti and Mahti have their own disk systems
 - Data can be [moved between the supercomputers](https://docs.csc.fi/data/moving/rsync/) and [CSC object storage](https://docs.csc.fi/data/Allas/)
 
-![](./img/data_migration.png)
+![](./img/data-migration.png)
 
 # Additional fast disk areas 
 - Login nodes
