@@ -4,30 +4,23 @@ lang: en
 --
 
 # Disk areas in CSC HPC environment {.title}
+In this section, you will learn how to manage different disk areas in HPC environment at CSC
 
-# Overview of this section
+# Overview of disk areas
 
-- Understand your disk areas and their specific uses in Puhti/Mahti
-- Disk areas have defined quotas for both amount of data and total number of files
-- Main disk areas at CSC
-    - Home directory ($HOME)
-    - ProjAppl directory (/projapple/project_name)
-    - Scratch directory (/scratch/project_name)
-- No more earlier concepts of personal $WRKDIR/persistent project directories or DONOTREMOVE directories
+- Main disk areas and their specific uses in Puhti/Mahti
+- Understanding quotas (both usable space and number of files) for different disk areas
+- Moving data between supercomputers
+- Additional fast disk areas
 
-# Overview of disk areas in Puhti/Mahti
-
-|**Directory**| **Default size** | **Default number of files** | **Accessibility**  | 
-| ---------- | ----------- | ------ | ------ |
-| Home | 10 GB     | 100 000 | User Only |
-| projappl | 50 GB | 100 000 | Project Members |
-| scratch | 1 TB     | 1000 000 | Project members |
-
-
+# Main disk areas in Puhti/Mahti
+- Home directory ($HOME)
+- ProjAppl directory (/projapple/project_name)
+- Scratch directory (/scratch/project_name)
 - Note that:
-    - any files on scratch that have not been used for 90 days will be automatically removed
-    - You can ask for more quota if needed 
-    - There is a limit for the number of files and used space
+    - you can find default quotas of each directory on [disk areas section](https://docs.csc.fi/computing/disk) of CSC documentation pages
+    - any files on `scratch` that have not been used for 90 days will be automatically removed
+    - no more earlier concepts of personal $WRKDIR/persistent project directories or DONOTREMOVE directories
 
 # Displaying current status of disk areas
 - use `csc-workspaces` command to display available projects and quotas 
@@ -36,12 +29,11 @@ lang: en
 
 # Moving data between supercomputers
 - Puhti and Mahti have their own disk systems
-- Data can be moved between the supercomputers and CSC object storage
+- Data can be [moved between the supercomputers](https://docs.csc.fi/data/moving/rsync/) and [CSC object storage](https://docs.csc.fi/data/Allas/)
 
 ![](./img/data-migration.png)
-FIXME add links to docs where transfer commands, more details for the environment, perhaps also link to al
 
-# Additional fast disk areas <- merge with the main picture
+# Additional fast disk areas 
 - Login nodes
     - Each of the login nodes have 2900 GiB of fast local storage `$TMPDIR`
     - The local storage is meant for temporary storage and is cleaned frequently
@@ -49,18 +41,15 @@ FIXME add links to docs where transfer commands, more details for the environmen
     - Interactive batch jobs as well as jobs running in the IO- and gpu-nodes have local fast storage
     - You must copy all the data that you want to preserve from these temporary disk areas to scratch directory or to Allas
 
-
 # What are the different disk areas for?
-- FIXME something along these lines (add links to docs?)
-- Allas - for data which is not actively used
-- HOME - small, thus only for most important (small) files
-- scratch - main working area, can be used to share with project members
-- projappl - not cleaned up, 
-- local tmp - compiling, temporary, fast IO 
-- NVmE - fast IO in batch jobs
+- [Allas](https://docs.csc.fi/data/Allas/) - for data which is not actively used
+- [HOME](https://docs.csc.fi/computing/disk/) - small, thus only for most important (small) files
+- [scratch](https://docs.csc.fi/computing/disk/) - main working area, can be used to share with project members
+- [projappl](https://docs.csc.fi/computing/disk/) - not cleaned up 
+- [local tmp](https://docs.csc.fi/computing/disk/) - compiling, temporary, fast IO 
+- [NVMe](https://docs.csc.fi/computing/disk/) - fast IO in batch jobs
 
-# Still more ideas
-- don't put databases on Lustre (projappl, scratch, home) -> link to kaivos, mongoDB faq on cpouta
+# Some best practice tips
+- don't put databases on Lustre (projappl, scratch, home) -> use other CSC services like [kaivos](https://docs.csc.fi/data/kaivos/overview/) and mongoDB
 - don't create a lot of files in one folder
 - don't create overall a lot of files (if you're creating tens of thousands of files, you should probably rethink the workflow)
-- what other best practices there are?
