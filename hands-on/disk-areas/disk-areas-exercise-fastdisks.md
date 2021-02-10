@@ -2,7 +2,7 @@
 
 ## The task description
 
-Lustre based project-specific directories, *scratch* and *projappl*, can store large amounts of data and make it accessible to all the nodes of Puhti. However, these directories are not good for managing a large number of files.  If you need to work with a huge number of smaller files, you should consider using the NVME based local temporary scratch directories, either through normal or interactive batch jobs. Read more about the advantages of using local scratch drive in [CSC docs page](https://docs.csc.fi/support/faq/local_scratch_for_data_processing/)
+Lustre-based project-specific directories, *scratch* and *projappl*, can store large amounts of data and make it accessible to all the nodes of Puhti. However, these directories are not good for managing a large number of files.  If you need to work with a huge number of smaller files, you should consider using the NVME based local temporary scratch directories, either through normal or interactive batch jobs. Read more about the advantages of using local scratch drive on [CSC docs pages](https://docs.csc.fi/support/faq/local_scratch_for_data_processing/)
 
  
 ## How do you make use of local scratch drive on compute node for faster computational tasks? 
