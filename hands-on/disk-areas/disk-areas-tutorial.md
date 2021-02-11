@@ -1,6 +1,6 @@
 # Disk areas in CSC supercomputing environment
 
-CSC users working at supercomputing environment have access to different disk areas (or directories) to manage their data in supercomputers. It is therefore important to understand his or her own disk areas to manage personal and project-specific data.
+CSC users working in a supercomputing environment have access to different disk areas (or directories) to manage their data in supercomputers. It is therefore important to understand his or her own disk areas to manage personal and project-specific data.
 
 Upon completion of this tutorial, you will get familiar with:
 - Personal and project-specific disk areas and their quotas in CSC supercomputing environment
@@ -13,7 +13,7 @@ Each user at CSC supercomputer (Puhti or Mahti) owns different disk areas (or di
 ```bash
 csc-workspaces 
 ```
-Above command shows information about your directories and their current quotas. These directories can be briefly summerised as below:
+The above command shows information about your directories and their current quotas. These directories can be briefly summerised as below:
 
 - User-specific directory: It is your home directory ($HOME) and is also the default directory when you login to Puhti/Mahti. You can store configuration files and other minor personal data. 
 
@@ -22,7 +22,7 @@ Above command shows information about your directories and their current quotas.
 
 ## Perform a light-weight pre-porcessing on data files using fast I/O local disks
 
-We sometimes come across situation where we have to handle uncommonly large number of smaller files that can cause heavy I/O load on supercomputing environment. In order to facilitate such operations, CSC provides fast local disk areas in login and compute nodes.
+We sometimes come across situations where we have to handle an uncommonly large number of smaller files that can cause heavy I/O load on supercomputing environment. In order to facilitate such operations, CSC provides fast local disk areas in login and compute nodes.
 
 In order to identify such directories in login nodes, use the following command:
 
@@ -73,5 +73,5 @@ Once you know the project number which would be in the form of project_xxx, you 
 mkdir /scratch/project_xxx/$USER
 mv Merged.fasta /scratch/project_xxx/$USER
 ```
-You have now successfully moved your data to scratch area and can start performing actual analysis using batch job scripts which you will learn in-depth in different module.
+You have now successfully moved your data to scratch area and can start performing actual analysis using batch job scripts which you will learn in-depth in a different module.
 
