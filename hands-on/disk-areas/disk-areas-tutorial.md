@@ -1,6 +1,5 @@
 # Disk areas in CSC supercomputing environment
 
-**Learning Objectives:**
 CSC users working at supercomputing environment have been granted with different disk areas (or directories) to manage their data in supercomputers. It is therefore important to understand your disk areas to manage personal and project-specific data.
 
 Upon completion of this tutorial, you will get familiar with:
