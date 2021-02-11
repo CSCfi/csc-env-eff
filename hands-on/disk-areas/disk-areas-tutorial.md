@@ -25,7 +25,7 @@ The resulting output from the above command shows a lot of information about dif
 
 Once in a while, you come across the cases where you have to handle an uncommonly large number of smaller files that cause heavy IO load on supercomputing environment. In order to facilitate such operations, CSC has provided fast local disk areas in login and compute nodes.
 
-In order to identify such directories in login nodes in Puhti/Maht, use the following command:
+In order to identify such directories in login nodes in Puhti/Mahti, use the following command:
 
 ```bash
 echo $TMPDIR
@@ -60,7 +60,7 @@ echo $LOCAL_SCRATCH
 ```
 When using batch job, use the environment variable $LOCAL_SCRATCH in your [batch job scripts](https://docs.csc.fi/computing/running/creating-job-scripts-puhti/#local-storage) to access the local storage on that node.
 
-## Move your pre-proceessed data to a project-specific scratch area before analaysis
+## Move your pre-proceessed data to a project-specific scratch area before analysis
 
 Currently, all directories on scratch drive are project-based and one should be aware of a project number to find out actual path on scratch directory. While we can actually find *scratch* directories corresponding to all your project numbers using `csc-workspace`, it may not be immediately obvious to map those project numbers to metadata of your projects. You can instead also use the following command to find more details on your project(s).
 
