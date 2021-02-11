@@ -1,13 +1,13 @@
 # Disk areas in CSC supercomputing environment
 
-## Learning Objectives
+**Learning Objectives:**
 CSC users working at supercomputing environment have been granted with different disk areas (or directories) to manage their data in supercomputers. It is therefore important to understand your disk areas to manage personal and project-specific data.
 
 Upon completion of this tutorial, you will get familiar with:
 - Personal and project-specific disk areas and their quotas in CSC supercomputing environment
 - Ideal disk areas for large IO operations
 
-### Identify your personal and project-specific directories in Puhti and Mahti supercomputers
+## Identify your personal and project-specific directories in Puhti and Mahti supercomputers
 
 Each user at CSC supercomputer (Puhti or Mahti) owns different disk areas (or directories), each one with a specific purpose. You can get familiar with the directories by issuing the following command in login node:
 
@@ -21,7 +21,7 @@ The resulting output from the above command shows a lot of information about dif
 - Project-specific directories: These are *scratch* and *projappl* directories. Each project has 1 TB of scratch disk space by default. This diskspace is temporary space and the files that have not been used for 90 days will be  removed automatically. *Projappl* directory on the other hand can contain up to 50 GB of data and is mainly for storing and sharing compiled applications and libraries etc. with other members of the project. 
 
 
-### Perform a light-weight pre-porcessing on data files using fast I/O local disks
+## Perform a light-weight pre-porcessing on data files using fast I/O local disks
 
 Once in a while, you come across the cases where you have to handle an uncommonly large number of smaller files that cause heavy IO load on supercomputing environment. In order to facilitate such operations, CSC has provided fast local disk areas in login and compute nodes.
 
@@ -60,7 +60,7 @@ echo $LOCAL_SCRATCH
 ```
 When using batch job, use the environment variable $LOCAL_SCRATCH in your [batch job scripts](https://docs.csc.fi/computing/running/creating-job-scripts-puhti/#local-storage) to access the local storage on that node.
 
-### Move your pre-proceessed data to a project-specific scratch area before analaysis
+## Move your pre-proceessed data to a project-specific scratch area before analaysis
 
 Currently, all directories on scratch drive are project-based and one should be aware of a project number to find out actual path on scratch directory. While we can actually find *scratch* directories corresponding to all your project numbers using `csc-workspace`, it may not be immediately obvious to map those project numbers to metadata of your projects. You can instead also use the following command to find more details on your project(s).
 
