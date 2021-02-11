@@ -1,35 +1,35 @@
 # Disk areas in CSC supercomputing environment
 
-CSC users working at supercomputing environment have been granted with different disk areas (or directories) to manage their data in supercomputers. It is therefore important to understand your disk areas to manage personal and project-specific data.
+CSC users working at supercomputing environment have access to different disk areas (or directories) to manage their data in supercomputers. It is therefore important to understand his or her own disk areas to manage personal and project-specific data.
 
 Upon completion of this tutorial, you will get familiar with:
 - Personal and project-specific disk areas and their quotas in CSC supercomputing environment
-- Ideal disk areas for large IO operations
+- Ideal disk areas for large I/O operations
 
 ## Identify your personal and project-specific directories in Puhti and Mahti supercomputers
 
-Each user at CSC supercomputer (Puhti or Mahti) owns different disk areas (or directories), each one with a specific purpose. You can get familiar with the directories by issuing the following command in login node:
+Each user at CSC supercomputer (Puhti or Mahti) owns different disk areas (or directories), each one with a specific purpose. You can get an overview of directories by using the following command in login node:
 
 ```bash
 csc-workspaces 
 ```
-The resulting output from the above command shows a lot of information about different directories and their current quota. Briefly, these directories are as below:
+Above command shows information about your directories and their current quotas. These directories can be briefly summerised as below:
 
-- User-specific directory: It is your home directory ($HOME) which can contain up to 10 GB of data by default. It is also the default directory when you login to Puhti/Mahti. You can store configuration files and other minor personal data. 
+- User-specific directory: It is your home directory ($HOME) and is also the default directory when you login to Puhti/Mahti. You can store configuration files and other minor personal data. 
 
-- Project-specific directories: These are *scratch* and *projappl* directories. Each project has 1 TB of scratch disk space by default. This diskspace is temporary space and the files that have not been used for 90 days will be  removed automatically. *Projappl* directory on the other hand can contain up to 50 GB of data and is mainly for storing and sharing compiled applications and libraries etc. with other members of the project. 
+- Project-specific directories: These are *scratch* and *projappl* directories. Each project contains its scratch disk space where actual data analysis tasks are performed. Scratch area is a temporary space. *Projappl* directory on the other hand is mainly for storing and sharing compiled applications and libraries etc. with other members of the project. 
 
 
 ## Perform a light-weight pre-porcessing on data files using fast I/O local disks
 
-Once in a while, you come across the cases where you have to handle an uncommonly large number of smaller files that cause heavy IO load on supercomputing environment. In order to facilitate such operations, CSC has provided fast local disk areas in login and compute nodes.
+We sometimes come across situation where we have to handle uncommonly large number of smaller files that can cause heavy I/O load on supercomputing environment. In order to facilitate such operations, CSC provides fast local disk areas in login and compute nodes.
 
-In order to identify such directories in login nodes in Puhti/Mahti, use the following command:
+In order to identify such directories in login nodes, use the following command:
 
 ```bash
 echo $TMPDIR
 ```
-This local disk area in login nodes is meant for some light-weight preprocessing of data before you start actual analysis on scratch drive. Let's look at the below  toy example where we can download a tar file containing thousands of  small files and then we can  merge all those files into one big file using local storage disks.
+This local disk area in login nodes is meant for some light-weight preprocessing of data before you start actual analysis on scratch drive. Let's look at the below  toy example where you can download a tar file containing thousands of small files and then you can  merge all of those files into one big file using local storage disks.
 
 1. Download tar file from *allas* object storage
 
