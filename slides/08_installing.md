@@ -37,8 +37,8 @@ In this section you will learn about installing your own software on CSC servers
 - You need a computer with a decent internet connection
 - You need a CSC account and need to be part of a project: https://research.csc.fi/accounts-and-projects
 - Log in to a CSC computer: https://docs.csc.fi/computing/connecting/
-- You need to know, at least basic, Unix line commands: 
-  - https://www.csc.fi/documents/200270/380972/Working_in_Unix_Command_Line_2019.pdf/fcce16b9-77ca-4582-a27f-f92f1a5c4d6d
+- You need to know, at least basic, Unix/Linux line commands: 
+  - https://docs.csc.fi/support/tutorials/env-guide/using-linux-in-command-line/
 
 # Instructions
 - See tutorials for each category for more detailed instructions
