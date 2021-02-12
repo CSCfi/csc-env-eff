@@ -6,7 +6,7 @@
  - Unzip you code (line command: unzip code-name.zip)
  - Follow any instructions on how to install. Usually comes with the code in form of a ‘readme’ or ’how to install’ file.
 
-## Install scenario A1: the code comes with cmake
+   ### Install scenario A1: the code comes with cmake
  - Load the module cmake with line command: module load cmake, and load also any other e.g. libraries the code needs (avilable modules: module spider), or try download and install also needed libraries.
  - Create a ‘build’ directory, and go to that directory (line commad: mkdir build, then: cd build)
  - Run cmake ..
@@ -14,7 +14,7 @@
  - Run ‘make’ to compile the specific codes you want to use
  - Ask help from servicedesk if you really get stuck (mail to: servcedesk@csc.fi)
 
-## Install scenario A2: the code comes with a makefile
+   ### Install scenario A2: the code comes with a makefile
  - Module load or install separately any needed libraries (check available modules with line command: module spider. Load module with: module load name-of-module)
  - Edit the ‘makefile’ and replace compile and link commands with proper ones for Mahti (https://docs.csc.fi/computing/compiling-mahti/) or Puhti ( https://docs.csc.fi/computing/compiling-puhti/)
  - Run the command ‘make’
