@@ -6,3 +6,4 @@ slides/reveal.js/
 slides/theme/
 slides/filter/
 slides/convert.sh
+slides/*.html
