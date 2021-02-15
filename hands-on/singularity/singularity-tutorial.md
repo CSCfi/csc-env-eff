@@ -55,6 +55,7 @@ singularity run tutorial.sif
 ```
 If the container image has execute rights, you can also run it directly:
 ```text
+chmod u+x tutorial.sif
 ./tutorial.sif
 ```
 You can see the actual script with command:
@@ -207,7 +208,7 @@ and some images can be large, it's best to set `$SINGULARITY_CACHE` to point to 
 other location with more space.
 
 You can find more detailed instructions for converting Docker images in Docs CSC: 
-[Running existing containers](ADD LINK)
+[Running existing containers](https://docs.csc.fi/computing/containers/run-existing/)
 
 ### Build the image on another system and transfer the image file to Puhti
 To do this you will need an access to system where you have root access and that has 

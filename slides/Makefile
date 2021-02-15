@@ -7,6 +7,7 @@ LECTURES= \
 09_singularity.md \
 10_speed_up_jobs.md 
 # remove example and add other chapters here
+# README.md creates the index for allas
 
 TITLE=Title.pdf
 
