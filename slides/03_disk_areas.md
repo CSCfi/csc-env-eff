@@ -27,6 +27,10 @@ In this section, you will learn how to manage different disk areas in HPC enviro
 
 ![](./img/disk_status.png)
 
+# Disk and storage overview  
+
+![](./img/disksystem.svg)
+
 # Moving data between supercomputers
 - Puhti and Mahti have their own disk systems
 - Data can be [moved between the supercomputers](https://docs.csc.fi/data/moving/rsync/) and [CSC object storage](https://docs.csc.fi/data/Allas/)
