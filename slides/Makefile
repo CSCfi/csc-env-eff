@@ -1,9 +1,13 @@
-LECTURES=00_study_tips.md \
+LECTURES=README.md \
+00_study_tips.md \
 02_logging_in.md \
+03_disk_areas.md \
 04_modules.md \
+09_singularity.md \
 10_speed_up_jobs.md \
 example.md
 # remove example and add other chapters here
+# README.md creates the index for allas
 
 TITLE=Title.pdf
 
