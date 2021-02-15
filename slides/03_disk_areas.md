@@ -29,7 +29,7 @@ In this section, you will learn how to manage different disk areas in HPC enviro
 
 # Disk and storage overview  
 
-![](./img/disksystem.svg)
+![](./img/disk-systems.svg)
 
 # Moving data between supercomputers
 - Puhti and Mahti have their own disk systems
