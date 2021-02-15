@@ -5,6 +5,11 @@ lang: en
 
 # The batch job system in CSC's HPC environment {.title}
 
+# The batch job system in CSC's HPC environment
+
+FIXME: ehka lyhyt kuvaus siitä mikä on jonojärjestelmä? + linkkejä docsiin
+FIXME: saisko tahan kuvan jonojarjestelman toiminnasta? vanhassa ppt-slidesetissa on joku, voin koittaa muokata
+
 - jobs don't start instantly but are put in a queue (partition)
 - CSC uses a batch job system (SLURM) to execute computing tasks
 - SLURM is used to control how the overall computing resources are shared among all projects in an efficient and fair way
@@ -25,6 +30,7 @@ lang: en
 
 - typically an HPC job can be classified as serial, parallel or gpu, depending on the main requested resource 
 - each batch job is billed using a scheme that takes into account the requested resources
+FIXME: tata voisi vahan avata lisaa: luulen, etta varauksen / kaytetyn resurssin ja niiden laskuttamisen suhteen on monilla epaselvaa
 - see the [Billing unit (BU) and price calculator at research.csc.fi](https://research.csc.fi/billing-and-monitoring#buc)
 - the billing is done per project
 - via the [My Projects page in MyCSC](https://my.csc.fi/welcome) you can monitor the BU consumption and apply for more billing units
@@ -35,7 +41,7 @@ lang: en
 - why could your serial job benefit from being executed using CSC's resources instead of on your own computer? 
 
     - part of a larger workflow
-    - data transfer
+    - data transfer FIXME: ehka tata voisi avata?
     - data sharing among other project members
     - CSC's software licensing
     - memory and/or disk demands
@@ -54,7 +60,7 @@ lang: en
 
 - CSC's gpu resources are relatively scarce and hence should be used with particular care
 - each reserved gpu card consumes 60 BU per hour compared to 1 BU per cpu core
-
+FIXME: tassa voisi linkata gpu-usage-policyyn (julkaistan pian)
 # Interactive jobs
 
 - when you login to CSC's  supercomputers, you end up in one of the login nodes of the computer. These login nodes are shared by all users and they are not intended for heavy computing. 
