@@ -40,6 +40,10 @@ In this section, you will learn how to manage different disk areas in HPC enviro
 
 ![](./img/disk_status.png)
 
+# Disk and storage overview  
+
+![](./img/disk-systems.svg)
+
 # Additional fast local disk areas 
 - `$TMPDIR` on Login nodes
     - Each of the login nodes have 2900 GiB of fast local storage `$TMPDIR`
@@ -51,7 +55,7 @@ In this section, you will learn how to manage different disk areas in HPC enviro
 
 # What are the different disk areas for?
 - [Allas](https://docs.csc.fi/data/Allas/) - for data which is not actively used
-- [HOME](https://docs.csc.fi/computing/disk/#home-directory) - small, thus only for most important (small) files
+- [HOME](https://docs.csc.fi/computing/disk/#home-directory) - small, thus only for most important (small) files, personal access only
 - [scratch](https://docs.csc.fi/computing/disk/#scratch-directory) - main working area, can be used to share with project members
 - [projappl](https://docs.csc.fi/computing/disk/#projappl-directory) - not cleaned up, e.g. for shared binaries 
 - [Login node local tmp](https://docs.csc.fi/computing/disk/#login-nodes) - compiling, temporary, fast IO 
