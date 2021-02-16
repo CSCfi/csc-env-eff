@@ -6,7 +6,9 @@ to download the .jar file.
 
 If you get an error message about java version, try loading a suitable java 
 module. You can check the available modules with command:
-`module spider java`
+```text
+module spider java
+```
 
 Despite their name, modules named `biojava` are just normal java installations,
 and can be used with any software, not just bio applications.
@@ -30,7 +32,7 @@ to a suitable location and make sure they are included in perl `@INC`
 There are three main ways to do it:
 1. Inlude command line option -I (capital i) with the path on the command line:
 ```text
-perl -I /projappl/project_12345/myperl ./my_app.pm
+perl -I /projappl/project_12345/myperl ./my_app.pl
 ```
 2. Include the path in `$PERL5LIB` environment variable.
 ```text
@@ -48,7 +50,46 @@ See our [biperl documentation](https://docs.csc.fi/apps/bioperl/) for details.
 
 ## Python
 
-TO BE ADDED
+To run Python applications, first load suitable Python module. You can check 
+available modules with e.g.:
+```text
+module spider python
+```
+- python-env is a general purpose Python installation
+- [`python-data`](https://docs.csc.fi/apps/python-data/) includes commonly used packages 
+for data analysis and machine learning
+
+To install simple packages it is usually enough to use:
+```text
+pip install --user package_to_install
+```
+Remember to include `--user`. By default it tries to install to Python install location,
+and this will not work.
+
+For more complex installations it is preferable to create a virtual environment:
+```text
+python -m venv --system-site-packages my-venv
+source my-venv/bin/activate
+pip install my_package_to_install
+```
+### Biopython
+For applications requiring Biopython we have two options:
+
+First option using `biopythontools` module:
+```text
+module load biokit
+module load biopythontools
+```
+With this option use `pip install --user` as above.
+
+Second option activates a virtual environment with biopython:
+```text
+export PROJAPPL=/projappl/project_your_proj_num
+module load bioconda
+biopython-env
+```
+
+See our [Biopython documentation](https://docs.csc.fi/apps/biopython/) for more details.
 
 ## R
 
