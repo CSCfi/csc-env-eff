@@ -55,9 +55,8 @@ available modules with e.g.:
 ```text
 module spider python
 ```
-- python-env is a general purpose Python installation
-- [`python-data`](https://docs.csc.fi/apps/python-data/) includes commonly used packages 
-for data analysis and machine learning
+- `python-env` is a general purpose Python installation
+- `python-data` includes commonly used packages for data analysis and machine learning
 
 To install simple packages it is usually enough to use:
 ```text
@@ -66,12 +65,11 @@ pip install --user package_to_install
 Remember to include `--user`. By default it tries to install to Python install location,
 and this will not work.
 
-For more complex installations it is preferable to create a virtual environment:
-```text
-python -m venv --system-site-packages my-venv
-source my-venv/bin/activate
-pip install my_package_to_install
-```
+For more complex installations it is preferable to create a virtual environment. 
+
+See instructions in our [python-data documentation](https://docs.csc.fi/apps/python-data/).
+The same instructions work also for the `python-env` module.
+
 ### Biopython
 For applications requiring Biopython we have two options:
 
@@ -82,13 +80,12 @@ module load biopythontools
 ```
 With this option use `pip install --user` as above.
 
-Second option activates a virtual environment with biopython:
+Second option activates a virtual environment with biopython (substitute your project name):
 ```text
-export PROJAPPL=/projappl/project_your_proj_num
+export PROJAPPL=/projappl/project_12345
 module load bioconda
 biopython-env
 ```
-
 See our [Biopython documentation](https://docs.csc.fi/apps/biopython/) for more details.
 
 ## R
