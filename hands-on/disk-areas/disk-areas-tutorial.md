@@ -8,7 +8,7 @@ Upon completion of this tutorial, you will get familiar with:
 
 ## Identify your personal and project-specific directories in Puhti and Mahti supercomputers
 
-Each user at CSC supercomputer (Puhti or Mahti) owns different disk areas (or directories), each one with a specific purpose. You can get an overview of directories by using the following command in login node:
+Each user at CSC supercomputer (Puhti or Mahti) owns disk areas (or directories), each one with a specific purpose. You can get an overview of directories by using the following command in login node:
 
 ```bash
 csc-workspaces 
@@ -31,13 +31,13 @@ echo $TMPDIR
 ```
 This local disk area in login nodes is meant for some light-weight preprocessing of data before you start actual analysis on scratch drive. Let's look at the below  toy example where you can download a tar file containing thousands of small files and then you can  merge all of those files into one big file using local storage disks.
 
-1. Download tar file from *allas* object storage
+1. Download tar file from *allas* object storage as shown below:
 
 ```bash 
 cd $TMPDIR           
 wget https://a3s.fi/CSC_training/Individual_files.tar.gz
 ```
-2. Unpack the downloaded tar file
+2. Unpack the downloaded tar file as below:
 
 ```
 tar -xavf Individual_files.tar.gz
