@@ -7,8 +7,8 @@ lang: en
 
 ## The purpose of large computers
 
-Typically, large computers, like the ones at CSC, are not faster than others - they are just bigger. That is, for fast computation the utilize parallelism.
-Parallelism means that you may use, simply speaking, hundreds or thousands of ordainary computers to the solution of a single problem.
+Typically, large computers, like the ones at CSC, are not faster than others - they are just bigger. That is, for fast computation they utilize parallelism.
+Parallelism means that you may use, simply speaking, hundreds or thousands of ordainary computers simultaneously for the solution of a single problem.
 
 ## Basic considerations
 - Spend a little time to investigate which of all available software would be the best solve the kind od problem you have. Experienced colleagues and servicedesk@csc.fi are good places to ask for guidance.
@@ -17,16 +17,17 @@ Parallelism means that you may use, simply speaking, hundreds or thousands of or
 - If you cant find a suitable software, consider writing your own code.
 
 ## Optimize the performance of your own code
-- Compile it with optimizing compiler options (https://docs.csc.fi/computing/compiling-puhti/, https://docs.csc.fi/computing/compiling-mahti/)
-- Construct a small and quick test case and run it in the test queue (https://docs.csc.fi/computing/running/batch-job-partitions/)
-- Use profiling tools to find out how much time is spent in diferent parts of the code (https://docs.csc.fi/computing/performance/)
+- Compile it with optimizing compiler options. [Compiling Puhti](https://docs.csc.fi/computing/compiling-puhti/), [Compiling Mahti](https://docs.csc.fi/computing/compiling-mahti/)
+- Construct a small and quick test case and run it in the test queue [Queue options](https://docs.csc.fi/computing/running/batch-job-partitions/)
+- Use profiling tools to find out how much time is spent in different parts of the code [Performance tools](https://docs.csc.fi/computing/performance/)
+- When the compute bottle-necks are identified try to figure out ways to improve the code. Again, servicedesk@csc.fi is a channel to ask for help. The more concrete the problem is descried, the better.
 
 ## Running your software
 - It is not only how your software is constructed and compiled that affect performance. It can also be run in different ways
 ### Running in parallel 
-- Running with MPI and/or OpenMP (https://github.com/csc-training/parallel-prog/)
-- Can you split your work into smaller bits and run them simultaneously? (https://docs.csc.fi/computing/running/array-jobs/)
-- Can you automate setting up, running and analysing your jobs? (https://docs.csc.fi/support/tutorials/many/)
+- Running with MPI and/or OpenMP [Parallel programmin](https://github.com/csc-training/parallel-prog/)
+- Can you split your work into smaller bits and run them simultaneously? [array jobs](https://docs.csc.fi/computing/running/array-jobs/)
+- Can you automate setting up, running and analysing your jobs? [workflow](https://docs.csc.fi/support/tutorials/many/)
 - Can your software utilize GPUs? 
 
 # What is OpenMP?
