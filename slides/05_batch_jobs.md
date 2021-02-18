@@ -12,7 +12,10 @@ lang: en
 - The jobs are queued and then run as resources become available
 - The order in which queued jobs start depend on available resources and their priority
 
-FIXME: saisko tahan kuvan jonojarjestelman toiminnasta? vanhassa ppt-slidesetissa on joku, voin koittaa muokata
+# Batch job system places jobs on compute nodes
+
+![](./img/slurm-sketch.svg)
+
 
 # The batch job system in CSC's HPC environment 
 
