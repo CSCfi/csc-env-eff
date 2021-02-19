@@ -76,4 +76,3 @@ Parallelism means that you may use, simply speaking, hundreds or thousands of or
 - Avoid unnecessary reads and writes of data. If you do, read and write in big chunks. Avoid writes/reads of hugh numbers  of small files.
 - Don't run too short jobs. There's a time-overhead in setting up a batch job. Aim for at least 30 minute jobs.
 - Don't run too long jobs. In very long jobs the possibility of something going wrong is bigger and may lose used computing time.
-- If you run your own code, make sure it is optimized (Compiling code for Puhti, Guidelines for optimizing R-code, CSC R-environment, file IO? )
