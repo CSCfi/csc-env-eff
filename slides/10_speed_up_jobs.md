@@ -55,7 +55,7 @@ Parallelism means that you may use, simply speaking, hundreds or thousands of or
 - For any ready made software, the best way to check if the software can utilize GPUs, is to consult the software user's manual.  
 - Do not try to use GPUs, unless you know what you are doing. If you're unsure, here's [how to check if your batch job used GPU](https://docs.csc.fi/support/tutorials/gpu-ml/#gpu-utilization)
 
-### Be more clever instead of (only) using brute force
+### Tricks of the trade
 
 - It is reasonable to try to achieve best performance by using fastest computers available. This is however far from the only important issue.
 - Different codes may give very different performance. Compare the options you have in [the CSC Software selection](https://docs.csc.fi/apps/)
@@ -68,27 +68,12 @@ Parallelism means that you may use, simply speaking, hundreds or thousands of or
     - Be carefully submitting large numbers of jobs before you know the results are really what you are looking for.
     - Try to use or implement so called 'restart options' in software, and always check results in between restarts.
     - Try to preliminary formulate your scientific results when you have a minimum amount of computational results - it often helps
-      to clarify what you still need to be computed and what is redundant.
-   
-
-### Common misconceptions
-
-- Just adding more memory, more cores, more *X* does not necessarily help, if that is not the limiting step.
-- When you allocate more resources, always confirm that the jobs actually complete faster - otherwise there is no use to allocate more resources.
-    - Before starting simulations on a new system it may be worth testing how much parallelisation is optimal by running short test runs on different numbers of cores.
-- Running the same job on your laptop with *one* core may be faster than doing the same in *e.g.* Puhti. Just using large computer may not speed up things.
-    - You might benefit of the application being there for you, though, or have faster access to a lot of data, but if your code can not be run in parallel, then you should consider some of the options above.
-
-# Optimal use of CSC resources
-
-The CSC supercomputers are used by hundreds of researchers. Please consider that when setting up your computational jobs. The most important things are:
-
-- [Don't run heavy jobs in the login nodes](usage policy)
-     - Either [use `sinteractive`](link) or regular [batch jobs](puhti tutorial, or something)
-- Only reserve the amount of memory you need. You can [estimate the memory requirement from past jobs](https://docs.csc.fi/support/faq/how-much-memory-my-job-needs/)
-- If your job reads and/or writes data to disk a lot, consider using NVMe.
-     - Don't write lots of small files, FIXME more on this topic: separate page?
-- Don't run too short jobs. There's an overhead in setting up a batch job. Aim for at least 30 minute jobs.
-- Don't run too long jobs. In very long jobs the possibility of something going wrong is bigger and may lose used computing time. Investigate the possibility of restarts and chaining shorter simulations.
-
+      to clarify what you still need to compute and what is redundant.
+- Reserving more memory resources and more compute cores does not necessary mean faster comutations.
+- Testing for optimal setup regarding compute cores and memory is good practice before performing massive computations.
+- Running the same job on a laptop may sometimes be useful for comparison.
+- Don't run heavy jobs in the login node.
+- Avoid unnecessary reads and writes of data. If you do, read and write in big chunks. Avoid writes/reads of hugh numbers  of small files.
+- Don't run too short jobs. There's a time-overhead in setting up a batch job. Aim for at least 30 minute jobs.
+- Don't run too long jobs. In very long jobs the possibility of something going wrong is bigger and may lose used computing time.
 - If you run your own code, make sure it is optimized (Compiling code for Puhti, Guidelines for optimizing R-code, CSC R-environment, file IO? )
