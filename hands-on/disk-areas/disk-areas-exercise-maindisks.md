@@ -6,14 +6,14 @@ Where would you share your files such as programme packages and data files to ot
 
 ###  Background
 
-This exercise is aimed at familiarising yourself with main disk areas in Puhti and Mahti supercomputers. Data files needed for computational analysis should be stored and shared in *scratch* directories and any software compilations and binaries should be shared in *proappl* directory. In order to find actual directories use commands such as `csc-workspaces` and `csc-projects`. Data transfer between two supercomputers can be done with many tools including `rsync`. In this example try to avoid using *allas* for data transfer between the supercomputers. You may download example programme package (i.e.,ggplot2_3.3.3_Rprogramme.tar.gz) and data file (i.e., Merged.fasta) from **allas** object storage available at https://a3s.fi/CSC_training/shared_files.tar.gz
+This exercise is aimed at familiarising yourself with main disk areas in Puhti and Mahti supercomputers. Data files needed for computational analysis should be stored and shared in *scratch* directories and any software compilations and binaries should be shared in *proappl* directory. In order to find actual directories use commands such as `csc-workspaces` and `csc-projects`. Data transfer between two supercomputers can be done with many tools including `rsync`. In this example try to avoid using *allas* for data transfer between the supercomputers. You may download an example programme package (i.e.,ggplot2_3.3.3_Rprogramme.tar.gz) and data file (i.e., Merged.fasta) from [**allas** object storage](https://a3s.fi/CSC_training/shared_files.tar.gz)
 
 ### Solution
 
 1. First login to Puhti supecomputer using *ssh* command as below:
 
 ```bash
-ssh <username>@puhti.csc.fi
+ssh yourcscusername@puhti.csc.fi
 ```
 Authenticate using the password associated with CSC user account. Once your login to Puhti is successful, Linux terminal will be opened for command-line interaction in your home directory. 
 
@@ -50,12 +50,12 @@ chmod -R g-w Merged.fasta
 you can copy *Merged.fasta* file on puhti to *scratch* drive on Mahti as below:
 
 ```bash
-rsync -P Merged.fasta <username>@mahti.csc.fi:/scratch/project_xxxx
+rsync -P Merged.fasta yourcscusername@mahti.csc.fi:/scratch/project_xxxx
 ```
 you can copy *ggplot2_3.3.3_Rprogramme.tar.gz* file on puhti to *projapple* directory on Mahti as below:
 
 ```bash
-rsync -P ggplot2_3.3.3_Rprogramme.tar.gz <username>@mahti.csc.fi:/scratch/project_xxxx
+rsync -P ggplot2_3.3.3_Rprogramme.tar.gz yourcscusername@mahti.csc.fi:/scratch/project_xxxx
 ```
 
 

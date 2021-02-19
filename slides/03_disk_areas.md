@@ -49,8 +49,8 @@ In this section, you will learn how to manage different disk areas in HPC enviro
     - Each of the login nodes have 2900 GiB of fast local storage `$TMPDIR`
     - The local storage is meant for temporary storage and is cleaned frequently
 - NVMe on part of compute nodes in Puhti
-    - Interactive batch job nodes, IO- and gpu-nodes have [local fast storage (NMvE)](https://docs.csc.fi/computing/running/creating-job-scripts-puhti/#local-storage) as `$LOCAL_SCRATCH`
-    - You must copy data in and out during your batch job. NMvE is accessible only during your job allocation.
+    - Interactive batch job nodes, IO- and gpu-nodes have [local fast storage (NVMe)](https://docs.csc.fi/computing/running/creating-job-scripts-puhti/#local-storage) as `$LOCAL_SCRATCH`
+    - You must copy data in and out during your batch job. NVMe is accessible only during your job allocation.
     - If your job reads or writes a lot of small files, using this can give 10x performance boost
 
 # What are the different disk areas for?
@@ -66,4 +66,5 @@ In this section, you will learn how to manage different disk areas in HPC enviro
 - Don't create a lot of files in one folder
 - Don't create overall a lot of files (if you're creating tens of thousands of files, you should probably rethink the workflow)
 - Take backups of important files. Data on CSC disks is not backed up even if systems are fault tolerant.
+- When working with the large number of smaller files, consider using fast local disks
 - [Best practice performance tips for using Lustre](https://docs.csc.fi/computing/lustre/#best-practices)
