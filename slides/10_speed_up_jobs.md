@@ -3,7 +3,7 @@ theme: csc-2019
 lang: en
 ---
 
-# How to speed up jobs {.title}
+# Getting most out of CSC computers {.title}
 
 ## The purpose of large computers
 
@@ -24,29 +24,30 @@ Parallelism means that you may use, simply speaking, hundreds or thousands of or
 
 ## Running your software
 - It is not only how your software is constructed and compiled that affect performance. It can also be run in different ways
+
 ### Running in parallel 
-- Running with MPI and/or OpenMP [Parallel programmin](https://github.com/csc-training/parallel-prog/)
+- Running in parallel with MPI and/or OpenMP.  
 - Can you split your work into smaller bits and run them simultaneously? [array jobs](https://docs.csc.fi/computing/running/array-jobs/)
 - Can you automate setting up, running and analysing your jobs? [workflow](https://docs.csc.fi/support/tutorials/many/)
 - Can your software utilize GPUs? 
 
-# What is OpenMP?
+### What is OpenMP and what is MPI? 
+- MPI and OpenMP and widely used standards for writing software that run in parallel
+- MPI or (Message Passing Interface) is standard the utilize compute cores that do not share their memory, and therefore passes data-messages back and forth between the compute cores.
+- OpenMP or Open Multi-Processing is a standard that utilize compute cores that share memory, and therefore do not need to send messages betwwen each other. Basically OpenMP is easier for beginners, but problems quickly arise with so called 'race conditions'. This appears when different compute cores process and update the sama data without proper synchronization.
+- There are many tutorials available on the internet that can be found with simple search for e.g. 'MPI tutorial'. 
+-There are documented exercise material and model answers from the CSC course "Introduction to Parallel Programming" availabel on GitHub [Parallel programming](https://github.com/csc-training/parallel-prog/). 
 
-- What is OpenMP and link to examples with a couple of codes, e.g. directly to docs/apps/insertcodehere.md
-- Bioinformatics tools have often been parallelized with OpenMP
 
-# What is MPI?
+### Task farming - running multiple independent jobs simultaneously
 
-- Brief explanation, how to check if your code can do that, link to some codes
-
-# Farming i.e. running multiple jobs simultaneously
-
-- Optimal scaling, caveats:
-   - Workflows will reduce manual work and errors
-   - beware too many batch jobs or job steps
-   - be aware of partition limits
-   - optimum job length
-   - avoid idling allocations
+- Task farming means that you have a set of, more or less, similar jobs that can be run independently of each other.
+- Such jobs are most easily run as, so called, array-jobs. [array jobs](https://docs.csc.fi/computing/running/array-jobs/)
+- In slightly more complex situations, workflows can be used. [workflow](https://docs.csc.fi/support/tutorials/many/) 
+- Task farming can be combined withe.g. OpenMP to speed up independent jobs, and with MPI to run several jobs in parallel.
+- There are a few things to consider: if the separate jobs are very different, running them in parallel with MPI easily waste
+  allocated resources when the fast jobs wait for slower ones.
+- Try to estimate as exact as possible the amount of memory and the time it the separate runs demand. [Run considerations](https://docs.csc.fi/support/tutorials/biojobs-on-puhti/)
 
 # Leverage GPUs for speed
 
