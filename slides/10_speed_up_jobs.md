@@ -53,10 +53,9 @@ Parallelism means that you may use, simply speaking, hundreds or thousands of or
 
 - GPUs, or Graphics Processing Units, are exteremly powerful processors developed for graphics and gaming. They can be used for computations, but are often really tricky to program. Only a small set of algorithms can use the full power of GPUs.
 - For any ready made software, the best way to check if the software can utilize GPUs, is to consult the software user's manual.  
-- Note, just asking for GPUs from SLURM will not help if your code can't use them
-   - If you're unsure, here's [how to check if your batch job used GPU](https://docs.csc.fi/support/tutorials/gpu-ml/#gpu-utilization)
+- Do not try to use GPUs, unless you know what you are doing. If you're unsure, here's [how to check if your batch job used GPU](https://docs.csc.fi/support/tutorials/gpu-ml/#gpu-utilization)
 
-# Be more clever instead of (only) using brute force
+### Be more clever instead of (only) using brute force
 
 - Better performance is not only due to ever faster computers, but also because scientists have come up with more clever algorithms
 - Different codes may give very different performance
