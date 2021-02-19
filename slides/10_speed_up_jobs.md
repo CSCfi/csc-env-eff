@@ -49,11 +49,11 @@ Parallelism means that you may use, simply speaking, hundreds or thousands of or
   allocated resources when the fast jobs wait for slower ones.
 - Try to estimate as exact as possible the amount of memory and the time it the separate runs demand. [Run considerations](https://docs.csc.fi/support/tutorials/biojobs-on-puhti/)
 
-# Leverage GPUs for speed
+### Use GPUs
 
-- GPUs can give a real boost, but can your code make use of them?
-   - How to check if your code can utilize GPUs (FIXME i.e. tell how)
-   - Note, just asking for GPUs from SLURM will not help if your code can't use them
+- GPUs, or Graphics Processing Units, are exteremly powerful processors developed for graphics and gaming. They can be used for computations, but are often really tricky to program. Only a small set of algorithms can use the full power of GPUs.
+- For any ready made software, the best way to check if the software can utilize GPUs, is to consult the software user's manual.  
+- Note, just asking for GPUs from SLURM will not help if your code can't use them
    - If you're unsure, here's [how to check if your batch job used GPU](https://docs.csc.fi/support/tutorials/gpu-ml/#gpu-utilization)
 
 # Be more clever instead of (only) using brute force
