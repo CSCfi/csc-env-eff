@@ -75,8 +75,8 @@ Parallelism means that you may use, simply speaking, hundreds or thousands of or
 
 - Just adding more memory, more cores, more *X* does not necessarily help, if that is not the limiting step.
 - When you allocate more resources, always confirm that the jobs actually complete faster - otherwise there is no use to allocate more resources.
-    - Before starting simulations on a new system, [perform a scaling test](link to be added)
-- Running the same job on your laptop with *one* core may be faster than doing the same in *e.g.* Puhti. Just using Puhti might not speed up things.
+    - Before starting simulations on a new system it may be worth testing how much parallelisation is optimal by running short test runs on different numbers of cores.
+- Running the same job on your laptop with *one* core may be faster than doing the same in *e.g.* Puhti. Just using large computer may not speed up things.
     - You might benefit of the application being there for you, though, or have faster access to a lot of data, but if your code can not be run in parallel, then you should consider some of the options above.
 
 # Optimal use of CSC resources
