@@ -57,16 +57,21 @@ Parallelism means that you may use, simply speaking, hundreds or thousands of or
 
 ### Be more clever instead of (only) using brute force
 
-- Better performance is not only due to ever faster computers, but also because scientists have come up with more clever algorithms
-- Different codes may give very different performance
-    - Compare the options you have in [the CSC Software selection](https://docs.csc.fi/apps/)
-- Before launching massive simulations, look for more efficient algorithms to get the data you need
+- It is reasonable to try to achieve best performance by using fastest computers available. This is however far from the only important issue.
+- Different codes may give very different performance. Compare the options you have in [the CSC Software selection](https://docs.csc.fi/apps/)
+- Before launching massive simulations, look for the most efficient algorithms to get the data you need
 - Well known boosters are:
     - Enchanced sampling methods in molecular dynamics (vs. brute force plain MD)
     - Bayesian Optimization Structure Search ([BOSS](https://pypi.org/project/aalto-boss/), potential energy mapping)
-    - `<insert other discipline example here>` 
+    - When starting a new project, begin with small and fast test cases, and increase comutations gradually.
+    - When scanning parameters, start with a coarse scan, and improve resolution where needed.
+    - Be carefully submitting large numbers of jobs before you know the results are really what you are looking for.
+    - Try to use or implement so called 'restart options' in software, and always check results in between restarts.
+    - Try to preliminary formulate your scientific results when you have a minimum amount of computational results - it often helps
+      to clarify what you still need to be computed and what is redundant.
+   
 
-# Common misconceptions
+### Common misconceptions
 
 - Just adding more memory, more cores, more *X* does not necessarily help, if that is not the limiting step.
 - When you allocate more resources, always confirm that the jobs actually complete faster - otherwise there is no use to allocate more resources.
