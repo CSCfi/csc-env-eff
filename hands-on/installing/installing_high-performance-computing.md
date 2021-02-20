@@ -25,4 +25,4 @@
  - You need an editor https://docs.csc.fi/support/tutorials/env-guide/text-and-image-processing/
  - Launch an editor and write the code
  - Compile your code (on puhti:https://docs.csc.fi/computing/compiling-puhti/, and on Mahti: https://docs.csc.fi/computing/compiling-mahti/)
- - Fix bugs until compiler accepts code# 
+ - Fix bugs until compiler accepts code
