@@ -1,7 +1,7 @@
 # installing, making and making your own C, C++, or Fortran program in the CSC environment
 
 ## scenario A: you have a code already, you want to install it and run it.
- - Create a proper directory for your code (command: mkdir file-name)
+ - Create a proper directory for your code (command: mkdir dir-name)
  - You need the codes sources files. Download from e.g. GitHub or use e.g. scp to upload a .zip file to the directory (https://docs.csc.fi/data/moving/scp/)
  - Unzip you code (line command: unzip code-name.zip)
  - Follow any instructions on how to install. Usually comes with the code in form of a ‘readme’ or ’how to install’ file.
