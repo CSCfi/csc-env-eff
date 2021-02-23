@@ -5,29 +5,58 @@ lang: en
 
 # The batch job system in CSC's HPC environment {.title}
 
+# What is a batch job?
+
+- On a laptop we are used to start a program(job) by clicking on an icon and the job starts instantly
+- If we start many jobs at the same time we occationally run into problems like running out of memory etc. 
+- In an HPC environment the computer is shared among hundreds of other users who all have different resource needs
+- In order to avoid problems and make the usage as efficient as possible all HPC jobs include an **estimate on how much resources they are expected to use**
+- A job is not started directly, but sent into a **queue**
+- Depending on the resources requested by the single job, and how many other jobs there are, the job usually have to wait for some time to get started
+
 # What is a batch job system?
 
-- Optimizes resource usage by filling the server with jobs
-- The batch system allows users to submit jobs requesting the resources (runtime, nodes, cores, memory, GPUs) that they need 
-- The jobs are queued and then run as resources become available
-- The order in which queued jobs start depend on available resources and their priority
-
-# Batch job system places jobs on compute nodes
+- A resource management system that keeps track of all batch jobs that uses, or would like to use the computing resources
+- Aim is to share the resources in an efficient and fair way
 
 ![](./img/slurm-sketch.svg)
 
 
+- Optimizes resource usage by filling the compute node with most suitable jobs
+- The batch system allows users to submit jobs requesting the resources (runtime, nodes, cores, memory, GPUs) that they need 
+- A job is queued and starts when the requested resources become available
+- The order in which the queued jobs start depend on available resources and their priority
+
 # The batch job system in CSC's HPC environment 
 
-- jobs don't start instantly but are put in a queue (partition)
-- CSC uses a batch job system (SLURM) to execute computing tasks
+- CSC uses a batch job system [(SLURM)](https://slurm.schedmd.com/sbatch.html) to manage jobs 
 - SLURM is used to control how the overall computing resources are shared among all projects in an efficient and fair way
 - SLURM controls how a single job request gets resources, like:
     - computing time
     - number of cores
     - amount of memory
     - other resources like gpu, local disk, etc.
+- jobs don't start instantly but are put in a queue (partition)
 
+# Example serial batch job script on Puhti
+
+```text
+#!/bin/bash -l
+#SBATCH --job-name=print_hostname
+#SBATCH --time=00:01:00
+#SBATCH --partition=test
+#SBATCH --ntasks=1
+#SBATCH --account=project_20001234
+
+srun echo "Hello $USER! You are on node $HOSTNAME"
+```
+- A shell script (Bash) containing specific flags (#SBATCH) that are passed on to the batch job system
+- It is mandatory to tell the system which project should be billed. This is done using the `--account` option
+- The actual program is launched using the `srun` command
+- The content should be copied into a file like `simple_serial.bash`
+- The job is put into the queue using the command `sbatch simple_serial.bash`
+
+ 
 # Available batch job partitions
 
 - [The available batch job partitions](https://docs.csc.fi/computing/running/batch-job-partitions/)
@@ -47,6 +76,7 @@ lang: en
 
 # HPC serial jobs 
 
+- a serial software can only use one core, so don't reserve more!
 - why could your serial job benefit from being executed using CSC's resources instead of on your own computer? 
 
     - part of a larger workflow
@@ -55,7 +85,8 @@ lang: en
     - CSC's software licensing
     - memory and/or disk demands
 
-- serial resources are only available in Puhti 
+- You can utilize parallel resources by running multiple serial jobs at the same time
+- serial resources are only available in Puhti
  
 # HPC parallel jobs
 
@@ -76,3 +107,14 @@ FIXME: tassa voisi linkata gpu-usage-policyyn (julkaistan pian)
 - when you login to CSC's supercomputers, you end up in one of the login nodes of the computer. These login nodes are shared by all users and they are not intended for heavy computing. 
 - if you have a heavier job that still requires interactive response (e.g. graphical user interface )
     - allocate the resource via the the [interactive partition](https://docs.csc.fi/computing/running/interactive-usage/)
+
+# Submitting, cancelling and stats of batch jobs
+- The job script file is submitted with the command
+   - `sbatch batch_job.bash`
+- Detailed info of a queuing/running job:
+   - `scontrol show job <jobid>`
+- A job can be deleted using the command:
+   - `scancel <jobid>`
+- Display the used resources of a completed job:
+   - `seff <jobid>`
+
