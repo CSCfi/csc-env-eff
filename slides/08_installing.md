@@ -10,18 +10,17 @@ In this section you will learn about installing your own software on CSC servers
 # Code categories
 - It is possible to install software on CSC servers
 - Start by reading the software documentation
-- Check the installation instructions to based the code type
-  - Installation method depends on code type
+  - Installation method depends on code type (or category)
   - Instructions found on the web rarely work "copy/paste" in HPC environment
-- Before doing a lot of work, check if an alternative is already available in [CSC application list](https://docs.csc.fi/apps/)
+- Before doing a lot of work, check if an alternative software is already available in [CSC application list](https://docs.csc.fi/apps/)
 
 # Binares
 - If you have ready made binaries, you can just try to run them
-- Problem with ready made binaries is that they are hardly ever optimal for the computer they are used on
+- The problem with ready made binaries is that they are hardly ever optimal for the computer they are used on
   - Especially MPI codes should always be re-compiled
-- Ready binaries should be considered if
+- Ready binaries can be considered if
   - Source code not available
-  - Software is compiled on identical computer 
+  - Software is compiled on an identical computer 
   - Software is for relatively light (serial or threaded) computation
 
 # Interpreted languages
@@ -32,8 +31,10 @@ In this section you will learn about installing your own software on CSC servers
 - An efficient code should be constructed so that heavy computations utilize libraries and/or subroutines written in High-Performance-Computing programming languages
 
 # High-Performance-Computing languages
-- Programming languages that need a compiler (C,C++,Fortran). 
+- Programming languages that need a compiler (C, C++, Fortran). 
 - These languages are not easy to program and for complicated tasks need quite a lot of experience and much work.
+- Most of the resource intensive software have been programmed with these
+- As a researcher, you typically _only_ need to compile them (unless already available) 
 
 # Basic requirements
 - You need a computer with a decent internet connection.
@@ -44,15 +45,16 @@ In this section you will learn about installing your own software on CSC servers
   - [Linux Command line quick reference / Cheat Sheet](https://docs.csc.fi/img/csc-quick-reference.pdf)
 
 
-# Instructions
+# Installation how-to 
 - See tutorials for each category for more detailed instructions
- - Interpreted languages (link)
- - High-Performance-Computing languages (link)
- - Applications may also be available as [containers](09_singularity.html), which can be used in CSC environment.
+  - [GitHub link for interpreted language tutorials](https://github.com/CSCfi/csc-env-eff/blob/master/hands-on/installing/README.md)
+  - [GitHub link for High-Performance-Computing language tutorials](https://github.com/CSCfi/csc-env-eff/blob/master/hands-on/installing/README.md)
+  - Applications may also be available as [containers](09_singularity.html), which can be used in CSC environment.
 
-# Testing
-- Construct a batch script
+# Testing - it's important to test _first_
+- Construct a batch script (see Chapter 3)
 - Make a short and simple test run
   - Use known test data, e.g. test data provided by the code developer if you use a ready made code.
-  - Write a simple program and compile it.
-- Run a test in the `test` queue or in an [interactive session](https://docs.csc.fi/computing/running/interactive-usage/) directly from the command line
+  - Run a tutorial provided with the code
+- Run your test in the `test` queue or in an [interactive session](https://docs.csc.fi/computing/running/interactive-usage/) directly from the command line
+- Compare performance to existing data (your old data, reference from the web, ...)
