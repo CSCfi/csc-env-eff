@@ -31,7 +31,8 @@ In this section you will learn about installing your own software on CSC servers
 - An efficient code should be constructed so that heavy computations utilize libraries and/or subroutines written in High-Performance-Computing programming languages
 
 # High-Performance-Computing languages
-- Programming languages that need a compiler (C, C++, Fortran). 
+- Programming languages that need a compiler 
+   - Typical examples are _e.g._ C, C++, and Fortran. 
 - These languages are not easy to program and for complicated tasks need quite a lot of experience and much work.
 - Most of the resource intensive software have been programmed with these
 - As a researcher, you typically _only_ need to compile them (unless already available) 
