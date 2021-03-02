@@ -128,9 +128,9 @@ Use with care: [https://docs.csc.fi/#data/Allas/using_allas/rclone/](https://doc
 
 *   8 hour connection limit with swift
 *   No way to check quota
-*   Movin data inside Allas is not possible (swift)
+*   Moving data inside Allas is not possible (swift)
 *   No way to freeze data ( use two projects if needed).
-*   Diffrent interfaces may work in diffrent ways
+*   Different interfaces may work in diffrent ways
 
 
 # Things that users should consider 
