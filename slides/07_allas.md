@@ -31,7 +31,7 @@ All project members have equal access to the data in Puhti and Allas.
 *  For the computation the data has to be typically copied to a file system in some computer
 *  Data can be shared publicly to Internet, which is otherwise not easily possible at CSC.
 
-!["Allas"](img/allas.png "Allas"){width=30%}
+!["Allas"](img/allas.svg "Allas"){width=30%}
 
 # Allas – object storage: what it is NOT
 
@@ -131,7 +131,7 @@ Use with care: [https://docs.csc.fi/#data/Allas/using_allas/rclone/](https://doc
 *   8 hour connection limit with swift
 *   No way to check quota
 *   Moving data inside Allas is not possible (swift)
-*   No way to freeze data ( use two projects if needed).
+*   No way to freeze data (use two projects if needed).
 *   Different interfaces may work in diffrent ways
 
 
