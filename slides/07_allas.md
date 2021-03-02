@@ -31,7 +31,6 @@ All project members have equal access to the data in Puhti and Allas.
 *  For the computation the data has to be typically copied to a file system in some computer
 *  Data can be shared publicly to Internet, which is otherwise not easily possible at CSC.
 
-!["Allas connection"](img/allas.png "Allas connections"){width=30%}
 
 # Allas – object storage: what it is NOT
 
