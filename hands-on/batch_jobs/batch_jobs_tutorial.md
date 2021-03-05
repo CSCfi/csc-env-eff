@@ -82,6 +82,5 @@ Hello world from node r07c02.bullx, rank 6 out of 8 tasks
 - The `squeue` command shows the list of jobs which are currently queued (they are in the RUNNING state, noted as ‘R’) or waiting for resources (noted as ‘PD’, short for PENDING)
 - the command `squeue -u $USER` lists your jobs 
  
-## Additional material 
-- [Hands-on batch jobs in Puhti tutorial](https://docs.csc.fi/support/tutorials/cmdline-handson/)
-- [FAQ on CSC batch jobs ](https://docs.csc.fi/support/faq/#batch-jobs)
+## Additional material
+- [FAQ on CSC batch jobs ](https://docs.csc.fi/support/faq/#batch-jobs) in Docs CSC

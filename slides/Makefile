@@ -4,6 +4,7 @@ LECTURES= \
 03_disk_areas.md \
 04_modules.md \
 05_batch_jobs.md \
+07_allas.md
 08_installing.md \
 09_singularity.md \
 10_speed_up_jobs.md 
