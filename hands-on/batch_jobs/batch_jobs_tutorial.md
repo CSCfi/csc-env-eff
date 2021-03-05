@@ -60,7 +60,7 @@ srun hello_mpi.x
 - Submit the job to the queue with the command `sbatch my_parallel.bash`
 - When finished, the output file `slurm-XXXXXXX.out` should contain the results obtained by the `hello_mpi.x` program on how the 8 tasks were distributed over the two reserved nodes
 - Check it with the `cat slurm-XXXXXXX.out` command:
-
+- **Note!** This example asks 4 cores from each of the 2 nodes. Normally, this would not make sense, but it would be better to run all 8 cores in the same node (in Puhti one node has 40 cores). Typically, you want your resources (cores) to be spread on as few nodes as possible.
 ```text
 cat slurm-5099873.out
 Hello world from node r07c01.bullx, rank 0 out of 8 tasks
