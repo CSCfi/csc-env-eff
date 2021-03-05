@@ -1,10 +1,10 @@
 ---
-theme: Allas storage service
+theme: csc-2019
 lang: en
 ---
 
 
-# How to get access to Allas
+# How to get access to Allas .{title}
 
 Use [https://my.csc.fi](https://my.csc.fi) to 
 1. Register to CSC (haka)
@@ -17,10 +17,10 @@ All project members have equal access to the data in Puhti and Allas.
 
 # Allas – object storage: what it is for?
 
-*  Allas is new storage service for all computing and cloud services
+*  Allas is a new storage service for all computing and cloud services
 *  CEPH based object storage
 *  Meant for data during project lifetime
-*  Default quota 10 TB / Project.
+*  Default quota 10 TB / Project.
 *  Possible to upload data from personal laptops or organizational storage systems into Allas
 *  Clients available in Puhti and Mahti
 *  Data can also be shared via Internet
@@ -28,7 +28,7 @@ All project members have equal access to the data in Puhti and Allas.
 # Allas – object storage: what it is for?
 
 *  Data can be moved to and from Allas directly without using Puhti or Mahti.
-*  For the computation the data has to be typically copied to a file system in some computer
+*  For computation the data has to be typically copied to a file system in some computer
 *  Data can be shared publicly to Internet, which is otherwise not easily possible at CSC.
 
 !["Allas"](img/allas.png "Allas"){width=10%}
@@ -42,48 +42,48 @@ All project members have equal access to the data in Puhti and Allas.
 
 # Allas - storage 
 
-* An object is stored in multiple servers so a disk or server break does not cause data loss.
+* An object is stored in multiple servers so a disk or server break does not cause data loss.
 * There is no backup i.e. if a file is deleted, it cannot be recovered
-* Data cannot be modified while it is in the object storage –  data is immutable.
-* Rich set of data management features to be built on top of it.
-* Usage thrpough S3 and Swift APIs supported
+* Data cannot be modified while it is in the object storage – data is immutable.
+* Rich set of data management features are to be built on top of it.
+* Usage through S3 and Swift APIs are supported
 
 # Allas – object storage: terminology
 
 *  Storage space in Allas is provided per **CSC project**
 *  Project space can have multiple *buckets* ( up to 1000)
-*  Only one level of hierarchy of buckets (no buckets within buckets)
+*  There is only one level of hierarchy of buckets (no buckets within buckets)
 *  Data is stored as **objects** within a bucket
 *  Objects can contain can contain any type of data (generally, object = file)
-*  In Allas you can have 500 000 objetcs / bucket
+*  In Allas you can have 500 000 objects / bucket
 *  Name of the bucket must be unique within Allas
 *  Objects have metadata that can be enriched 
-*  In reality, there is no hierarcical dirctory structure, even tough it sometimes looks like that.
+*  In reality, there is no hierarcical directory structure, although it sometimes looks like that.
 
-# Allas supports Two Protocols
+# Allas supports two protocols
 
 *  S3  (used by: s3cmd)
 *  Swift (used by: swift, rclone, a-tools, cyberduck)  
 
 *   Authentication is different
-*   S3: permanent key based authentication – nice, easy and unsecure
+    * S3: permanent key based authentication – nice, easy and unsecure
 *   Swift: authentication based on temporary tokens – more secure, requires authentication every 8 hours
-*   Metadata is handled in different ways
-*   Over 5G files are managed in different ways
+    * Metadata is handled in different ways
+    * Over 5G files are managed in different ways
 *   → **Avoid cross-using Swift and S3 based objects!**
 
 
 # Allas Clients: read, write, delete
 
 **Puhti, Mahti, Linux servers, Macs:**
-*  rclone, switft, s3cdm, a-tools
+*  rclone, swift, s3cdm, a-tools
 
 **Virtual machines, small servers:**
-* in addition to the tools above you can use FUSE based virtual mounts
+* In addition to the tools above, you can use FUSE based virtual mounts
 
 **Laptops (Windows, Mac):**
 * Cyberduck, FileZilla(pro), pouta-www interface
-
+FIXME: links to these / detailed instructions?
 
 # Allas – first steps for Puhti 
 
@@ -93,16 +93,16 @@ All project members have equal access to the data in Puhti and Allas.
 module load allas
 allas-conf
 ```
-*  Study the manual and Start using Allas with rclone or a-tools:[https://docs.csc.fi/data/Allas/](https://docs.csc.fi/data/Allas/)
+*  Study the manual and [Start using Allas with rclone or a-tools instructions](https://docs.csc.fi/data/Allas/)
 
 # Allas – rclone
 
-*  Straight-forward power-user tool with wide range of features
+*  Straight-forward power-user tool with wide range of features.
 *  Fast and effective.
 *  Available for Linux, Mac and windows.
 *  Overwrites and removes data without asking!
 *  The default configuration at CSC uses swift-protocol but S3 can be used too.
-Use with care: [https://docs.csc.fi/#data/Allas/using_allas/rclone/](https://docs.csc.fi/#data/Allas/using_allas/rclone/)
+Use with care: [rclone instructions in Docs CSC](https://docs.csc.fi/#data/Allas/using_allas/rclone/)
 
 
 # Allas – a-tools
@@ -113,19 +113,19 @@ Use with care: [https://docs.csc.fi/#data/Allas/using_allas/rclone/](https://doc
 *  Unlike rclone, a-tools do not overwrite and remove data without asking!
 *  Automatic packing and compression.
 *  Default bucket names based on directories of Puhti
-*  [https://docs.csc.fi/#data/Allas/using_allas/a_commands/](https://docs.csc.fi/#data/Allas/using_allas/a_commands/)
+*  [a-commnds instructions in Docs CSC](https://docs.csc.fi/#data/Allas/using_allas/a_commands/)
 
 
 # A-put/a-get: pros and cons
 
-+ saving data as a tar package preserves time stamps, accession settings, and internal links of the directory.
-+ zstdmt compression reduces size
-+ default bucket name and metadata reflect the directory sturctures of Puhti and Mahti
-+ checks to prevent over writing data accidentally
++ Saving data as a tar package preserves time stamps, accession settings, and internal links of the directory.
++ `zstdmt` compression reduces size
++ Default bucket name and metadata reflect the directory sturctures of Puhti and Mahti
++ Checks to prevent over writing data accidentally
 
-- usage of objects, created by a-put can be complicated when other object storage tools are used
-- ecpecially windows is problematic
-- each object has additional _ameta object
+- Usage of objects, created by `a-put` can be complicated when other object storage tools are used
+- Especially usage from windows is problematic
+- Each object has an additional _ameta object
 
 # Allas problems
 
@@ -140,6 +140,6 @@ Use with care: [https://docs.csc.fi/#data/Allas/using_allas/rclone/](https://doc
 
 *   Should I store files as one object or as bigger chunks?
 *   Should I use compression?
-*   Who can use the data: Projects and accession permissions ?
+*   Who can use the data: Projects and accession permissions?
 *   What will happen to my data later on?
 *   How to keep track of all the data I have in Allas?
