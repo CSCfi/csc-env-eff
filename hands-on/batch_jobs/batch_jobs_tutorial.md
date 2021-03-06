@@ -97,7 +97,7 @@ Hello world from node r07c02.bullx, rank 6 out of 8 tasks
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 srun hello_omp.x
 ```
-```
+```text
 cat slurm-5118404.out
 Hello from thread: 0
 Hello from thread: 3
