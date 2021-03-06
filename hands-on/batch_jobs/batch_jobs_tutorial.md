@@ -34,18 +34,50 @@ srun sleep 60
 - You can get a list of all your jobs that are running or queuing with the command `squeue -u $USER`
 - A submitted job can be cancelled using the command `scancel XXXXXXX` 
 
-
 ## Parallel jobs
-- A parallel program is capable of utilizing several cores simultaneously for the same job
+- A parallel program is capable of utilizing several cores and other resources simultaneously for the same job
 - The aim of a parallel program is to solve a problem (job) faster and to be able to tacle a larger problem that wouldn't fit into a single core
-- Depending on the parallel program and the type of job, the optimal resource request is often difficult to decide
 - There are two major strategies to divide the computational burden over several cores:
+  - [OpenMP](https://e-learn.csc.fi/pluginfile.php/3007/mod_resource/content/1/09-OpenMP-intro.pdf) 
   - [MPI](https://e-learn.csc.fi/pluginfile.php/2997/mod_resource/content/1/04-intro-to-mpi.pdf)
-  - [OMP](https://e-learn.csc.fi/pluginfile.php/3007/mod_resource/content/1/09-OpenMP-intro.pdf) 
 - Depending on the parallel program and the type of job, the optimal resource request is often difficult to decide
+
+### A simple OpenMP job
+- An OpenMP enabled program can take advantage of multiple cores that shares the same memory on a **single node** 
+- Dowload a simple OpenMP parallel program with the command `wget https://a3s.fi/hello_omp.x/hello_omp.x`
+- Make it executable using the command `chmod +x hello_omp.x` 
+
+```text
+#!/bin/bash
+#SBATCH --account=myprojectname
+#SBATCH --partition=test
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --time=00:00:10
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+srun hello_omp.x
+```
+- In the batch job example above we are requesting resources for one OpenMP job (--ntasks=1) using four cores (`--cpus-per-task=4`) for ten seconds (`--time=00:00:10`) from the test queue (`--partition=test`)
+- We want to run the program `hello_omp.x`, that will be able to utilise four cores
+- The variable `OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK` tells the program that it can use four cores   
+- Each of the four threads launced by `hello_omp.x` will print their own output 
+- Copy the example above into a file called `my_parallel_omp.bash` and change the `myprojectname` to the project you actually want to use
+- Submit the job to the queue with the command `sbatch my_parallel_omp.bash`
+- When finished, the output file `slurm-XXXXXXX.out` should contain the results printed from the four OpenMP threads 
+- Check it with the `cat slurm-XXXXXXX.out` command:
+
+```text
+cat slurm-5118404.out
+Hello from thread: 0
+Hello from thread: 3
+Hello from thread: 2
+Hello from thread: 1
+```
 
 ### A simple MPI job
-- Dowload a simple MPI parallel program with the command `wget https://a3s.fi/hello_mpi.x/hello_mpi.x`
+- A MPI enabled program can take advantage of resourses that are spread over multiple nodes 
+- Dowload a simple MPI parallel program with the command 
+  `wget https://a3s.fi/hello_mpi.x/hello_mpi.x`
 - Make it executable using the command `chmod +x hello_mpi.x` 
 
 ```text
@@ -82,28 +114,6 @@ Hello world from node r07c02.bullx, rank 6 out of 8 tasks
 - Check the efficiency of the job compared to the reserved resources by issuing the command `seff XXXXXXX` (replace `XXXXXXX` with the actual  job ID number from the `slurm-XXXXXXX.out` file)
 - You can get a list of all your jobs that are running or queuing with the command `squeue -u $USER`
 - A submitted job can be cancelled using the command `scancel XXXXXXX` 
-
-### A simple OMP job
-- Dowload a simple OMP parallel program with the command `wget https://a3s.fi/hello_omp.x/hello_omp.x`
-- Make it executable using the command `chmod +x hello_omp.x` 
-
-```text
-#!/bin/bash
-#SBATCH --account=myprojectname
-#SBATCH --partition=test
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --time=00:00:10
-export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
-srun hello_omp.x
-```
-```text
-cat slurm-5118404.out
-Hello from thread: 0
-Hello from thread: 3
-Hello from thread: 2
-Hello from thread: 1
-```
 
 ## Gathering information
 - The `sinfo` command gives an overview of the partitions(queues) offered by the computer
