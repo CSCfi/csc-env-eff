@@ -43,7 +43,7 @@ srun sleep 60
 - Depending on the parallel program and the type of job, the optimal resource request is often difficult to decide
 
 ### A simple OpenMP job
-- An OpenMP enabled program can take advantage of multiple cores that shares the same memory on a **single node** 
+- An OpenMP enabled program can take advantage of multiple cores that share the same memory on a **single node** 
 - Dowload a simple OpenMP parallel program with the command `wget https://a3s.fi/hello_omp.x/hello_omp.x`
 - Make it executable using the command `chmod +x hello_omp.x` 
 
