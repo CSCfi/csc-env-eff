@@ -22,7 +22,6 @@ lang: en
 
 ![](./img/slurm-sketch.svg)
 
-
 - Optimizes resource usage by filling the compute node with most suitable jobs
 - The batch system allows users to submit jobs requesting the resources (runtime, nodes, cores, memory, GPUs) that they need 
 - A job is queued and starts when the requested resources become available
@@ -39,7 +38,7 @@ lang: en
     - other resources like gpu, local disk, etc.
 - jobs don't start instantly but are put in a queue (partition)
 
-# Example serial batch job script on Puhti
+# Example serial batch job script for Puhti
 
 ```text
 #!/bin/bash -l
@@ -51,12 +50,10 @@ lang: en
 
 srun echo "Hello $USER! You are on node $HOSTNAME"
 ```
-- A shell script (Bash) containing specific flags (#SBATCH) that are passed on to the batch job system
+- A batch job is a shell script (bash) that consists of two parts: A resource request flagged with `#SBATCH` and the actual computing step
 - It is mandatory to tell the system which project should be billed. This is done using the `--account` option
 - The actual program is launched using the `srun` command
-- The content should be copied into a file like `simple_serial.bash`
-- The job is put into the queue using the command `sbatch simple_serial.bash`
-
+- The content above could be copied into a file like `simple_serial.bash` and put into the queue with `sbatch simple_serial.bash`
  
 # Available batch job partitions
 
@@ -75,6 +72,13 @@ srun echo "Hello $USER! You are on node $HOSTNAME"
 - via the [My Projects page in MyCSC](https://my.csc.fi/welcome) you can monitor the BU consumption and apply for more billing units
 - "csc-projects" is a command line tool for showing the the BU consumption per project    
 
+# Mapping your needs and the performance
+
+- Before starting any large-scale calculations it's a good practice to check how the software and your actual input performs
+    - use short runs in the queue `--partition=test` to check that the input works and that the resource requests are interpreted correctly
+    - if the program works in parallel check that it benefits from the requested parallel resources 
+    - check the output from the `seff` command to ensure that the cpu and memory performances are sufficient 
+
 # HPC serial jobs 
 
 - a serial software can only use one core, so don't reserve more!
@@ -86,22 +90,26 @@ srun echo "Hello $USER! You are on node $HOSTNAME"
     - CSC's software licensing
     - memory and/or disk demands
 
-- You can utilize parallel resources by running multiple serial jobs at the same time
-- serial resources are only available in Puhti
+- You can utilize parallel resources for running multiple serial jobs at the same time
+    - [Array jobs](https://docs.csc.fi/computing/running/array-jobs/) 
+    - [GREASY jobs](https://docs.csc.fi/computing/running/greasy/)
+- pure serial resources are only available in Puhti, but **GREASY jobs** can use Mahti, as well
  
 # HPC parallel jobs
 
-- in a parallel job the calculation is distributed over several cores in order to achieve a shorter wall time (and/or a larger allocatable memory)   
-- there are two major parallelization schemes: [OpenMP](https://en.wikipedia.org/wiki/OpenMP) and [MPI](https://en.wikipedia.org/wiki/Message_Passing_Interface)
+- A parallel job distributes the calculation over several cores in order to achieve a shorter wall time (and/or a larger allocatable memory)   
+- There are two major parallelization schemes: [OpenMP](https://en.wikipedia.org/wiki/OpenMP) and [MPI](https://en.wikipedia.org/wiki/Message_Passing_Interface)
 - depending on the parallellization scheme there is a slight difference between how the resource reservation is done  
 - [examples of batch job skripts on Puhti](https://docs.csc.fi/computing/running/creating-job-scripts-puhti/)
 - [examples of batch job skripts on Mahti](https://docs.csc.fi/computing/running/example-job-scripts-mahti/)
 
+
 # HPC gpu jobs 
 
-- CSC's gpu resources are relatively scarce and hence should be used with particular care
-- each reserved gpu card consumes 60 BU per hour compared to 1 BU per cpu core
-FIXME: tassa voisi linkata gpu-usage-policyyn (julkaistan pian)
+- A graphics processing unit (GPU, a video card), is capable of doing certain type of simlutaneous calculations very efficiently
+- In order to take advantage of this power, a computer program has to be reprogrammed to be adapt to how GPU's handles data   
+- CSC's gpu resources are relatively scarce and hence should be used with [particular care](https://docs.csc.fi/computing/overview/#gpu-nodes)
+
 
 # Interactive jobs
 
@@ -124,7 +132,7 @@ FIXME: tassa voisi linkata gpu-usage-policyyn (julkaistan pian)
 # Reserving and optimizing batch job resources 
 
 Since the computing resources are shared among hundreds of your colleagues, who all have different resource needs, it's vital to estimate the resource needs for your job as accurately as possible, in order to minimize the **waste** 
-- It's a good practice to regularly monitor the resource consumption and efficiency of your jobs
+- It's a good practice to regularly monitor the resource consumption and the efficiency of your jobs
    - for finished jobs, use the command `seff XXXXXXX` (replace `XXXXXXX` with the actual job ID you are interested in)
    - if you plan to run a lot of similar jobs, the estimate is particularly important
 - Important resource requests that should be monitored are:
@@ -133,5 +141,6 @@ Since the computing resources are shared among hundreds of your colleagues, who 
    - [Disk workload](https://docs.csc.fi/computing/running/creating-job-scripts-puhti/#local-storage)
    - [GPU efficiency](https://docs.csc.fi/computing/overview/#gpu-nodes)
  
+
   
 
