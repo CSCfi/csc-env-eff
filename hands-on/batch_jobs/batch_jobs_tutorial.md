@@ -2,7 +2,7 @@
 
 - In this tutorial we'll get familiar with the basic usage of the Slurm batch queue system at CSC
 - The goal is to learn how to request resources that **match** the needs of a job  
-- A job consists of two parts: resource requests and job step(s)
+- A job consists of two parts: resource requests and the job step(s)
 - We'll go through examples for both serial and parallel jobs
 - Examples are done on Puhti 
 
@@ -10,7 +10,7 @@
 
 - For a program that can use only one core (cpu), one should request only one core from Slurm. 
 - The job doesn't benefit from additional cores, hence don't request more 
-- Excess reservation is waisted since it's not available to other users
+- Excess reservation is waisted since it wouldn't be available to other users
 - Within the job, the actual program is launched using the command `srun` 
 
 ```text 
@@ -37,9 +37,15 @@ srun sleep 60
 
 ## Parallel jobs
 - A parallel program is capable of utilizing several cores simultaneously for the same job
-- The aim of a parallel program is to solve problems (jobs) faster and to be able to tacle larger problems that wouldn't fit into a single core
+- The aim of a parallel program is to solve a problem (job) faster and to be able to tacle a larger problem that wouldn't fit into a single core
 - Depending on the parallel program and the type of job, the optimal resource request is often difficult to decide
-- Dowload a simple parallel program with the command `wget https://a3s.fi/hello_mpi.x/hello_mpi.x`
+- There are two major strategies to divide the computational burden over several cores:
+  - [MPI](https://e-learn.csc.fi/pluginfile.php/2997/mod_resource/content/1/04-intro-to-mpi.pdf)
+  - [OMP](https://e-learn.csc.fi/pluginfile.php/3007/mod_resource/content/1/09-OpenMP-intro.pdf) 
+- Depending on the parallel program and the type of job, the optimal resource request is often difficult to decide
+
+### A simple MPI job
+- Dowload a simple MPI parallel program with the command `wget https://a3s.fi/hello_mpi.x/hello_mpi.x`
 - Make it executable using the command `chmod +x hello_mpi.x` 
 
 ```text
@@ -77,10 +83,31 @@ Hello world from node r07c02.bullx, rank 6 out of 8 tasks
 - You can get a list of all your jobs that are running or queuing with the command `squeue -u $USER`
 - A submitted job can be cancelled using the command `scancel XXXXXXX` 
 
+### A simple OMP job
+- Dowload a simple OMP parallel program with the command `wget https://a3s.fi/hello_omp.x/hello_omp.x`
+- Make it executable using the command `chmod +x hello_omp.x` 
+
+```text
+#!/bin/bash
+#SBATCH --account=myprojectname
+#SBATCH --partition=test
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --time=00:00:10
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+srun hello_omp.x
+```
+```
+cat slurm-5118404.out
+Hello from thread: 0
+Hello from thread: 3
+Hello from thread: 2
+Hello from thread: 1
+```
+
 ## Gathering information
 - The `sinfo` command gives an overview of the partitions(queues) offered by the computer
 - The `squeue` command shows the list of jobs which are currently queued (they are in the RUNNING state, noted as ‘R’) or waiting for resources (noted as ‘PD’, short for PENDING)
 - the command `squeue -u $USER` lists your jobs 
  
-## Additional material
-- [FAQ on CSC batch jobs ](https://docs.csc.fi/support/faq/#batch-jobs) in Docs CSC
+## Additional material [FAQ on CSC batch jobs ](https://docs.csc.fi/support/faq/#batch-jobs) in Docs CSC
