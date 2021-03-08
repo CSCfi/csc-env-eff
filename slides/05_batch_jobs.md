@@ -6,29 +6,31 @@ lang: en
 # The batch job system in CSC's HPC environment {.title}
 
 # What is a batch job?
-
 - On a laptop we are used to start a program(job) by clicking on an icon and the job starts instantly
 - If we start many jobs at the same time we occationally run into problems like running out of memory etc. 
 - In an HPC environment the computer is shared among hundreds of other users who all have different resource needs
 - In order to avoid problems and make the usage as efficient as possible, all HPC jobs include an **estimate on how much resources they are expected to use**
+
+# What is a batch job? (continued)
 - A batch job consists of two parts: A resource request and the actual computing step
 - A job is not started directly, but sent into a **queue**
 - Depending on the resources requested by the single job, and how many other jobs there are, the job usually have to wait for some time to get started
 
-# What is a batch job system?
-
+# What is a batch job system? 
 - A resource management system that keeps track of all batch jobs that uses, or would like to use the computing resources
 - Aim is to share the resources in an efficient and fair way
-
-![](./img/slurm-sketch.svg)
-
 - Optimizes resource usage by filling the compute node with most suitable jobs
 - The batch system allows users to submit jobs requesting the resources (runtime, nodes, cores, memory, GPUs) that they need 
+ What is a batch job system? 
+
+# What is a batch job system? (continued)
 - A job is queued and starts when the requested resources become available
 - The order in which the queued jobs start depend on available resources and their priority
 
-# The batch job system in CSC's HPC environment 
+# Schema on how the batch job sheduler works
+![](./img/slurm-sketch.svg)
 
+# The batch job system in CSC's HPC environment 
 - CSC uses a batch job system [(SLURM)](https://slurm.schedmd.com/sbatch.html) to manage jobs 
 - SLURM is used to control how the overall computing resources are shared among all projects in an efficient and fair way
 - SLURM controls how a single job request gets resources, like:
@@ -51,9 +53,9 @@ lang: en
 srun echo "Hello $USER! You are on node $HOSTNAME"
 ```
 - A batch job is a shell script (bash) that consists of two parts: A resource request flagged with `#SBATCH` and the actual computing step
-- It is mandatory to tell the system which project should be billed. This is done using the `--account` option
+- The `--account` option is mandatory to tell which project should be billed.
 - The actual program is launched using the `srun` command
-- The content above could be copied into a file like `simple_serial.bash` and put into the queue with `sbatch simple_serial.bash`
+- The content above could be copied into a file like `simple_serial.bash` and put into the queue with the command `sbatch simple_serial.bash`
  
 # Available batch job partitions
 
@@ -69,8 +71,10 @@ srun echo "Hello $USER! You are on node $HOSTNAME"
 - Note that the billing is based on the actual time a job has used, not the reserved maximum time 
 - see the [Billing unit (BU) and price calculator at research.csc.fi](https://research.csc.fi/billing-and-monitoring#buc)
 - the billing is done per project
+
+# Different type of HPC jobs (continued)
 - via the [My Projects page in MyCSC](https://my.csc.fi/welcome) you can monitor the BU consumption and apply for more billing units
-- "csc-projects" is a command line tool for showing the the BU consumption per project    
+- "csc-projects" is a command line tool for showing the BU consumption per project    
 
 # Mapping your needs and the performance
 
@@ -90,6 +94,7 @@ srun echo "Hello $USER! You are on node $HOSTNAME"
     - CSC's software licensing
     - memory and/or disk demands
 
+# HPC serial jobs (continued)
 - You can utilize parallel resources for running multiple serial jobs at the same time
     - [Array jobs](https://docs.csc.fi/computing/running/array-jobs/) 
     - [GREASY jobs](https://docs.csc.fi/computing/running/greasy/)
