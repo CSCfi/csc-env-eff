@@ -1,7 +1,7 @@
---
+---
 theme: csc-2019
 lang: en
---
+---
 
 # Disk areas in CSC HPC environment {.title}
 In this section, you will learn how to manage different disk areas in HPC environment at CSC
