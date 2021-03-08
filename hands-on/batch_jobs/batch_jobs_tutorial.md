@@ -3,7 +3,7 @@
 - In this tutorial we'll get familiar with the basic usage of the Slurm batch queue system at CSC
 - The goal is to learn how to request resources that **match** the needs of a job  
 - A job consists of two parts: resource requests and the job step(s)
-- We'll go through examples for both serial and parallel jobs
+- We'll go through examples for serial, parallel and interactive jobs
 - Examples are done on Puhti 
 
 ## Serial jobs
@@ -114,6 +114,20 @@ Hello world from node r07c02.bullx, rank 6 out of 8 tasks
 - Check the efficiency of the job compared to the reserved resources by issuing the command `seff XXXXXXX` (replace `XXXXXXX` with the actual  job ID number from the `slurm-XXXXXXX.out` file)
 - You can get a list of all your jobs that are running or queuing with the command `squeue -u $USER`
 - A submitted job can be cancelled using the command `scancel XXXXXXX` 
+
+## Interactive jobs
+- In an interactive batch job, an interactive shell session is launced on a computing node. For heavy interactive tasks one can request specific resources (time, memory, cores, disk). 
+
+- You can also use tools with graphical user interfaces in an interactive shell session. For such usage the [NoMachine](https://docs.csc.fi/support/tutorials/nomachine-usage/) remote desktop often provides an improved experience.  
+
+### A simple interactive job 
+
+- To start an interactive job using one core for ten minutes
+```text
+interactive --account myprojectname --time 00:10:00
+```
+- See the documetation at docs.csc.fi of [Interactive usage](https://docs.csc.fi/computing/running/interactive-usage/), for further information
+
 
 ## Gathering information
 - The `sinfo` command gives an overview of the partitions(queues) offered by the computer
