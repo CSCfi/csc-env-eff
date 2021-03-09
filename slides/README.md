@@ -17,7 +17,7 @@ slide hierarchy, related tutorials and exercises.
 * [00 Study tips](00_study_tips.html)
 * [02 Logging in](02_logging_in.html)
 * [03 Disk areas](03_disk_areas.html)
-* [04 Modules](02_modules.html)
+* [04 Modules](04_modules.html)
 * [05 Batch jobs](05_batch_jobs.html)
 </div>
 <div class="column">  
