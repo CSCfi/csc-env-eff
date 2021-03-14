@@ -50,7 +50,7 @@ conda env export > environment.yml
 You can try with one of your own environments, or download an example to use for
 this exercise:
 ```text
-wget LINK
+wget https://raw.githubusercontent.com/CSCfi/csc-env-eff/master/data/environment.yml
 ```
 In addition to the `environmet.yml` file, you will need a Singularity definition file.
 
