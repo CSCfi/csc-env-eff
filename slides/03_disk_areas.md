@@ -40,7 +40,7 @@ In this section, you will learn how to manage different disk areas in HPC enviro
 
 ![](./img/disk_status.png)
 
-# Disk and storage overview  
+# Disk and storage overview (revisited) 
 
 ![](./img/disk-systems.svg)
 
