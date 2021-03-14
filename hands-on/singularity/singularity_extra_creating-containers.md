@@ -118,7 +118,9 @@ a definition file for it. That way the other users can, if
 they so choose, rebuild the production image.
 
 A definition file will also make it easier to modify and re-use 
-the container later.
+the container later. For example, software update can often be done
+simply by modifying the version number in the definition file and
+re-building the image.
 
 To write the definition file we can start from the original 
 bare-bones file and add various sections to it as necessary.
@@ -172,3 +174,5 @@ Include: yum
     exec "$@"
 
 ```
+In more complex cases it often helpful to first build the image in
+sandbox mode and make note of all the commands needed.
