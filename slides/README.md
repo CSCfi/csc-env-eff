@@ -21,8 +21,8 @@ slide hierarchy, related tutorials and exercises.
 * [05 Batch jobs](05_batch_jobs.html)
 </div>
 <div class="column">  
-* [07 Using Allas](07_allas.md)
-* [08 Installing Software](08_installing.md)
+* [07 Using Allas](07_allas.html)
+* [08 Installing Software](08_installing.html)
 * [09 Singularity](09_singularity.html)
 * [10 Speed up jobs](10_speed_up_jobs.html)
 </div>
