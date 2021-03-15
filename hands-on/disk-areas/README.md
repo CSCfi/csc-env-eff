@@ -1,4 +1,4 @@
-# USING disk areas for data storage in Puhti/Mahti
+# Using disk areas for data storage in Puhti/Mahti
 
 ## Tutorials
 * [Using disk areas in Puhti](disk-areas-tutorial.md)
