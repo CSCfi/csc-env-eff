@@ -52,7 +52,7 @@ you can copy *Merged.fasta* file on puhti to *scratch* drive on Mahti as below:
 ```bash
 rsync -P Merged.fasta yourcscusername@mahti.csc.fi:/scratch/project_xxxx/$USER
 ```
-you can copy *ggplot2_3.3.3_Rprogramme.tar.gz* file on puhti to *projapple* directory on Mahti as below:
+you can copy *ggplot2_3.3.3_Rprogramme.tar.gz* file on puhti to *projappl* directory on Mahti as below:
 
 ```bash
 rsync -P ggplot2_3.3.3_Rprogramme.tar.gz yourcscusername@mahti.csc.fi:/projappl/project_xxxx/$USER
