@@ -136,10 +136,9 @@ srun echo "Hello $USER! You are on node $HOSTNAME"
 
 # Reserving and optimizing batch job resources 
 
-Since the computing resources are shared among hundreds of your colleagues, who all have different resource needs, it's vital to estimate the resource needs for your job as accurately as possible, in order to minimize the **waste** 
-- It's a good practice to regularly monitor the resource consumption and the efficiency of your jobs
-   - for finished jobs, use the command `seff XXXXXXX` (replace `XXXXXXX` with the actual job ID you are interested in)
-   - if you plan to run a lot of similar jobs, the estimate is particularly important
+The computing resources are shared among hundreds of your colleagues, who all have different resource needs.
+Try to estimate the resources that are needed for your job as accurately as possible, in order to minimize the **waste** 
+
 - Important resource requests that should be monitored are:
    - [Scaling of a job over several cores and nodes](https://docs.csc.fi/computing/running/performance-checklist/#perform-a-scaling-test)
    - [Memory requirement](https://docs.csc.fi/support/faq/how-much-memory-my-job-needs/)  
