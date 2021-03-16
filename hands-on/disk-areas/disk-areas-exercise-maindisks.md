@@ -31,7 +31,7 @@ Let's assume that file *Merged.fasta* is data file intended for computational us
 3. Share your *ggplot2_3.3.3_Rprogramme.tar.gz* file in *projappl* directory
 
 ```bash
-cp ggplot2_3.3.3_Rprogramme.tar.gz  /projapple/project_xxxx
+cp ggplot2_3.3.3_Rprogramme.tar.gz  /projappl/project_xxxx
 ````
 
 4. Share *Merged.fasta* file in *scratch* directory
