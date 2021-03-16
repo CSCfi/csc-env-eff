@@ -19,6 +19,15 @@ export SINGULARITY_CACHEDIR=/scratch/project_xxx/$USER
 singularity pull --name trinity.simg  docker://trinityrnaseq/trinityrnaseq
 ```
 
+Copy above script to a file (e.g.,batch_job.sh) and modify it. You can then submit the script file to compute nodes using the following command:
+
+```
+sbatch batch_job.sh
+
+```
+
+### How much tim,e did it take to finish above job?
+
 ### Hints
 
 - Request NVME fast local storage using the --gres flag  in sbatch directive as below:
@@ -32,7 +41,7 @@ singularity pull --name trinity.simg  docker://trinityrnaseq/trinityrnaseq
 - Please move any data to shared area once  the job is finished
 
 
-### Solution
+### Solution for script
 
 ```bash
 #!/bin/bash
