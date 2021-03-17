@@ -124,7 +124,7 @@ Hello world from node r07c02.bullx, rank 6 out of 8 tasks
 
 - To start an interactive job using one core for ten minutes
 ```text
-interactive --account myprojectname --time 00:10:00
+sinteractive --account myprojectname --time 00:10:00
 ```
 - See the documetation at docs.csc.fi of [Interactive usage](https://docs.csc.fi/computing/running/interactive-usage/), for further information
 
