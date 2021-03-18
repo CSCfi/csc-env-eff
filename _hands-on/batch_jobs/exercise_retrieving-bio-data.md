@@ -1,5 +1,5 @@
 ---
-title: Exercise: Retrieving data from the net
+title: Exercise - Retrieving data from the net
 ---
 
 # Exercise: Retrieving data from the net
