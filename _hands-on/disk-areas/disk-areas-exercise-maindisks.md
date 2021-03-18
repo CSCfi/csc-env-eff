@@ -1,3 +1,7 @@
+---
+title: exercise - disk-areas main disks
+---
+
 # Where to put files in CSC environment?
 
 ## Binary and data files to share

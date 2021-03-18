@@ -1,3 +1,7 @@
+---
+title: Singularity tutorial 
+---
+
 # Singularity tutorial
 
 In this tutorial we get familiar with the basic usage of Singularity containers. 

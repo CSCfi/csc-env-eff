@@ -1,3 +1,7 @@
+---
+title: exercise - Gaussian GREASY
+---
+
 # Using GREASY for running multiple Gaussian jobs on Puhti
 
 This tutorial requires that you have a [user account at CSC](https://docs.csc.fi/accounts/how-to-create-new-user-account/)

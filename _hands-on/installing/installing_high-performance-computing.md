@@ -1,3 +1,7 @@
+---
+title: installing own C, C++, or Fortran
+---
+
 # installing, making and making your own C, C++, or Fortran program in the CSC environment
 
 ## scenario A: you have a code already, you want to install it and run it.

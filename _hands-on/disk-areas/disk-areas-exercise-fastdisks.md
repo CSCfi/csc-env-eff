@@ -1,3 +1,7 @@
+---
+title: exercise - disk-areas fastdisks 
+---
+
 # Where to run computing tasks that require high I/O operations ?
 
 ## Background

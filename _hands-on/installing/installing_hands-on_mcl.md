@@ -1,3 +1,7 @@
+---
+title: Installing a simple C code from source
+---
+
 # Installing a simple C code from source
 
 In this example we install MCL Markov cluster algorithm program 

@@ -1,3 +1,7 @@
+---
+title: Modules Puhti
+---
+
 # Modules in Puhti
 
 This tutorial requires that you have a [user account at CSC](https://docs.csc.fi/accounts/how-to-create-new-user-account/)

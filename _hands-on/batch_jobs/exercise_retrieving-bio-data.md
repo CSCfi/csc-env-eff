@@ -1,3 +1,7 @@
+---
+title: Exercise: Retrieving data from the net
+---
+
 # Exercise: Retrieving data from the net
 
 These exercises cover retrieving data from various commonly used 

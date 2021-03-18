@@ -1,3 +1,7 @@
+---
+title: module-exercise-with-aligners
+---
+
 # Biosoftwares in Puhti
 
 This exercise requires that you have a [user account at CSC](https://docs.csc.fi/accounts/how-to-create-new-user-account/)

@@ -1,3 +1,7 @@
+---
+title: Batch job tutorial
+---
+
 # Batch job tutorial
 
 - In this tutorial we'll get familiar with the basic usage of the Slurm batch queue system at CSC

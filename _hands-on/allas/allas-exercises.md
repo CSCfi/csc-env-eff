@@ -1,4 +1,8 @@
-# Using Allas in CSC HPC environmnest
+---
+title: Using Allas in CSC HPC environment
+---
+
+# Using Allas in CSC HPC environment
 
 ## A. Log in Puhti and use scratch
 

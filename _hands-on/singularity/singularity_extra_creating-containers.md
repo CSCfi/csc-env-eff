@@ -1,3 +1,7 @@
+---
+title: Creating singularity containers
+---
+
 # Creating singularity containers
 
 This is an extra exercise. It can not be run in Puhti. You will need  access

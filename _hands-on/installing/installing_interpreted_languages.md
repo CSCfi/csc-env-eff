@@ -1,3 +1,7 @@
+---
+title: installing_interpreted_language
+---
+
 # Installing applications and libraries for Java, Perl, Python and R 
 
 ## Java
