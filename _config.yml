@@ -1,0 +1,29 @@
+title: BioMonth - CSC supercomputing and data management for bioscientists
+
+plugins:
+  - jekyll-sitemap
+
+collections:
+    lectures:
+        output: true
+    tutorials:
+        output: true
+    exercises:
+        output: true
+
+defaults:
+  -
+    scope:
+      path: "_lectures"
+    values:
+      layout: "slides-csc"
+  -
+    scope:
+      path: "_tutorials"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_exercises"
+    values:
+      layout: "default"
