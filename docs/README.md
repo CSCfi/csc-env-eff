@@ -1,3 +1,6 @@
-# For future use
+# Publish page
 
-May contain html version of the content at some point
+[Publish link](https://cscfi.github.io/csc-env-eff/)
+
+
+
