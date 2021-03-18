@@ -4,26 +4,12 @@ plugins:
   - jekyll-sitemap
 
 collections:
-    lectures:
-        output: true
    hands-on:
-        output: true
-    exercises:
         output: true
 
 defaults:
   -
     scope:
-      path: "_lectures"
-    values:
-      layout: "slides-csc"
-  -
-    scope:
       path: "_hands-on"
-    values:
-      layout: "default"
-  -
-    scope:
-      path: "_exercises"
     values:
       layout: "default"
