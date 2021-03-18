@@ -1,4 +1,4 @@
-title: BioMonth - CSC supercomputing and data management for bioscientists
+title: Using CSC HPC Environment Efficiently
 
 plugins:
   - jekyll-sitemap
@@ -6,7 +6,7 @@ plugins:
 collections:
     lectures:
         output: true
-    tutorials:
+   hands-on:
         output: true
     exercises:
         output: true
@@ -19,7 +19,7 @@ defaults:
       layout: "slides-csc"
   -
     scope:
-      path: "_tutorials"
+      path: "_hands-on"
     values:
       layout: "default"
   -
