@@ -1,5 +1,21 @@
 # Using Allas in CSC HPC environmnest
 
+Before the actual exercise, open the view to the Allas service in your browser using the cPouta WWW-interface.
+Open: https://pouta.csc.fi
+
+Login with your account.
+
+From the upper left corner, you find a project selection pop-up menu. If you have several projects available, select the
+training project: **project_2002389**
+
+Then from the menu in left side of the interface, select:
+
+**Object Store -> Containers**
+
+During the exercises, you can use this interface to get a another view to the buckets and objects in Allas.
+Note that you need to **reload** the view in order to see the changes.
+
+
 ## A. Log in Puhti and use scratch
 
 1. Login to puhti.csc.fi and move to scratch:
