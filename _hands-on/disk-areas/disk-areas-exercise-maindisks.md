@@ -1,5 +1,6 @@
 ---
-title: exercise - disk-areas main disks
+topic: disk-areas
+title: Exercise - disk-areas main disks
 ---
 
 # Where to put files in CSC environment?

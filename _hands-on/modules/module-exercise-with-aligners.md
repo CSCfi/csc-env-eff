@@ -1,5 +1,6 @@
 ---
-title: module-exercise-with-aligners
+topic: modules
+title: Exercise - module-with-aligners
 ---
 
 # Biosoftwares in Puhti

@@ -1,5 +1,6 @@
 ---
-title: Installing a simple C code from source
+topic: installing
+title: Tutorial - Installing a simple C code from source
 ---
 
 # Installing a simple C code from source

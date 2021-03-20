@@ -1,5 +1,6 @@
 ---
-title: exercise - Replicating a Conda environment
+topic: singularity
+title: Extra exercise - Replicating a Conda environment
 ---
 
 # Extra exercise: Replicating a Conda environment in a container

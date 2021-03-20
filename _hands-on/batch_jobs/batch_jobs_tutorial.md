@@ -1,5 +1,6 @@
 ---
-title: Batch job tutorial
+topic: Batch jobs
+title: Tutorial - Batch job tutorial
 ---
 
 # Batch job tutorial

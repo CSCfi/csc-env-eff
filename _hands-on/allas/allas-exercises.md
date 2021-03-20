@@ -1,5 +1,6 @@
 ---
-title: Using Allas in CSC HPC environment
+topic: allas
+title: Tutorial - Using Allas in CSC HPC environment
 ---
 
 # Using Allas in CSC HPC environment

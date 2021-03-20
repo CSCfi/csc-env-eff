@@ -1,5 +1,6 @@
 ---
-title: Singularity tutorial 
+topic: singularity
+title: Tutorial - Singularity 
 ---
 
 # Singularity tutorial
