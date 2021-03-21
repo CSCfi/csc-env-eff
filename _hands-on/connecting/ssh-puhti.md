@@ -55,6 +55,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 - the first time you connect, you need to accept, but the key should not change for the next
   login (but be sure to check whether it's login1 or login2).
 - Once you've logged in you'll see a greeting starting something like this:
+
 ```
 Last login: Mon Dec 14 14:53:15 2020 from jabadabaduu.fi
 ┌─ Welcome ───────────────────────────────────────────────────────────────────┐
