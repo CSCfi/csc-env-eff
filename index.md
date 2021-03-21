@@ -28,6 +28,13 @@ author: CSC Training
 {% endif %}
 {% endfor %}
 
+## Modules
+{% for hands-on in items %}
+{% if hands-on.topic == 'modules' %}
+- [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
+{% endif %}
+{% endfor %}
+
 ## Batch Jobs
 {% for hands-on in items %}
 {% if hands-on.topic == 'Batch jobs' %}
@@ -35,12 +42,6 @@ author: CSC Training
 {% endif %}
 {% endfor %}
 
-## Modules
-{% for hands-on in items %}
-{% if hands-on.topic == 'modules' %}
-- [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
-{% endif %}
-{% endfor %}
 
 ## Singularity
 {% for hands-on in items %}
