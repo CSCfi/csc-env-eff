@@ -1,4 +1,4 @@
-# Using Allas in CSC HPC environmnest
+# Using Allas in CSC HPC environments
 
 Before the actual exercise, open the view to the Allas service in your browser using the cPouta WWW-interface.
 
