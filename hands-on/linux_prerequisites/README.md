@@ -1,9 +1,10 @@
 # Linux prerequisites
 
 ## Tutorials
-* [Login Puhti with ssh](ssh-puhti.md)
+* [Login Puhti with ssh](csc-env-eff/hands-on/connecting/ssh-puhti.md)
 * [Basic Linux commands](basic-linux-commands.md)
-* add tutorials here...
+* [Basics of file editors](basic-file-editing.md)
+
 
 ## Exercises
-* more exercises...
+* TBA
