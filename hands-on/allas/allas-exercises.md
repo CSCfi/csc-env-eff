@@ -41,18 +41,13 @@ Switch to the scratch directory of your project
 ```text
 cd /scratch/project_2002389
 ```
-And create your own sub-directory, named after you training account:
+And create your own sub-directory, named after you training account (if this directory does not yet exist):
 ```text
 mkdir XXXX 
 ```
 (relace XXXX with your user account)
 
-Make the directory permissions such, that other group members can only read the contents but
-not modify it
-```text
-chmod g-wx XXXX 
-```
-move to the new directory.
+move to the directory.
 ```text
 cd XXXX
 ```
@@ -68,13 +63,15 @@ ls -ltr
 tree pythium
 ```
 
-## Using Allas
+# Using Allas
 
 Open connection to Allas:
 ```text
 module load allas
 allas-conf 
 ```
+If you have several Allas projects available, select the training project we are currently using.
+
 ### Upload case 1.  rclone
 
 Upload the data from Puhti to Allas with rclone. Use the command below (replace XXXX with your user account):
@@ -156,7 +153,7 @@ Try opening the public link that a-flip produced, with your browser.
 ## Upload case 3. Allas-backup
 Run commands:
 ```test
-allas-backup –help
+allas-backup -help
 allas-backup pythium
 allas-backup list
 ```
@@ -169,7 +166,8 @@ The data in pythium directory is now stored in many ways to Allas so we can remo
 rm -r pythium
 exit
 ```
-# C. Downloading data from Allas to Puhti
+# Downloading data from Allas to Puhti
+
 
 1. Login to puhti.csc.fi and move to scratch:
 
@@ -191,7 +189,7 @@ csc-workspaces
 ```
 Go to your personal scratch directory of your project. 
 ```text
-cd /scratch/project_yourprojectnumber/trng_xxxx
+cd /scratch/project_yourprojectnumber/xxxx
 ```
 Set up Allas connection
 ```text
@@ -232,9 +230,9 @@ mkdir vexans
 rclone copyto allas:xxxx-genomes-rc/pythium_vexans vexans/
 ls -l vexans
 ```
-example 3: copy just one object
+### example 3: copy just one object
 ```text
-rclone copyto allas:trng_xxxx-genomes-rc/pythium_vexans/pythium_vexans.fasta \ ./vexans.fasta
+rclone copyto allas:trng_xxxx-genomes-rc/pythium_vexans/pythium_vexans.fasta  ./vexans.fasta
 ls -l
 ```
 
