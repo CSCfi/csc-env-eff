@@ -1,9 +1,10 @@
 # Using Allas in CSC HPC environmnest
 
 Before the actual exercise, open the view to the Allas service in your browser using the cPouta WWW-interface.
+
 Open: https://pouta.csc.fi
 
-Login with your account.
+Annd login with your account.
 
 From the upper left corner, you find a project selection pop-up menu. If you have several projects available, select the
 training project: **project_2002389**
