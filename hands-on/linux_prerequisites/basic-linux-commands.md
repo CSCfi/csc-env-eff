@@ -15,7 +15,7 @@ pwd
 ls
 ```
 
-3. Let's make a directory (replace YourName with your name)! Try ls to see if the folder is now there!
+3. Let's make a directory (replace YourName with your name, for example: MariasTestFolder)! Try ls to see if the folder is now there!
 ```bash
 mkdir YourNameTestFolder 
 ls
@@ -28,25 +28,26 @@ cd YourNameTestFolder
 
 5. Let's download a file into this new folder. wget is the command for downloading from URL.
 ```bash
-wget https://github.com/CSCfi/csc-env-eff/hands-on/linux_prerequisites/my-first-test-file.sh
+wget https://github.com/CSCfi/csc-env-eff/raw/Linux101/hands-on/linux_prerequisites/my-first-file.sh
 ```
 
-6. What kind of file did you get? What's in that file now? What size is it? 
+6. What kind of file did you get? What's in that file now? What size is it? Let's use ls command with some extra parameters, and less command to check out how the file looks like. 
 ```bash
 ls -lth
-less filename
+less my-first-file.sh
 ```
+To exit the "less" preview of the file, hit q. 
 
-7. Let's make a copy of this file: cp filename YourNamefilename
+7. Let's make a copy of this file (again, replace YourName with your name).
 ```bash
-cp filename YourNamefilename
+cp my-first-file.sh YourName-first-file.sh
 ls -lth
-less YourNamefilename
+less YourName-first-file.sh
 ```
 
-8. Let's remove the file we downloaded (leave your own copy). 
+8. Let's remove the file we originally downloaded (leave your own copy). 
 ```bash
-rm filename
+rm my-first-file.sh
 ls
 ```
 
