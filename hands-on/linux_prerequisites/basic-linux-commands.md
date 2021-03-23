@@ -28,7 +28,7 @@ cd YourNameTestFolder
 
 5. Let's download a file into this new folder. wget is the command for downloading from URL.
 ```bash
-wget https://github.com/CSCfi/csc-env-eff/raw/Linux101/hands-on/linux_prerequisites/my-first-file.sh
+wget https://github.com/CSCfi/csc-env-eff/raw/master/hands-on/linux_prerequisites/my-first-file.sh
 ```
 
 6. What kind of file did you get? What's in that file now? What size is it? Let's use ls command with some extra parameters, and less command to check out how the file looks like. 
