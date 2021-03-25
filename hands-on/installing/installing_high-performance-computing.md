@@ -26,3 +26,6 @@
  - Launch an editor and write the code
  - Compile your code (on puhti:https://docs.csc.fi/computing/compiling-puhti/, and on Mahti: https://docs.csc.fi/computing/compiling-mahti/)
  - Fix bugs until compiler accepts code
+ 
+## Exercise
+ - Write your own simple code, compile it if necessary and run it.

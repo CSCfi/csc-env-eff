@@ -4,7 +4,7 @@ Before the actual exercise, open the view to the Allas service in your browser u
 
 Open: https://pouta.csc.fi
 
-Annd login with your account.
+And login with your account.
 
 From the upper left corner, you find a project selection pop-up menu. If you have several projects available, select the
 training project: **project_2002389**
@@ -13,8 +13,10 @@ Then from the menu in left side of the interface, select:
 
 **Object Store -> Containers**
 
-During the exercises, you can use this interface to get a another view to the buckets and objects in Allas.
+During the exercises, you can use this interface to get another view to the buckets and objects in Allas.
 Note that you need to **reload** the view in order to see the changes.
+
+=======
 
 
 ## A. Log in Puhti and use scratch
@@ -23,29 +25,29 @@ Note that you need to **reload** the view in order to see the changes.
 
 **Linux/mac**
 ```text
-ssh XXXX@puhti.csc.fi   (replace XXXX with your user account)
+ssh XXXX@puhti.csc.fi   (replace XXXX with your csc user account)
 ```
 
 **Windows/PuTTY**
 
    **host:* puhti.csc.fi
  
-   **login as:** XXXX  (replace XXXX with your account number)
+   **login as:** XXXX  (replace XXXX with your csc user account)
 
 
-In Puhti check you environment with command:
+In Puhti check your environment with command:
 ```text
 csc-workspaces
 ```
 Switch to the scratch directory of your project 
 ```text
-cd /scratch/project_2002389
+cd /scratch/project_2002389  # note! replace the text here (and below) with your project
 ```
-And create your own sub-directory, named after you training account (if this directory does not yet exist):
+And create your own sub-directory, named after your training account (if this directory does not yet exist):
 ```text
 mkdir XXXX 
 ```
-(relace XXXX with your user account)
+(replace XXXX with your user account)
 
 move to the directory.
 ```text
@@ -74,7 +76,7 @@ If you have several Allas projects available, select the training project we are
 
 ### Upload case 1.  rclone
 
-Upload the data from Puhti to Allas with rclone. Use the command below (replace XXXX with your user account):
+Upload the data from Puhti to Allas with `rclone`. Use the command below (replace XXXX with your user account):
 ```text
 rclone -P copyto pythium allas:xxxx-genomes-rc/
 ```
@@ -92,12 +94,12 @@ rclone lsf allas:xxxx-genomes-rc/
 
 Check how this looks like in the Pouta web interface. Open browser and go to: [https://pouta.csc.fi/](https://pouta.csc.fi/)
 
-In Pouta interface, go to _object store_ section, list the buckets (that are here called as “Containers”).
+In Pouta interface, go to _object store_ section, list the buckets (which are here called as “Containers”).
 Locate your own _xxxx-genomes-rc_ directory and download one of the uploaded fasta files to your local computer.
 
 ### Upload case 2. a-put 
 
-Upload the pyhium directory from to Allas using following commands
+Upload the pythium directory from Puhti to Allas using following commands
 (replace XXXX with your user account)
 
 A-put case 1: Store everything in one object:

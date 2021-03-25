@@ -174,7 +174,7 @@ singularity exec tutorial.sif find / -type f -name "hello2" 2>/dev/null
 ```
 You can now run it by providing the full path:
 ```text
-singularity exec tutorial.sif /fond/me/hello2
+singularity exec tutorial.sif /found/me/hello2
 ```
 Or you could add it to `$PATH` inside the container:
 ```text

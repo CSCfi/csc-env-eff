@@ -31,12 +31,12 @@ Let's assume that file *Merged.fasta* is data file intended for computational us
 3. Share your *ggplot2_3.3.3_Rprogramme.tar.gz* file in *projappl* directory
 
 ```bash
-cp ggplot2_3.3.3_Rprogramme.tar.gz  /projapple/project_xxxx
+cp ggplot2_3.3.3_Rprogramme.tar.gz  /projappl/project_xxxx/$USER
 ````
 
 4. Share *Merged.fasta* file in *scratch* directory
 ```bash
-cp Merged.fasta /scratch/project_xxxx
+cp Merged.fasta /scratch/project_xxxx/$USER
 ```
 All new files and directories are also fully accessible for other group members (including read, write and execution permissions). If you want to restrict access from your group members, you can reset the permissions with *chmod* command.
 
@@ -50,12 +50,12 @@ chmod -R g-w Merged.fasta
 you can copy *Merged.fasta* file on puhti to *scratch* drive on Mahti as below:
 
 ```bash
-rsync -P Merged.fasta yourcscusername@mahti.csc.fi:/scratch/project_xxxx
+rsync -P Merged.fasta yourcscusername@mahti.csc.fi:/scratch/project_xxxx/$USER
 ```
-you can copy *ggplot2_3.3.3_Rprogramme.tar.gz* file on puhti to *projapple* directory on Mahti as below:
+you can copy *ggplot2_3.3.3_Rprogramme.tar.gz* file on puhti to *projappl* directory on Mahti as below:
 
 ```bash
-rsync -P ggplot2_3.3.3_Rprogramme.tar.gz yourcscusername@mahti.csc.fi:/scratch/project_xxxx
+rsync -P ggplot2_3.3.3_Rprogramme.tar.gz yourcscusername@mahti.csc.fi:/projappl/project_xxxx/$USER
 ```
 
 

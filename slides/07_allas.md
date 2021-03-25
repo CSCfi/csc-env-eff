@@ -33,7 +33,6 @@ All project members have equal access to the data in Puhti and Allas.
 
 !["Allas"](img/allas.png "Allas"){width=10%}
 
-
 # Allas – object storage: what it is NOT
 
 *  **Allas is not a file system** (even though many tools try to fool you to think so). It is just a place for a pile of static data objects.

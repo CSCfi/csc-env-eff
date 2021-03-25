@@ -4,10 +4,11 @@ LECTURES= \
 03_disk_areas.md \
 04_modules.md \
 05_batch_jobs.md \
+07_allas.md \
 08_installing.md \
 09_singularity.md \
-10_speed_up_jobs.md 
-# remove example and add other chapters here
+10_speed_up_jobs.md \
+README.md
 # README.md creates the index for allas
 
 TITLE=Title.pdf

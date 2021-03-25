@@ -1,7 +1,7 @@
---
+---
 theme: csc-2019
 lang: en
---
+---
 
 # Disk areas in CSC HPC environment {.title}
 In this section, you will learn how to manage different disk areas in HPC environment at CSC
@@ -15,7 +15,7 @@ In this section, you will learn how to manage different disk areas in HPC enviro
 
 # Disk and storage overview  
 
-![](./img/disk-systems.svg)
+![](./img/disk-systems.svg){width=90%}
 
 # Main disk areas in Puhti/Mahti
 - Home directory (`$HOME`)
@@ -40,9 +40,9 @@ In this section, you will learn how to manage different disk areas in HPC enviro
 
 ![](./img/disk_status.png)
 
-# Disk and storage overview  
+# Disk and storage overview (revisited) 
 
-![](./img/disk-systems.svg)
+![](./img/disk-systems.svg){width=90%}
 
 # Additional fast local disk areas 
 - `$TMPDIR` on Login nodes
@@ -62,7 +62,8 @@ In this section, you will learn how to manage different disk areas in HPC enviro
 - [NVMe](https://docs.csc.fi/computing/running/creating-job-scripts-puhti/#local-storage) - fast IO in batch jobs
 
 # Some best practice tips
-- Don't put databases on Lustre (projappl, scratch, home) -> use other CSC services like [kaivos](https://docs.csc.fi/data/kaivos/overview/) and mongoDB
+- Don't put databases on Lustre (projappl, scratch, home) 
+    - use other CSC services like [kaivos](https://docs.csc.fi/data/kaivos/overview/) or mongoDB in cPouta
 - Don't create a lot of files in one folder
 - Don't create overall a lot of files (if you're creating tens of thousands of files, you should probably rethink the workflow)
 - Take backups of important files. Data on CSC disks is not backed up even if systems are fault tolerant.

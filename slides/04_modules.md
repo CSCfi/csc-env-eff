@@ -1,7 +1,7 @@
---
+---
 theme: csc-2019
 lang: en
---
+---
 
 # Module system {.title}
 
