@@ -15,28 +15,28 @@ pwd
 ls
 ```
 
-3. Let's make a directory (replace YourName with your name, for example: MariasTestFolder)! Try ls to see if the folder is now there!
+3. Let's make a directory (replace YourName with your name, for example: MariasTestFolder)! Try `ls` to see if the folder is now there!
 ```bash
 mkdir YourNameTestFolder 
 ls
 ```
 
-4. Go to that folder. Note, that if you just type cd and the first letter of the folder name,  then hit tab key, the terminal completes the name. Handy!
+4. Go to that folder. Note, that if you just type `cd` and the first letter of the folder name,  then hit 'tab' key, the terminal completes the name. Handy!
 ```bash
 cd YourNameTestFolder
 ```
 
-5. Let's download a file into this new folder. wget is the command for downloading from URL.
+5. Let's download a file into this new folder. `wget` is the command for downloading from URL.
 ```bash
 wget https://github.com/CSCfi/csc-env-eff/raw/master/hands-on/linux_prerequisites/my-first-file.sh
 ```
 
-6. What kind of file did you get? What's in that file now? What size is it? Let's use ls command with some extra parameters, and less command to check out how the file looks like. 
+6. What kind of file did you get? What's in that file now? What size is it? Let's use `ls` command with some extra parameters, and `less`  command to check out how the file looks like. 
 ```bash
 ls -lth
 less my-first-file.sh
 ```
-To exit the "less" preview of the file, hit q. 
+To exit the `less` preview of the file, hit 'q'. 
 
 7. Let's make a copy of this file (again, replace YourName with your name).
 ```bash
