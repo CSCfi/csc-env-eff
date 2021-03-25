@@ -3,10 +3,12 @@ theme: csc-2019
 lang: en
 ---
 
+# Allas object storage service {.title}
 
-# How to get access to Allas .{title}
+# How to get access to Allas
 
 Use [https://my.csc.fi](https://my.csc.fi) to 
+
 1. Register to CSC (haka)
 2. Set up a project at CSC (Principal Investigator)
 3. Apply for Puhti and Allas service, quota and billing units for your project
@@ -27,11 +29,16 @@ All project members have equal access to the data in Puhti and Allas.
 
 # Allas – object storage: what it is for?
 
+<br>
+
+<div class="column">
 *  Data can be moved to and from Allas directly without using Puhti or Mahti.
 *  For computation the data has to be typically copied to a file system in some computer
 *  Data can be shared publicly to Internet, which is otherwise not easily possible at CSC.
-
-!["Allas"](img/allas.png "Allas"){width=10%}
+</div>
+<div class="column">
+!["Allas"](img/allas.png "Allas"){width=90%}
+</div>
 
 # Allas – object storage: what it is NOT
 
@@ -88,7 +95,7 @@ FIXME: links to these / detailed instructions?
 
 *  Use [https://my.csc.fi](https://my.csc.fi) to apply Allas access for your project – Allas is not automatically available
 *  In Puhti and Mahti, setup connection to Allas with commands:
-```text
+```bash
 module load allas
 allas-conf
 ```
@@ -112,7 +119,7 @@ Use with care: [rclone instructions in Docs CSC](https://docs.csc.fi/#data/Allas
 *  Unlike rclone, a-tools do not overwrite and remove data without asking!
 *  Automatic packing and compression.
 *  Default bucket names based on directories of Puhti
-*  [a-commnds instructions in Docs CSC](https://docs.csc.fi/#data/Allas/using_allas/a_commands/)
+*  [a-commands instructions in Docs CSC](https://docs.csc.fi/#data/Allas/using_allas/a_commands/)
 
 
 # A-put/a-get: pros and cons
