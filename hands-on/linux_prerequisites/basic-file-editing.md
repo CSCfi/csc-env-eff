@@ -16,7 +16,7 @@ nano yourname-first-file.sh
 
 2. Let's edit the file. Type something there!
 
-3. Let's save the file (Ctrl + S) and exit nano (Ctrl + X). Type Y to confirm saving.
+3. Let's save the file (Ctrl + S) and exit `nano` (Ctrl + X). Type Y to confirm saving.
 
 4. Check that the modifications are actually there:
 ```bash
