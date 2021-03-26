@@ -7,5 +7,5 @@
 * [Hands-on batch jobs in Puhti tutorial](https://docs.csc.fi/support/tutorials/cmdline-handson/)
 
 ## Exercises
-* ...
+* [Retrieving bio data from repository](exercise_retrieving-bio-data.md) as an interactive job.
 
