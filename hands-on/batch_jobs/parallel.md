@@ -16,9 +16,9 @@
 ### A simple OpenMP job
 - An OpenMP enabled program can take advantage of multiple cores that share the same memory on a **single node** 
 - Dowload a simple OpenMP parallel program with the
-- ```
-- wget https://a3s.fi/hello_omp.x/hello_omp.x
-- ```
+```
+wget https://a3s.fi/hello_omp.x/hello_omp.x
+```
 - Make it executable using the command:
 ```
 chmod +x hello_omp.x
