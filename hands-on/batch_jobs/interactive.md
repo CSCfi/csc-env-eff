@@ -25,6 +25,7 @@ python3
 ```
 - Quit the Python interpreter with `quit()`
 - This way you can work interactively for extended period, using lots of memory without creating load on the login nodes, which is forbidden in [the Usage Policy](https://docs.csc.fi/computing/overview/#usage-policy).
+- Quit the interactive batch job with `exit`. Note, that above you asked only for 10 minutes of time. Once that is up, you will be automatically logged out from the compute node. From the command line prompt you can see whether you're in the compute node (e.g. _r07c51_) or back to the login node (e.g. _puhti-login2_). Giving `exit` in the login node, will log you out from Puhti.
 - See the documetation at docs.csc.fi of [Interactive usage](https://docs.csc.fi/computing/running/interactive-usage/), for further information
  
 ## Additional material [FAQ on CSC batch jobs ](https://docs.csc.fi/support/faq/#batch-jobs) in Docs CSC
