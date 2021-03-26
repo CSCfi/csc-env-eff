@@ -1,9 +1,9 @@
 # Batch jobs
 
 ## Tutorials
-* [Serial batch job tutorial](serial.md) on serial jobs.
-* [Parallel batch job tutorial](parallel.md) on parallel jobs (mpi and openmp).
-* [Interactive batch job tutorial](interactive.md) on interactive batch jobs.
+* [Serial batch job tutorial](serial.md) start with thiss.
+* [Parallel batch job tutorial](parallel.md) using MPI and/or OpenMP.
+* [Interactive batch job tutorial](interactive.md) on Puhti.
 * [Hands-on batch jobs in Puhti tutorial](https://docs.csc.fi/support/tutorials/cmdline-handson/)
 
 ## Exercises

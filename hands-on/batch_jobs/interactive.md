@@ -17,6 +17,14 @@
 ```text
 sinteractive --account myprojectname --time 00:10:00
 ```
+- You should see that the command prompt (what's shown to the left to your cursor) has changed from _puhti-login1_ (or _puhti-login2_) to e.g. _r07c51_
+- Once on the compute node, you can run commands directly from the command line without `srun`, e.g. launch the (default) Python interpreter:
+```
+module load python-env
+python3
+```
+- Quit the Python interpreter with `quit()`
+- This way you can work interactively for extended period, using lots of memory without creating load on the login nodes, which is forbidden in [the Usage Policy](https://docs.csc.fi/computing/overview/#usage-policy).
 - See the documetation at docs.csc.fi of [Interactive usage](https://docs.csc.fi/computing/running/interactive-usage/), for further information
  
 ## Additional material [FAQ on CSC batch jobs ](https://docs.csc.fi/support/faq/#batch-jobs) in Docs CSC

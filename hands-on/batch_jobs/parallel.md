@@ -16,7 +16,11 @@
 ### A simple OpenMP job
 - An OpenMP enabled program can take advantage of multiple cores that share the same memory on a **single node** 
 - Dowload a simple OpenMP parallel program with the command `wget https://a3s.fi/hello_omp.x/hello_omp.x`
-- Make it executable using the command `chmod +x hello_omp.x` 
+- Make it executable using the command:
+```
+chmod +x hello_omp.x
+``` 
+- Copy the following example into a file called `my_parallel_omp.bash` and change the `myprojectname` to the project you actually want to use
 
 ```text
 #!/bin/bash
@@ -32,11 +36,16 @@ srun hello_omp.x
 - We want to run the program `hello_omp.x`, that will be able to utilise four cores
 - The variable `OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK` tells the program that it can use four cores   
 - Each of the four threads launced by `hello_omp.x` will print their own output 
-- Copy the example above into a file called `my_parallel_omp.bash` and change the `myprojectname` to the project you actually want to use
-- Submit the job to the queue with the command `sbatch my_parallel_omp.bash`
+- Submit the job to the queue with the command 
+```
+sbatch my_parallel_omp.bash
+```
 - When finished, the output file `slurm-XXXXXXX.out` should contain the results printed from the four OpenMP threads 
-- Check it with the `cat slurm-XXXXXXX.out` command:
-
+- Check it with 
+```
+cat slurm-XXXXXXX.out
+``` 
+- The results should look like: 
 ```text
 cat slurm-5118404.out
 Hello from thread: 0
@@ -49,7 +58,12 @@ Hello from thread: 1
 - A MPI enabled program can take advantage of resourses that are spread over multiple nodes 
 - Dowload a simple MPI parallel program with the command 
   `wget https://a3s.fi/hello_mpi.x/hello_mpi.x`
-- Make it executable using the command `chmod +x hello_mpi.x` 
+- Make it executable using the command 
+```
+chmod +x hello_mpi.x
+``` 
+
+- Copy the example below into a file called `my_parallel.bash` and change the `myprojectname` to the project you actually want to use
 
 ```text
 #!/bin/bash
@@ -61,14 +75,18 @@ Hello from thread: 1
 
 srun hello_mpi.x
 ```
-
 - In the batch job example above we are requesting resources from two nodes (`--nodes=2`), and four cores from each node (`--ntasks-per-node=4`) for ten seconds (`--time=00:00:10`) from the test queue (`--partition=test`)
 - We want to run the program `hello_mpi.x`, that will, based on the resource request, start 8 simultaneous tasks  
 - Each of the 8 tasks launced by `hello_mpi.x` will report on which node they got their resource 
-- Copy the example above into a file called `my_parallel.bash` and change the `myprojectname` to the project you actually want to use
-- Submit the job to the queue with the command `sbatch my_parallel.bash`
+- Submit the job to the queue with the command
+```
+sbatch my_parallel.bash
+```
 - When finished, the output file `slurm-XXXXXXX.out` should contain the results obtained by the `hello_mpi.x` program on how the 8 tasks were distributed over the two reserved nodes
-- Check it with the `cat slurm-XXXXXXX.out` command:
+- Check it with
+```
+cat slurm-XXXXXXX.out
+```
 - **Note!** This example asks 4 cores from each of the 2 nodes. Normally, this would not make sense, but it would be better to run all 8 cores in the same node (in Puhti one node has 40 cores). Typically, you want your resources (cores) to be spread on as few nodes as possible.
 ```text
 cat slurm-5099873.out

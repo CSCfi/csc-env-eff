@@ -9,8 +9,8 @@
 
 - For a program that can use only one core (cpu), one should request only one core from Slurm. 
 - The job doesn't benefit from additional cores, hence don't request more 
-- Excess reservation is waisted since it wouldn't be available to other users
-- Within the job, the actual program is launched using the command `srun` 
+- Excess reservation is wasted since it wouldn't be available to other users
+- Within the job (or allocation), the actual program is launched using the command `srun` 
 - If you use a software that is preinstalled at CSC, please [check its infopage](https://docs.csc.fi/apps/): it might have a batch job template with useful default settings
 
 ```text 
@@ -27,8 +27,11 @@ srun sleep 60
 - In the batch job example above we are requesting one core (`--ntasks=1`) for two minutes (`--time=00:02:00`) from the test queue (`--partition=test`)
 - We want to run the program `hostname`, that will print the name of the Puhti computing node that has been allocated for this particular job.
 - In addition, we are running the `sleep` program to keep the job running for an additional 60 seconds, in order to have time to monitor the job
-- Copy the example above into a file called `my_serial.bash` and change the `myprojectname` to the project you actually want to use
-- Submit the job to the queue with the command `sbatch my_serial.bash`  
+- Copy the example above into a file called `my_serial.bash` and change the `myprojectname` to the project you actually want to use (e.g. with `nano`)
+- Submit the job to the queue with the command:
+```
+sbatch my_serial.bash
+```   
 - If you are quick enough you should see your job in the queue by issuing the command `squeue -u $USER` 
 - By default the output is written into a file named `slurm-XXXXXXX.out` where `XXXXXXX` is a unique number corresponding to the job ID of the job 
 - Check the efficiency of the job compared to the reserved resources by issuing the command `seff XXXXXXX` (replace `XXXXXXX` with the actual  job ID number from the `slurm-XXXXXXX.out` file) 
