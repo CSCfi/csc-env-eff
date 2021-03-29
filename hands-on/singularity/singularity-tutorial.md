@@ -212,10 +212,16 @@ Instead, you will have to import a ready image file.
 
 There are various option to do this.
 
-### 1. Pull an existing Singularity container from a repository
-Use `singularity pull`:
+### 1. Run or pull an existing Singularity container from a repository
+It is possible to run containers directly from repository:
 ```text
-singularity pull shub://vsoch/hello-world
+singularity run shub://vsoch/hello-world:latest
+```
+This can, however, lead to a batch job failing if there are network problems.
+Usually it is preferable to pull the container first and use the image file.
+```text
+singularity pull shub://vsoch/hello-world:latest
+singularity run hello-world_latest.sif
 ```
 
 ### 2. Convert an existing Docker container to Singularity
