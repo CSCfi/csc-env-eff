@@ -118,20 +118,21 @@ otherwise problematic:
 
 # Building a new Singularity container (1/3)
 - Requires root access: Can not be done directly in e.g. Puhti
-- Typical steps
-  - Build a basic container in sandbox mode (`--sandbox`)
+
+- 1. Build a basic container in sandbox mode (`--sandbox`)
     - Uses a folder structure instead of an image file
     - Requires root access!
  
 # Building a new Singularity container (2/3)
-- Open a shell in the container and install software
+- 2. Open a shell in the container and install software
   - Depending on base image system, package managers can be used to install 
     libraries and dependencies (`apt install` , `yum install` etc)
   - Installation as per software developer instructions
   
 # Building a new Singularity container (3/3)
-- Build a production image from the sandbox
-- (optional) Make a definition file and build a productio image from it
+- 3. Build a production image from the sandbox
+- (optional) Make a definition file and build a production image from it
   - Mostly necesary if you wish to distribute your container wider
   - Also helps with updating and re-using containers
+- Production image can be transferred to e.g. Puhti and run with user rights
 
