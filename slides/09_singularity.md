@@ -14,7 +14,7 @@ and how to use them in CSC environment.
 - Singularity is the most popular in HPC environments
 
 # Containers vs. Virtual Machines (1/2)
-![](./img/containers-fig1.png){width=90%}
+<div style="text-align:center"><img src="./img/containers-fig1.png" /></div>
 
 # Containers vs. Virtual Machines (2/2)
 - Virtual machines can run totally different OS than host
@@ -75,8 +75,7 @@ and how to use them in CSC environment.
   - The internal FS is always read-only when run with user level rights 
 - To access host directories, they  need to be mapped to container directories
   - E.g. to map host directory `/scratch/project_12345` to directory `/data` 
-  inside the container: 
-  - `--bind /scratch/project_12345:/data`
+  inside the container: `--bind /scratch/project_12345:/data`
   - Target directory inside the container does not need to exist. It is created as
 necessary
   - More than one directory can be mapped
@@ -89,7 +88,7 @@ setting in host `$SINGULARITYENV_variablename`.
   - E.g. to set `$TEST` in container, set `$SINGUALRITYENV_TEST` in host
 
 # singularity_wrapper
-- Running containers with singularity_wrapper takes care of most common `--bind` commands
+- Running containers with `singularity_wrapper` takes care of most common `--bind` commands
   - `singularity_wrapper exec image.sif myprog <options>`
 - If environment variable `$SING_IMAGE` is set with the path to the image, even image file can be omitted
   - `singularity_wrapper exec myprog <options>`
@@ -125,14 +124,14 @@ otherwise problematic:
     - Requires root access!
  
 # Building a new Singularity container (2/3)
-  - Open a shell in the container and install software
-    - Depending on base image system, package managers can be used to install 
-    libraries and dependencies (apt install, yum install etc)
-    - Installation as per software developer instructions
+- Open a shell in the container and install software
+  - Depending on base image system, package managers can be used to install 
+    libraries and dependencies (`apt install` , `yum install` etc)
+  - Installation as per software developer instructions
   
-  # Building a new Singularity container (3/3)
-  - Build a production image from the sandbox
-  - (optional) Make a definition file and build a productio image from it
-    - Mostly necesary if you wish to distribute your container wider
-    - Also helps with updating and re-using containers
+# Building a new Singularity container (3/3)
+- Build a production image from the sandbox
+- (optional) Make a definition file and build a productio image from it
+  - Mostly necesary if you wish to distribute your container wider
+  - Also helps with updating and re-using containers
 
