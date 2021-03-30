@@ -171,7 +171,7 @@ before invoking the container.
 Set some test variables:
 ```text
 export TEST1="value1"
-export SINGULARITYENV_TEST2="value"
+export SINGULARITYENV_TEST2="value2"
 ```
 Compare the outputs of:
 
@@ -185,6 +185,12 @@ second command is run in the container and we see `$TEST1` (inherited from host)
 `$TEST2` (specifically set inside the container by setting `$SINGULARITYENV_TEST2` on host). 
 The third command is also run  inside the container, but this time we omitted host environment
 variables, so we only see `$TEST2`.
+
+It should be noted that any variables on command line are substituted by their values on the host.
+```text
+singularity exec tutorial.sif echo $TEST2
+```
+This will result in empty output because $TEST2 has not been set on host.
 
 ## Exploring containers
 
@@ -225,16 +231,28 @@ singularity run hello-world_latest.sif
 ```
 
 ### 2. Convert an existing Docker container to Singularity
-Use `singularity build`:
+
+Docker images are downloaded as layers. These layers are stored in the cache directory. 
+Default location for this is `$HOME/.singularity/cache`. Since the home directory has 
+limited capacity, and some images can be large, it's best to set `$SINGULARITY_CACHE` 
+to point to some other location with more space.
+
+If running with `sinteractive`, or as batch job on an IO node, you can use the 
+fast local storage:
+```text
+export SINGULARITY_TMPDIR=$LOCAL_SCRATCH
+export SINGULARITY_CACHEDIR=$LOCAL_SCRATCH
+```
+If running on a node with no local storage, you can use e.g. /scratch.
+
+You can avoid some unnecessary warnings by unsetting a variable:
+```text
+unset XDG_RUNTIME_DIR
+```
+You can now run `singularity build`:
 ```text
 singularity build alpine.sif docker://library/alpine:latest
 ```
-Unlike Singularity images that are downloaded as as single file, Docker images are 
-downloaded as layers. These layers are stored in the cache directory. Default location 
-for this is `$HOME/.singularity/.cache`. Since the home directory has limited capacity, 
-and some images can be large, it's best to set `$SINGULARITY_CACHE` to point to some 
-other location with more space.
-
 You can find more detailed instructions for converting Docker images in Docs CSC: 
 [Running existing containers](https://docs.csc.fi/computing/containers/run-existing/)
 
