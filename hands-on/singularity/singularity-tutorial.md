@@ -227,7 +227,7 @@ singularity run hello-world_latest.sif
 ### 2. Convert an existing Docker container to Singularity
 Use `singularity build`:
 ```text
-singularity build pytorch_20.03-py3.sif docker://nvcr.io/nvidia/pytorch:20.03-py3
+singularity build alpine.sif docker://library/alpine:latest
 ```
 Unlike Singularity images that are downloaded as as single file, Docker images are 
 downloaded as layers. These layers are stored in the cache directory. Default location 
