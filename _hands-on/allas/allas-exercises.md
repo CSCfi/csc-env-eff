@@ -27,14 +27,14 @@ During the exercises, you can use this interface to get another view to the buck
 
 1. Login to puhti.csc.fi and move to scratch:
 
-**Linux/mac**
+**Linux/mac/MobaXterm**
 ```text
 ssh XXXX@puhti.csc.fi   (replace XXXX with your csc user account)
 ```
 
 **Windows/PuTTY**
 
-   **host:* puhti.csc.fi
+   **host:** puhti.csc.fi
  
    **login as:** XXXX  (replace XXXX with your csc user account)
 
@@ -69,7 +69,7 @@ ls -ltr
 tree pythium
 ```
 
-# Using Allas
+## Using Allas
 
 Open connection to Allas:
 ```text
@@ -172,12 +172,12 @@ The data in pythium directory is now stored in many ways to Allas so we can remo
 rm -r pythium
 exit
 ```
-# Downloading data from Allas to Puhti
+## Downloading data from Allas to Puhti
 
 
 1. Login to puhti.csc.fi and move to scratch:
 
-Linux/mac
+Linux/mac/MobaXterm
 ```text
 ssh xxxx@puhti.csc.fi   (replace xxxx with your user account )
 ```
@@ -242,7 +242,7 @@ rclone copyto allas:trng_xxxx-genomes-rc/pythium_vexans/pythium_vexans.fasta  ./
 ls -l
 ```
 
-# 2. Dowload with  a-get
+## 2. Download with  a-get
 
 Return to your XXXX directory in Puhti scratch
 ```text
@@ -294,7 +294,7 @@ ls -l pythium/pythium_vexans/
 ```
 
 
-# 3. Downloading data from allas-backup
+## 3. Downloading data from allas-backup
 Return to your main scratch directory and make a new directory:
 ```text
 cd ..
