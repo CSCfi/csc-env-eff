@@ -49,6 +49,7 @@ lang: en
 # Available HPC resources
 
 Check CSC Docs pages for information on available resources
+
   - [Puhti technical details](https://docs.csc.fi/computing/systems-puhti/)
   - [Mahti technical details](https://docs.csc.fi/computing/systems-mahti/)
   - [Available partitions](https://docs.csc.fi/computing/running/batch-job-partitions/)
