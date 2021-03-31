@@ -53,7 +53,7 @@ lang: en
    - This depends on many things so you must try, see our [instructions on a scaling test](https://docs.csc.fi/support/tutorials/cmdline-handson/#scaling-test-for-an-mpi-parallel-job)
 
 
-# What if your job fails - Troubleshooting checklist 1/2?
+# What if your job fails? Troubleshooting checklist 1/2
 
    1. Did the job run out of time?
    2. Did the job run out of memory?
@@ -62,7 +62,7 @@ lang: en
    4. Did it fail immediately or did it run for some time?
       * Jobs failing immediately are often due to something simple like typos in command line, missing inputs, bad parameters etc.
 
-# What if your job fails - Troubleshooting checklist 2/2?
+# What if your job fails? Troubleshooting checklist 2/2
 
    5. Check the error file captured by batch job script
    6. Check any other error files and logs the program may have produced
@@ -74,20 +74,16 @@ lang: en
 # Document your discoveries
 
 - When you've successfully solved an issue, make it easy to rediscover it
-- Set up a file in your `$HOME` and add your commands there with keywords for yourself
-   - e.g. it's quick to copy/paste your command from the screen to the end of the file
+- Set up a file in your `$HOME` and add your commands there
+   - It's quick to copy/paste from the screen to the end of the file
 
 ```bash
 cat >> $HOME/vault
 <copy/paste>
-Ctlr-C
+Ctrl-C
 ```
 
-- and `grep`'ing it later is quick
+- ... and finding _them_ with `grep` later is quick (`grep them $HOME/vault`)
+   - `bash` history is nice, but keeps also the ones that didn't work...
+   - Note, don't overwrite your vault file (_e.g._ with `cat > $HOME/vault`)
 - Store scripts in `$HOME/bin` and take backups
-
-# Keep notes
-
-Save useful commands and short scripts to a file for later reference, and push
-your notes to GitHub every now and then. Bash history keeps all the commands
-that you typed, but it also keeps the ones that did not work...
