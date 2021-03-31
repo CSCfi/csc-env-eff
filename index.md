@@ -51,6 +51,7 @@ author: CSC Training
 {% endfor %}
 * [Exercise - Serial, array and parallel jobs with R + contours calculation from DEM with raster package (GIS) ](https://github.com/csc-training/geocomputing/tree/m
 aster/R/puhti)
+
 * [Exercise - Serial, array and parallel jobs with Python + NDVI calculation rasterio package (GIS) ](https://github.com/csc-training/geocomputing/tree/master/pytho
 n/puhti)
 
