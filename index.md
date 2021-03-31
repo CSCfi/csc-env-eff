@@ -8,7 +8,7 @@ author: CSC Training
 {% assign items = site.hands-on |  sort: "title" | reverse %}
 
 ## Prerequirements
-* [Tutorial - Login Puhti with ssh](csc-env-eff/hands-on/connecting/ssh-puhti.md)
+* [Tutorial - Login Puhti with ssh](csc-env-eff/hands-on/connecting/ssh-puhti.html)
 {% for hands-on in items %}
 {% if hands-on.topic == 'Linux Prerequisites' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
