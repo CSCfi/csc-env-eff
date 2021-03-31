@@ -12,22 +12,22 @@ On Windows 10, you can use the *Windows Power Shell*
 or [download Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), or 
 [download and install MobaXterm](https://mobaxterm.mobatek.net/download.html).
 
-In this tutorial, we assume you use MobaXterm. More examples can be found
+In this tutorial, we assume you use MobaXterm. [More examples can be found
 in docs](https://docs.csc.fi/computing/connecting/).
-- Launch MobaXterm from the applications list (opens from the windows logo) or search for it
-in the bottom bar search box.
 
-1. "SSH" icon at top left
-2. in the Basic SSH settings section Remote host field write "puhti.csc.fi"
-3. Tick the "specify username" box and in the username box write your csc username (leave port in the default setting 22). 
-4. Click "OK" at the bottom.
-5. MobaXterm will now log you in puhti.csc.fi and ask you for your password.
+1. Launch MobaXterm from the applications list (opens from the windows logo) or search for it
+in the bottom bar search box.
+2. "SSH" icon at top left
+3. in the Basic SSH settings section Remote host field write "puhti.csc.fi"
+4. Tick the "specify username" box and in the box write your csc username (leave port in the default setting 22). 
+5. Click "OK" at the bottom.
+6. MobaXterm will now log you in puhti.csc.fi and ask you for your password.
 
 ## MacOS
 
 In MacOS, you can use Terminal similarly as with Linux machines (see below). Simply open the Terminal application and type:
 ```bash
-ssh <your_csc_username>@puhti.csc.fi
+ssh yourcscusername@puhti.csc.fi
 ```
 
 ## Linux
@@ -35,7 +35,7 @@ ssh <your_csc_username>@puhti.csc.fi
 Laptops and workstations running Linux typically have SSH installed. Simply open a terminal
 and give:
 ```bash
-ssh <your_csc_username>@puhti.csc.fi
+ssh yourcscusername@puhti.csc.fi
 ```
 
 - if you're connecting to Puhti (or that Puhti login node) for the first time, SSH will
@@ -69,9 +69,9 @@ Last login: Mon Dec 14 14:53:15 2020 from jabadabaduu.fi
 ...
 
 └─────────────────────────────────────────────────────────────────────────────┘
-[<your username>@puhti-login1 ~]$
+[ yourcscusername@puhti-login1 ~]$
 ```
 Now, you're ready to go. Note, however, that remote graphics will not work. You could
 add X11-tunneling to your ssh-connection, by adding `-X` or `-Y` to your command, while
 in Windows MobaXterm actually will tunnel the connection by default. However,  
-for intesive remote graphics we recommend using NoMachine.
+for intensive remote graphics we recommend using NoMachine.
