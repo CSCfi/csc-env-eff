@@ -73,5 +73,5 @@ Last login: Mon Dec 14 14:53:15 2020 from jabadabaduu.fi
 ```
 Now, you're ready to go. Note, however, that remote graphics will not work. You could
 add X11-tunneling to your ssh-connection, by adding `-X` or `-Y` to your command, while
-in Windows MobaXterm actually will tunnel the connection by default. However,  
-for intensive remote graphics we recommend using NoMachine.
+in Windows MobaXterm actually will tunnel the connection by default. However, for 
+intensive remote graphics we recommend using NoMachine.
