@@ -28,7 +28,7 @@ in the bottom bar search box.
 5. Click "OK" at the bottom.
 6. MobaXterm will now log you in puhti.csc.fi and ask you for your password.
 
-* The next time you want to login to Puhti, just select it from the "session" menu on the left.
+* The next time you want to login to Puhti, just select it from the "session" menu on the left. (Scroll down to [In Puhti](#in-puhti))
 
 ## MacOS
 
@@ -37,6 +37,8 @@ In MacOS, you can use Terminal similarly as with Linux machines (see below). Sim
 ssh yourcscusername@puhti.csc.fi
 ```
 
+(Scroll down to [In Puhti](#in-puhti))
+
 ## Linux
 
 Laptops and workstations running Linux typically have SSH installed. Simply open a terminal
@@ -44,6 +46,8 @@ and give:
 ```bash
 ssh yourcscusername@puhti.csc.fi
 ```
+
+## In Puhti
 
 - if you're connecting to Puhti (or that Puhti login node) for the first time, SSH will
   ask you if you trust the authenticity of the host, e.g.:
