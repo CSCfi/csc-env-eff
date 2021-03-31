@@ -13,7 +13,7 @@ Singularity 3.x installed.
 Conda is a usefull tool for installing software with complex dependencies. 
 It has, however, some problems, especially on systems like Puhti. 
 
-The main problems are related to storage: Conda environments can be quite large
+The main problems are related to storage: Conda environments can be quite large,
 and can have tens of thousands of files. Just 3-4 environments are enough to fill
 the basic quota of project's /projapp directory.
 
@@ -21,7 +21,7 @@ Conda environments can also be somewhat sensitive to changes in the base system,
 meaning that e.g. updates in Puhti can sometimes break Conda environments, 
 necessitating a re-install.
 
-Using a Singularity container instead can help with bot problems: Singularity
+Using a Singularity container instead can help with both problems: Singularity
 containers are just single file that is typically smaller than the total size
 of the Conda environment directory. They are also less sensitive for changes in
 host system.
@@ -41,7 +41,7 @@ You can find more detailed instructions for converting Docker images in Docs CSC
 
 ## Replicating existing Conda environment
 
-If you have an existing Conda environment, you can save `environmet.yml`file and
+If you have an existing Conda environment, you can save `environmet.yml` file and
 use it to replicate the environment.
 
 Please note that the `environment.yml` file will only reflect changes to environment
@@ -81,7 +81,7 @@ From: continuumio/miniconda3
 %runscript
     exec "$@"
 ```
-Make sure files `environment.yml`and `conda_environment.def` are in the
+Make sure files `environment.yml` and `conda_environment.def` are in the
 current directory and give command:
 
 ```text
@@ -125,4 +125,8 @@ In this case there would even better option: Building from a ready container:
 singularity build fastx.sif docker://biocontainers/fastx-toolkit:v0.0.14-6-deb_cv1
 ```
 - Good: This can be done with user right in Puhti and you end up with a single 61 MB file.
-- Bad: Finding a ready, working container may take some time. 
+- Bad: Finding a ready, working container may take some time.
+
+Containers are not a "silver bullet" solution to all installation problems, but they can
+be in many cases a preferable alternative for conda.
+

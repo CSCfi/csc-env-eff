@@ -45,8 +45,30 @@ The first command is run in the host. The second command is run inside the conta
 
 The tutorial container is based on Ubuntu 18.04. The host and the container use the 
 same kernel, but the rest of the system can vary. That means a container can be based 
-on a different Linux distro than the host (as long as they the are kernel compatible), 
+on a different Linux distribution than the host (as long as they the are kernel compatible), 
 but can't run a totally differen OS like Windows.
+
+`Singularity exec` is the run method you will typically use in a batch job script.
+
+Make a file called `test.sh`, and copy the following contents to it. Change "project_xxxx"
+to the corrct project name.
+```text
+#!/bin/bash
+#SBATCH --job-name=test
+#SBATCH --account=project_xxxx
+#SBATCH --partition=test
+#SBATCH --time=00:01:00
+#SBATCH --mem=1G
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+
+singularity exec tutorial.sif hello_world
+```
+Submit the job to the queue with:
+```text
+sbatch test.sh
+```
+For more information on batch jobs, please see [CSC Docs pages](https://docs.csc.fi/computing/running/getting-started/).
 
 ### 2. Singularity run
 When containers are created, a standard action, called the `runscript` is defined. 
@@ -95,7 +117,7 @@ container.
 
 This is done with command line argument `--bind` (or `-B`). The basic syntax is 
 `--bind /path/in/host:/path/inside/container`.
-```
+
 The bind path does not need to exist inside the container. It is created if necessary. 
 More that one bind pair can be specified. The option is available for all the run methods 
 described above.
@@ -105,15 +127,15 @@ from inside the container without bind:
 
 ```text
 export SCRATCH=/scratch/project_12345
-singularity exec tutorial.sif ls 
+singularity exec tutorial.sif ls $SCRATCH
 ```
 This will not work. The container can not see the host diectory, so you will get a 
-`No such file or directory` error.
+"No such file or directory" error.
 
 Now try binding host directory `/scratch` to directory `/scratch` inside the container.
 
 ```text
-singularity exec --bind /scrath:/scratch tutorial.sif ls $SCRATCH
+singularity exec --bind /scratch:/scratch tutorial.sif ls $SCRATCH
 ```
 This time the host directory is linked to to the container directory and the command works.
 
@@ -136,7 +158,7 @@ image file.
 export SING_IMAGE=$PWD/tutorial.sif
 singularity_wrapper exec ls $SCRATCH
 ```
-Since some modules set `$SING_IMAGE` when loaded it is a good idea to start with 
+Since some modules set `$SING_IMAGE` when loaded, it is a good idea to start with 
 `module purge` if you plan to use it, to make sure correct image is used.
 
 ## Environment variables
@@ -144,8 +166,8 @@ Some software may reguire some environment variables to be set, e.g. to point to
 reference data or a configuration file.
 
 Most environment variables set on the host are inherited by the container. Sometimes 
-this may be undesirable. With command line option --cleanenv host environment is not 
-inherited by the conatiner.
+this may be undesirable. With command line option `--cleanenv` host environment is not 
+inherited by the container.
 
 To set an environment variable specifically inside the container, you can set an 
 environment variable `$SINGULARITYENV_xxx` (where xxx is the variable name) on the host 
@@ -154,7 +176,7 @@ before invoking the container.
 Set some test variables:
 ```text
 export TEST1="value1"
-export SINGULARITYENV_TEST2="value"
+export SINGULARITYENV_TEST2="value2"
 ```
 Compare the outputs of:
 
@@ -163,16 +185,22 @@ env |grep TEST
 singularity exec tutorial.sif env |grep TEST
 singularity exec --cleanenv tutorial.sif env |grep TEST
 ```
-The first command is run on host and we see `$TEST1` and `$SINGULARITYENV_TEST2`. The 
+The first command is run on host, and we see `$TEST1` and `$SINGULARITYENV_TEST2`. The 
 second command is run in the container and we see `$TEST1` (inherited from host) and 
-`$TEST2` (specifically set inside the container by setting `$SINGULARITYENV_TEST2`on host). 
+`$TEST2` (specifically set inside the container by setting `$SINGULARITYENV_TEST2` on host). 
 The third command is also run  inside the container, but this time we omitted host environment
 variables, so we only see `$TEST2`.
+
+It should be noted that any variables on command line are substituted by their values on the host.
+```text
+singularity exec tutorial.sif echo $TEST2
+```
+This will result in empty output because $TEST2 has not been set on host.
 
 ## Exploring containers
 
 Our test container includes program `hello2`, but it is not in the `$PATH`. One way to 
-find it is to try running `find`inside the container
+find it is to try running `find` inside the container
 
 ```text
 singularity exec tutorial.sif find / -type f -name "hello2" 2>/dev/null
@@ -195,27 +223,45 @@ Instead, you will have to import a ready image file.
 
 There are various option to do this.
 
-### Pull an existing Singularity container from a repository
-Use `singularity pull`:
+### 1. Run or pull an existing Singularity container from a repository
+It is possible to run containers directly from repository:
 ```text
-singularity pull shub://vsoch/hello-world
+singularity run shub://vsoch/hello-world:latest
+```
+This can, however, lead to a batch job failing if there are network problems.
+Usually it is preferable to pull the container first and use the image file.
+```text
+singularity pull shub://vsoch/hello-world:latest
+singularity run hello-world_latest.sif
 ```
 
-### Convert an existing Docker container to Singularity
-Use `singularity build`:
-```text
-singularity build pytorch_20.03-py3.sif docker://nvcr.io/nvidia/pytorch:20.03-py3
-```
-Unlike Singularity images that are downloaded as as single file, Docker images are 
-downloaded as layers. These layers are stored in the cache directory. Default location 
-for this is `$HOME/.singularity/.cache`. Since the home directory has limited capacity, 
-and some images can be large, it's best to set `$SINGULARITY_CACHE` to point to some 
-other location with more space.
+### 2. Convert an existing Docker container to Singularity
 
+Docker images are downloaded as layers. These layers are stored in the cache directory. 
+Default location for this is `$HOME/.singularity/cache`. Since the home directory has 
+limited capacity, and some images can be large, it's best to set `$SINGULARITY_CACHE` 
+to point to some other location with more space.
+
+If running with `sinteractive`, or as batch job on an IO node, you can use the 
+fast local storage:
+```text
+export SINGULARITY_TMPDIR=$LOCAL_SCRATCH
+export SINGULARITY_CACHEDIR=$LOCAL_SCRATCH
+```
+If running on a node with no local storage, you can use e.g. /scratch.
+
+You can avoid some unnecessary warnings by unsetting a variable:
+```text
+unset XDG_RUNTIME_DIR
+```
+You can now run `singularity build`:
+```text
+singularity build alpine.sif docker://library/alpine:latest
+```
 You can find more detailed instructions for converting Docker images in Docs CSC: 
 [Running existing containers](https://docs.csc.fi/computing/containers/run-existing/)
 
-### Build the image on another system and transfer the image file to Puhti
+### 3. Build the image on another system and transfer the image file to Puhti
 To do this you will need an access to system where you have root access and that has 
 Singularity installed.
 

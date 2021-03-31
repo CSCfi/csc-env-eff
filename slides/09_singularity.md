@@ -13,6 +13,15 @@ and how to use them in CSC environment.
 - Popular container engines include Docker, Singularity, Shifter
 - Singularity is the most popular in HPC environments
 
+# Containers vs. Virtual Machines (1/2)
+<div style="text-align:center"><img src="./img/containers-fig1.png" /></div>
+
+# Containers vs. Virtual Machines (2/2)
+- Virtual machines can run totally different OS than host
+(e.g. Windows on Linux host or vice versa)
+- Containers share kernel with host, but can have its own libraries etc
+  - Can run e.g. different Linux distribution than host
+
 # Container benefits: Ease of installation
 - Containers are becoming a popular way to distribute software
   - Single command installation
@@ -30,8 +39,8 @@ and how to use them in CSC environment.
   
 # Container benefits: Enviroment reproducibility
 - Analysis environment can be saved as a whole
-  - Usefull with e.g. Python, where updating underlaying 
-  libraries (Numpy etc) can lead to differences  
+  - Useful with e.g. Python, where updating underlaying 
+  libraries (Numpy etc) can lead to differences in behavior  
 - Sharing with collaborators easy (single file)
 
 # Singularity in a nutshell
@@ -46,19 +55,18 @@ and how to use them in CSC environment.
   - Running Docker directly would require root rights
 
 # Singularity on CSC servers
-- Singularity installed only in compute nodes
-- Singularity jobs need to run as batch jobs or with `sinteractive`
+- Singularity jobs should be run as batch jobs or with `sinteractive`
 - No need to load a module
 - Users can run their own containers
 - Some CSC software installations provided as containers
   - See software pages for details
 
 # Running Singularity containers: Basic syntax
+- Execute a command in the container
+  - `singularity exec [exec options...] <container> <command>`
 - Run the default action (runscript) of the container
   - Defined when the container is built
   - `singularity run [run options...] <container>`
-- Execute a command in the container
-  - `singularity exec [exec options...] <container> <command>`
 - Open a shell in the container
   - `singularity shell [shell options...] <container>`
 
@@ -80,7 +88,7 @@ setting in host `$SINGULARITYENV_variablename`.
   - E.g. to set `$TEST` in container, set `$SINGUALRITYENV_TEST` in host
 
 # singularity_wrapper
-- Running containers with singularity_wrapper takes care of most common `--bind` commands
+- Running containers with `singularity_wrapper` takes care of most common `--bind` commands
   - `singularity_wrapper exec image.sif myprog <options>`
 - If environment variable `$SING_IMAGE` is set with the path to the image, even image file can be omitted
   - `singularity_wrapper exec myprog <options>`
@@ -108,16 +116,23 @@ otherwise problematic:
   - Singularity: 1 file, total size 339 MB
 - Containers are not the solution for everything, but they do have their uses…
 
-# Building a new Singularity container
-- Typical steps
-  - Build a basic container in sandbox mode (`--sandbox`)
+# Building a new Singularity container (1/3)
+- Requires root access: Can not be done directly in e.g. Puhti
+
+- 1. Build a basic container in sandbox mode (`--sandbox`)
     - Uses a folder structure instead of an image file
     - Requires root access!
-  - Open a shell in the container and install software
-    - Depending on base image system, package managers can be used to install libraries and dependencies (apt install, yum install etc)
-    - Installation as per software developer instructions
-  - Build a production image from the sandbox
-  - (optional) Make a definition file and build a productio image from it
-    - Mostly necesary if you wish to distribute your container wider.
+ 
+# Building a new Singularity container (2/3)
+- 2. Open a shell in the container and install software
+  - Depending on base image system, package managers can be used to install 
+    libraries and dependencies (`apt install` , `yum install` etc)
+  - Installation as per software developer instructions
+  
+# Building a new Singularity container (3/3)
+- 3. Build a production image from the sandbox
+- (optional) Make a definition file and build a production image from it
+  - Mostly necesary if you wish to distribute your container wider
+  - Also helps with updating and re-using containers
+- Production image can be transferred to e.g. Puhti and run with user rights
 
-Requires root access: Can not be done directly in e.g. Puhti

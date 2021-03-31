@@ -37,7 +37,7 @@ Was HISAT2 available in the biokit?
 
 ## Bioconda environment
 
-4. After aligning, we might want to check the quality of the alignment with RSeQC tool. As we can see from the `module list` command above, it was not included in the biokit. Like we learned, you can try to look for it from the application manual page and by using the `module spider reseqc`. 
+4. After aligning, we might want to check the quality of the alignment with RSeQC tool. As we can see from the `module list` command above, it was not included in the biokit. Like we learned, you can try to look for it from the application manual page and by using the `module spider rseqc`. 
 
 No luck? What next? Let's take a look at the bioconda environment.
 
@@ -48,13 +48,14 @@ Let's check what is available with spider again, and load one of the modules:
 module spider bioconda
 module load bioconda/3
 ```
-Take a look at the message you get. Note, that some dependency modules were re-loaded in the background. It says that we first need to set the PROJAPPL environment variable.
-To do so, run command (you can check the name/number of your project(s) with command `csc-workspaces`)
+Take a look at the message you get. Note, that some dependency modules were re-loaded in the background. It also says that we first need to set the PROJAPPL environment variable.
+To do so, run command (you can check the name/number of your project(s) with command `csc-workspaces`):
 ```bash
 export PROJAPPL=/projappl/project_XXXXXXX
 ```
-Check which applications are available in this bioconda environment:
+Re-run the ```module load``` command and then check which applications are available in this bioconda environment:
 ```bash
+module load bioconda/3
 conda env list
 ```
 See RSeQc there? 
