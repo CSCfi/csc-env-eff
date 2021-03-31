@@ -23,6 +23,8 @@ in the bottom bar search box.
 5. Click "OK" at the bottom.
 6. MobaXterm will now log you in puhti.csc.fi and ask you for your password.
 
+* The next time you want to login to Puhti, just select it from the "session" menu on the left.
+
 ## MacOS
 
 In MacOS, you can use Terminal similarly as with Linux machines (see below). Simply open the Terminal application and type:
