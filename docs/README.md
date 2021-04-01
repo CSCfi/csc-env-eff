@@ -1,3 +1,3 @@
-# For future use
+# Deprecated
 
-May contain html version of the content at some point
+Don't edit this repository. Work continued in https://github.com/csc-training/csc-env-eff
