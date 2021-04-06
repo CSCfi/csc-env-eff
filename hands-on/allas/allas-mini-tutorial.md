@@ -23,8 +23,6 @@ Any file should do, but prefer a file that you can open in Puhti.
 During the exercises, you can use this interface to get another view to the buckets and objects in Allas.
 Note that you need to **reload** the view in order to see the changes.
 
-=======
-
 
 ## Log in Puhti and use scratch
 
